@@ -30,89 +30,84 @@
         <h2>Compile 과 Run</h2>
         <p><img src="Java_run.jpg" width="500px" border="1"></p>
 
-        <h2>Data Type</h2>
+        <h2>Variable</h2>
+        <h3>Data Type</h3>
         <br>
-    <table border="1">
-      <thead>
-        <tr>
-          <th>정수</th>
-          <th>Byte</th>
-          <th>범위</th>
-        </tr>
-      </thead>
-        <tr>
-          <td>byte</td>
-          <td>1</td>
-          <td>-2^7 ~ 2^7-1 (-128 ~ 127)</td>
-        </tr>
-        <tr>
-          <td>short</td>
-          <td>2</td>
-          <td>-2^15 ~ 2^15-1 (-32768 ~ 32767)</td>
-        </tr>
-        <tr>
-          <td>int</td>
-          <td>4</td>
-          <td>-2^31 ~ 2^31-1 (-2147483648 ~ 2147483647)</td>
-        </tr>
-        <tr>
-          <td>long</td>
-          <td>8</td>
-          <td>-2^63 ~ 2^63-1 (-9223372036854775808 ~ 9223372036854775807)</td>
-        </tr>
-       <thead>
-        <tr>
-          <th>실수</th>
-          <th>Byte</th>
-          <th>범위</th>
-        </tr>
-       </thead>
-        <tr>
-          <td>float</td>
-          <td>4</td>
-          <td>0x0.000002P-126f ~ 0x1.fffffeP+127f</td>
-        </tr>
-        <tr>
-          <td>double</td>
-          <td>8</td>
-          <td>0x0.0000000000001P-1022 ~ 0x1.fffffffffffffP+1023  </td>
-        </tr>
-      <thead>
-        <tr>
-          <th>문자</th>
-          <th>Byte</th>
-          <th>범위</th>
-        </tr>
-      </thead>
-        <tr>
-          <td>char</td>
-          <td>2</td>
-          <td>\u0000 ~ \uffff (0 ~ 2^15-1) * 자바에서 unsgined로 동작하는 자료형</td>
-        </tr>
-       <thead>
-        <tr>
-          <th>논리</th>
-          <th>Bit</th>
-          <th>범위</th>
-        </tr>
-      </thead>
-        <tr>
-          <td>boolean</td>
-          <td>1bit</td>
-          <td>true, false</td>
-        </tr>
-    </table>
-        <ul><span id="ulh">Number & String 비교</span>
-          <li><span id="필기">System.out.println(6); </span>//number</li>
-          <li><span id="필기">System.out.println("6"); </span>//string</li>
-          <li><span id="필기">System.out.println(6+6); </span>//12</li>
-          <li><span id="필기">System.out.println("6"+"6"); </span>//66</li>
-          <li><span id="필기">System.out.println(6*6); </span>//36</li>
-          <li><i>System.out.println("6"*"6"); </i>//Error</li>
-          <li><span id="필기">System.out.println("1111".length()); </span>//4</li>
-          <li><i>System.out.println(1111.length); </i>//Error</li>
-        </ul>
-        <h3>문자열(String)</h3>
+        <table border="1">
+          <thead>
+            <tr>
+              <th>정수</th>
+              <th>Byte</th>
+              <th>범위</th>
+            </tr>
+          </thead>
+            <tr>
+              <td>byte</td>
+              <td>1</td>
+              <td>-2^7 ~ 2^7-1 (-128 ~ 127)</td>
+            </tr>
+            <tr>
+              <td>short</td>
+              <td>2</td>
+              <td>-2^15 ~ 2^15-1 (-32768 ~ 32767)</td>
+            </tr>
+            <tr>
+              <td>int</td>
+              <td>4</td>
+              <td>-2^31 ~ 2^31-1 (-2147483648 ~ 2147483647)</td>
+            </tr>
+            <tr>
+              <td>long</td>
+              <td>8</td>
+              <td>-2^63 ~ 2^63-1 (-9223372036854775808 ~ 9223372036854775807)</td>
+            </tr>
+          <thead>
+            <tr>
+              <th>실수</th>
+              <th>Byte</th>
+              <th>범위</th>
+            </tr>
+          </thead>
+            <tr>
+              <td>float</td>
+              <td>4</td>
+              <td>0x0.000002P-126f ~ 0x1.fffffeP+127f</td>
+            </tr>
+            <tr>
+              <td>double</td>
+              <td>8</td>
+              <td>0x0.0000000000001P-1022 ~ 0x1.fffffffffffffP+1023  </td>
+            </tr>
+          <thead>
+            <tr>
+              <th>문자</th>
+              <th>Byte</th>
+              <th>범위</th>
+            </tr>
+          </thead>
+            <tr>
+              <td>char</td>
+              <td>2</td>
+              <td>\u0000 ~ \uffff (0 ~ 2^15-1) * 자바에서 unsgined로 동작하는 자료형</td>
+            </tr>
+          <thead>
+            <tr>
+              <th>논리</th>
+              <th>Bit</th>
+              <th>범위</th>
+            </tr>
+          </thead>
+            <tr>
+              <td>boolean</td>
+              <td>1bit</td>
+              <td>true, false</td>
+            </tr>
+        </table>
+
+        <h3>Number</h3>
+
+
+        <h3>String</h3>
         <ul>
           <li><span id="필기">System.out.println('H'); </span>//char</li>
           <li><span id="강조">System.out.println("H"); </span>//string</li>
@@ -123,6 +118,16 @@
           <br>+ "World"); </span>//ok</li>
           <li><span id="필기">System.out.println("Hello, [[[name]]] ... bye".replace("[[[name]]]", "Sophie")); </span>//replace</li>
         </ul>
+
+        <ul><span id="ulh">Number & String 비교</span>
+          <li><span id="필기">System.out.println(6); </span>//number</li>
+          <li><span id="필기">System.out.println("6"); </span>//string</li>
+          <li><span id="필기">System.out.println("6"+"6"); </span>//66</li>
+          <li><i>System.out.println("6"*"6"); </i>//Error</li>
+          <li><span id="필기">System.out.println("1111".length()); </span>//4</li>
+          <li><i>System.out.println(1111.length); </i>//Error</li>
+        </ul>
+
       </div>
     </div>
   </body>
