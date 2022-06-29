@@ -1,0 +1,95 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8"> <!--메타태그는 문자 세팅태그 (character set)-->
+    <title>WEB_CSS</title> <!--타이틀은 책제목,검색엔진에 유리-->
+  </head>
+
+  <style>
+
+    /*선택자와 우선순위*/
+    #id {color:deeppink; margin-left: 20px;}
+    .class {color:lime; margin-left: 20px;}
+
+    /*media query*/
+    #max {border:10px solid gray; font-size: 30px;}
+    #min {border:10px solid gray; font-size: 30px;}
+    @media(max-width:1000px) {#max {border:10px solid red;}}
+    @media(min-width:1000px) {#min {border:10px solid red;}}
+
+  </style>
+
+  <link rel="stylesheet" href="CSS_Style.css">
+
+  <body>
+    <h1 id="큰제목">CSS</h1>
+    <div class="grid">
+      <div class="gridleft">
+        <ul>
+          <a href="★WEB.html"><li>WEB</li></a>
+            <ol>
+              <a href="★HTML.html"><li>HTML</li></a>
+              <a href="★CSS.html"><li id="active">CSS</li></a>
+              <a href="★JavaScript.html"><li>JavaScript</li></a>
+              <a href="★Java.html"><li>Java</li></a>
+            </ol>
+          <a href="★C언어.html"><li>C언어</li></a>
+          <a href="★Linux.html"><li>Linux</li></a>
+        </ul>
+      </div>
+
+      <div class="gridright">
+        <h1>CSS : 디자인 언어</h1>
+        <p>CSS는 HTML로 표현하기 어려운 디자인 효과를 나타내는 언어이다
+        <br>CSS 문법은 style속성이나 태그로 표기하며, 정보와 분리하여 인식된다
+        <br>중복할 필요 없이 일괄적으로 디자인을 변경할 수 있다
+        <br>; 은 하나의 효과의 끝에 넣어 구분한다</p>
+
+        <h2>style 속성 (HTML Attribute)</h2>
+        <p style="color:darkorange;">style속성(style="")은 HTML속성태그이고 해당태그 한줄마다 CSS언어를 들여온다 (선택자가 필요없다)</p>
+
+        <h2>style 태그</h2>
+        <p>style태그는 HTML태그이고 안에는 CSS언어를 들여온다.
+        <br><strong>선택자+선언(효과+값)</strong> 으로 이루어진다.
+        <br>선택자을 많이 알수록 정확도를 높일 수 있고, 선언(속성)을 많이 알수록 표현력을 높일 수 있다
+        <br><img src="CSS_style.JPG" border="1" style="margin-top:10px;">
+        <i>a=<strong>선택자(Selector)</strong>,  { }안의내용=<strong>선언(Declaration)</strong>,  color:=<strong>효과(Property)</strong>,  blue;=<strong>값(value)</strong></i></P>
+
+        <h2>선택자의 우선순위</h2>
+        <p>CSS 선택자로 지정할 수 있는 HTML태그 종류는 3가지가 있다</p>
+        <div id="id"><i>#id태그</i></div>
+        <div class="class"><i>.class태그</i></div>
+        <div style="margin-left:20px;"><i>HTML기본태그</i></div>
+        <p>구체적인 선택자가 포괄적인 선택자 보다 우선순위가 높고(id태그 > class태그 > HTML기본태그), 같은 레벨에서는 마지막에 등장하는 태그의 우선순위가 높다
+        <br>class는 그루핑하는 것이고 id는 한개만 식별하는 것이다. (고로 id는 하나만 지정하는 것이 원칙이다)
+        <br><i>br태그는 닫는태그가 없어 id와 class지정이 안되는것 같다</i></p>
+        <p><img src="CSS_selector.JPG" width="750px" border="1">
+        <br>(출처 : <a href="https://www.w3schools.com/cssref/css_selectors.asp"target="_blank">https://www.w3schools.com/cssref/css_selectors.asp</a>)</p>
+
+        <h2>Box model 과 Display</h2>
+        <P>참고링크 : <a href="CSS_BOX.html">CSS_BOX.html</a>
+        <br><img src="CSS_box model.JPG" width="350px" border="1">
+        <p>박스는 태그가 차지하는 공간을 의미하고, 두가지 레벨이 있다
+        <br><strong>Block level element = 화면전체 차지 / Inline element = 자기 컨텐츠의 부피만큼만 차지</strong>
+        <br>CSS의 display 태그로 기본 설정 값을 변경시킬 수 있다 (Block level element / Inline element / none)</p>
+
+        <h2>div 와 span</h2>
+        <P>div 와 span은 의미를 가지지 않은 무색무취의 태그이다
+        <br><strong>div : Block level element</strong>
+        <br><span style="font-weight:bold;">span : Inline element</p>
+
+        <h2>GRID</h2>
+        <P>참고링크 : <a href="CSS_GRID.html">CSS_GRID.html</a>
+        <br>div 두개를 묶어서 Display값을 grid로 지정하면 분할화면을 만들 수 있다 (display: grid;)
+        <br>(새기술이 적용된 범위를 알수있는 웹사이트 : <a href="https://caniuse.com/"target="_blank">https://caniuse.com</a>)</p>
+
+        <h2>미디어쿼리</h2>
+        <p>미디어쿼리는 화면의 특성에 따라 웹스타일을 수정하는 CSS 태그이다 (@media)</p>
+        <div id="max">max1000px 최대1000까지적용</div>
+        <div id="min">min1000px 최소1000은돼야적용</div>
+
+
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,40 @@
+  /*<style> 태그적으면 오류남*/
+  /*<link rel="stylesheet" href="Style.CSS">*/
+@media(max-width: 600px) {
+  .grid {display: block;}
+  .gridright {border-left: none;}
+}
+@media (min-width: 600px) {
+  .grid {display: grid; grid-template-columns: 160px 1fr;}
+  .gridright {border-left:1px solid gray; padding-left:20px; }
+}
+
+
+#큰제목 {font-size:50px; font-weight: bold; text-align: center; border-bottom:1px solid gray; margin:0px; padding:30px; color: red;}
+#active {color:red; text-decoration:underline; font-weight: bold;}
+.gridleft ul {font-weight: bold; width:110px; padding:30px; margin:0px; font-size: 20px;}
+.gridleft ul li {margin-top: 10px; color: blue; font-size: 25px; list-style-type: square;}
+.gridleft ol {font-weight: bold; width:110px; padding-left: 10px; margin:0px; font-size: 20px;}
+.gridleft ol li {margin: 0px; color: royalblue; font-size: 20px; list-style-type: none;}
+
+#night {margin-left:20px; background-color: rgb(181, 187, 244); border: 1px dashed blue; width: 100px; height:30px; font-size: 16px; color:blue; font-weight: bold;}
+#Studyplanbutton {margin-left:20px; background-color: pink; border: 1px dashed red; width: 100px; height:30px; font-size: 16px; color:red; font-weight: bold;}
+#Studyplanbuttonactive {margin-left:20px; background-color: red; border: 1px dashed red; width: 100px; height:30px; font-size: 16px; color: pink; font-weight: bold;}
+
+h1 {margin-top: 60px; margin-bottom: 0px; color: blue;}
+h2 {margin-top: 30px; margin-bottom: 0px; margin-left: 15px; padding-left: 10px; border-left: 5px solid black;}
+h3 {margin-top: 20px; margin-bottom: 0px; margin-left: 30px; padding-left: 5px; padding-top: 0px; padding-bottom: 0px; border-left: 3px solid dimgray;}
+p {margin-left: 30px; margin-bottom: 5px;}
+ul {margin-left: 14px; margin-top: 10px; margin-bottom:3px;}
+li {list-style-type: square; color: dimgray; margin-bottom:3px;}
+body{margin: 0px; margin-right: 50px;}
+
+#ulh {color:dimgray; font-weight: bold; font-size: 18px; }
+#필기 {color:deeppink; font-style:italic;}
+#강조 {color:deeppink; font-weight: bold;}
+#의문 {color:white; background: red; font-style:italic; font-weight: bold;}
+
+table {margin-left: 30px; margin-top: 0px; border-spacing: 0; font-size: 14px;}
+th {background-color:lightgray; padding: 3px;}
+td {padding-top: 2px; padding-bottom: 3px; padding-left: 6px; padding-right: 3px;}
+a {color: dodgerblue; text-decoration: none;}

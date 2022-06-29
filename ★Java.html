@@ -1,0 +1,129 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>WEB_Java</title>
+  </head>
+
+  <link rel="stylesheet" href="CSS_Style.css">
+
+  <body>
+    <h1 id="큰제목">Java</h1>
+    <div class="grid">
+      <div class="gridleft">
+        <ul>
+          <a href="★WEB.html"><li>WEB</li></a>
+            <ol>
+              <a href="★HTML.html"><li>HTML</li></a>
+              <a href="★CSS.html"><li>CSS</li></a>
+              <a href="★JavaScript.html"><li>JavaScript</li></a>
+              <a href="★Java.html"><li id="active">Java</li></a> 
+            </ol>
+          <a href="★C언어.html"><li>C언어</li></a>
+          <a href="★Linux.html"><li>Linux</li></a>
+        </ul>
+        <br>
+      </div>
+
+      <div class="gridright">
+        <h1>Java : 객체 지향 프로그래밍 언어</h1>
+        <h2>Compile 과 Run</h2>
+        <p><img src="Java_run.jpg" width="500px" border="1"></p>
+
+        <h2>Data Type</h2>
+        <br>
+    <table border="1">
+      <thead>
+        <tr>
+          <th>정수</th>
+          <th>Byte</th>
+          <th>범위</th>
+        </tr>
+      </thead>
+        <tr>
+          <td>byte</td>
+          <td>1</td>
+          <td>-2^7 ~ 2^7-1 (-128 ~ 127)</td>
+        </tr>
+        <tr>
+          <td>short</td>
+          <td>2</td>
+          <td>-2^15 ~ 2^15-1 (-32768 ~ 32767)</td>
+        </tr>
+        <tr>
+          <td>int</td>
+          <td>4</td>
+          <td>-2^31 ~ 2^31-1 (-2147483648 ~ 2147483647)</td>
+        </tr>
+        <tr>
+          <td>long</td>
+          <td>8</td>
+          <td>-2^63 ~ 2^63-1 (-9223372036854775808 ~ 9223372036854775807)</td>
+        </tr>
+       <thead>
+        <tr>
+          <th>실수</th>
+          <th>Byte</th>
+          <th>범위</th>
+        </tr>
+       </thead>
+        <tr>
+          <td>float</td>
+          <td>4</td>
+          <td>0x0.000002P-126f ~ 0x1.fffffeP+127f</td>
+        </tr>
+        <tr>
+          <td>double</td>
+          <td>8</td>
+          <td>0x0.0000000000001P-1022 ~ 0x1.fffffffffffffP+1023  </td>
+        </tr>
+      <thead>
+        <tr>
+          <th>문자</th>
+          <th>Byte</th>
+          <th>범위</th>
+        </tr>
+      </thead>
+        <tr>
+          <td>char</td>
+          <td>2</td>
+          <td>\u0000 ~ \uffff (0 ~ 2^15-1) * 자바에서 unsgined로 동작하는 자료형</td>
+        </tr>
+       <thead>
+        <tr>
+          <th>논리</th>
+          <th>Bit</th>
+          <th>범위</th>
+        </tr>
+      </thead>
+        <tr>
+          <td>boolean</td>
+          <td>1bit</td>
+          <td>true, false</td>
+        </tr>
+    </table>
+        <ul><span id="ulh">Number & String 비교</span>
+          <li><span id="필기">System.out.println(6); </span>//number</li>
+          <li><span id="필기">System.out.println("6"); </span>//string</li>
+          <li><span id="필기">System.out.println(6+6); </span>//12</li>
+          <li><span id="필기">System.out.println("6"+"6"); </span>//66</li>
+          <li><span id="필기">System.out.println(6*6); </span>//36</li>
+          <li><i>System.out.println("6"*"6"); </i>//Error</li>
+          <li><span id="필기">System.out.println("1111".length()); </span>//4</li>
+          <li><i>System.out.println(1111.length); </i>//Error</li>
+        </ul>
+        <h3>문자열(String)</h3>
+        <ul>
+          <li><span id="필기">System.out.println('H'); </span>//char</li>
+          <li><span id="강조">System.out.println("H"); </span>//string</li>
+          <li><span id="필기">System.out.println("Hello \"World\""); </span>//escape</li>
+          <li><span id="강조">System.out.println("Hello
+          <br>World"); </span>//error</li>
+          <li><span id="강조">System.out.println("Hello "
+          <br>+ "World"); </span>//ok</li>
+          <li><span id="필기">System.out.println("Hello, [[[name]]] ... bye".replace("[[[name]]]", "Sophie")); </span>//replace</li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>
