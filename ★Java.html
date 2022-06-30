@@ -27,11 +27,11 @@
 
       <div class="gridright">
         <h1>Java : 객체 지향 프로그래밍 언어</h1>
-        <h2>Compile 과 Run</h2>
-        <p><img src="Java_run.jpg" width="500px" border="1"></p>
+        <h2>Compile & Run</h2>
+        <p>소스코드파일(.java)은 컴파일러(javac.exe)를 통해 컴파일되어 바이트코드파일(.class)이 생성된다. JVM(java.exe)을 통해 실행된다.
+        <br><img src="Java_run.jpg" width="500px" border="1"></p>
 
-        <h2>Variable</h2>
-        <h3>Data Type</h3>
+        <h2>Data</h2>
         <br>
         <table border="1">
           <thead>
@@ -102,10 +102,17 @@
               <td>1bit</td>
               <td>true, false</td>
             </tr>
-        </table>
+          </table>
 
-        <h3>Number</h3>
+        <h3>Variable</h3>
+        <p>변수란 하나의 값을 저장할 수 있는 메모리 공간이다</p>
 
+        <h3>Constant</h3>
+        <p>상수는 선언과 동시에 초기화를 해야하며, 이후 변경이 불가하다.
+        <br><span id=강조>상수를 선언하는 방법은 변수 앞에 final을 붙여준다</span></p>
+
+        <h3>Literal</h3>
+        <p>값 그 자체</p>
 
         <h3>String</h3>
         <ul>
@@ -127,6 +134,8 @@
           <li><span id="필기">System.out.println("1111".length()); </span>//4</li>
           <li><i>System.out.println(1111.length); </i>//Error</li>
         </ul>
+
+        <h3>Casting</h3>
 
       </div>
     </div>
