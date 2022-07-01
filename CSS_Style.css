@@ -20,6 +20,9 @@
 #night {margin-left:20px; background-color: rgb(181, 187, 244); border: 1px dashed blue; width: 100px; height:30px; font-size: 16px; color:blue; font-weight: bold;}
 #Studyplanbutton {margin-left:20px; background-color: pink; border: 1px dashed red; width: 100px; height:30px; font-size: 16px; color:red; font-weight: bold;}
 #Studyplanbuttonactive {margin-left:20px; background-color: red; border: 1px dashed red; width: 100px; height:30px; font-size: 16px; color: pink; font-weight: bold;}
+#Studyplanbutton2 {margin-left:20px; background-color: #bef9b5; border: 1px dashed rgb(58, 173, 102); width: 100px; height:30px; font-size: 16px; color:rgb(0, 81, 255); font-weight: bold;}
+#Studyplanbutton2active {margin-left:20px; background-color: red; border: 1px dashed red; width: 100px; height:30px; font-size: 16px; color: #bef9b5; font-weight: bold;}
+
 
 h1 {margin-top: 60px; margin-bottom: 0px; color: blue;}
 h2 {margin-top: 30px; margin-bottom: 0px; margin-left: 15px; padding-left: 10px; border-left: 5px solid black;}
