@@ -37,7 +37,9 @@
           <li>Linux</li>
         </a>
       </ul>
+
       <br>
+      <input id="Studyplanbutton" type="button" value="Study Plan" onclick="location.href = '★Plan_java.html' ">
     </div>
 
     <div class="gridright">
@@ -46,6 +48,7 @@
       <p>소스코드파일(.java)은 컴파일러(javac.exe)를 통해 컴파일되어 바이트코드파일(.class)이 생성된다. JVM(java.exe)을 통해 실행된다.
         <br><img src="Java_run.jpg" width="500px" border="1">
       </p>
+
 
       <h2>Data</h2>
       <br>
@@ -104,7 +107,7 @@
         <tr>
           <td>char</td>
           <td>2</td>
-          <td>0 ~ 2¹⁶-1 (65,535) 유니코드 \u0000 ~ \uFFFF  **unsgined</td>
+          <td>0 ~ 2¹⁶-1 (65,535) 유니코드 \u0000 ~ \uFFFF **unsgined</td>
         </tr>
         <thead>
           <tr>
@@ -120,8 +123,9 @@
         </tr>
       </table>
       <ul>
-        <li><span id="강조">정수 </span>는 1bit가 부호정보를 저장하기 때문에 자료형 byte크기에서 1bit를 뺀 수의 제곱으로 표현 범위를 구할 수 있다. 각 타입의 정확한 최대와 최소는 Integer.MIN_VALUE;</li>
-        <li><span id="강조">실수 </span><span id =의문>범위가 왜 저렇게 나오지??</span></li>
+        <li><span id="강조">정수 </span>는 1bit가 부호정보를 저장하기 때문에 자료형 byte크기에서 1bit를 뺀 수의 제곱으로 표현 범위를 구할 수 있다. 각 타입의 정확한 최대와
+          최소는 Integer.MIN_VALUE;</li>
+        <li><span id="강조">실수 </span><span id=의문>범위가 왜 저렇게 나오지??</span></li>
         <li><span id="강조">문자 </span> 자료형 char는 java에서 unsgined로 동작 하므로 부호없이 2byte 모두 uni code로 쓰인다.</li>
         <li><span id="강조">논리 </span> 자료형 boolean은 1bit 이다</li>
       </ul>
@@ -136,16 +140,18 @@
 
       <h3>Literal</h3>
       <p>리터럴은 값 그 자체이다.
-      <br>정수 리터럴은 기본 int(4byte)이고, long 타입은 뒤에 l 또는 L을 추가
-      <br>실수 리터럴은 기본 double(8yte)이고, float 타입은 뒤에 f 또는 F를 추가
-      <br>문자 리터럴은 기본적으로 char(2byte)이고, 문자열 리터럴은 기본적으로 String
+        <br>정수 리터럴은 기본 int(4byte)이고, long 타입은 뒤에 l 또는 L을 추가
+        <br>실수 리터럴은 기본 double(8yte)이고, float 타입은 뒤에 f 또는 F를 추가
+        <br>문자 리터럴은 기본적으로 char(2byte)이고, 문자열 리터럴은 기본적으로 String
       </p>
 
       <h3>Casting</h3>
       <p>형 변환이란 변수나 리터럴의 타입을 다른 타입으로 변환하는 것이다.</p>
       <ul>
-        <li><span id="강조">묵시적 형 변환 </span>작은타입→ 큰타입으로 변환할 때는 자동으로 형 변환된다. <br>리터럴은 변수 저장시 해당 변수타입에 저장할 수 있는 범위만 넘지 않으면 자동 형 변환된다.</li>
-        <li><span id="강조">명시적 형 변환 </span>큰타입→ 작은타입으로 변환할 때는 ( )로 강제 형 변환 하여야한다. <br>이때 데이터 손실이나 오버플로우가 발생 할 수 있다. <span id="필기">int num10 = (int) 3.14; 이때 0.14 값은 손실된다.</span></li>
+        <li><span id="강조">묵시적 형 변환 </span>작은타입→ 큰타입으로 변환할 때는 자동으로 형 변환된다. <br>리터럴은 변수 저장시 해당 변수타입에 저장할 수 있는 범위만 넘지 않으면
+          자동 형 변환된다.</li>
+        <li><span id="강조">명시적 형 변환 </span>큰타입→ 작은타입으로 변환할 때는 ( )로 강제 형 변환 하여야한다. <br>이때 데이터 손실이나 오버플로우가 발생 할 수 있다. <span
+            id="필기">int num10 = (int) 3.14; 이때 0.14 값은 손실된다.</span></li>
       </ul>
 
       <h3>etc</h3>
@@ -153,9 +159,11 @@
         <li>"H" <span id="강조">→1글자지만 String</span></li>
         <li>System.out.println("Hello \"World\""); <span id=강조>→escape</span></li>
         <li>System.out.println("Hello <span id=강조>→줄바꿈 불가능</span>
-            <br>World"); </li>
+          <br>World");
+        </li>
         <li>System.out.println("Hello " <span id=필기>→OK</span>
-            <br>+ "World");</li>
+          <br>+ "World");
+        </li>
         <li>"6"+"6" <span id=필기>→66</span></li>
         <li>"6"*"6" <span id=필기>→문자열 *연산 불가</span></li>
         <li>"1111".length(); <span id=필기>→문자열 길이는 4</span></li>
