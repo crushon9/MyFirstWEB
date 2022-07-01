@@ -146,21 +146,22 @@
       <ul>
         <li><span id="강조">묵시적 형 변환 </span>작은타입→ 큰타입으로 변환할 때는 자동으로 형 변환된다. <br>리터럴은 변수 저장시 해당 변수타입에 저장할 수 있는 범위만 넘지 않으면 자동 형 변환된다.</li>
         <li><span id="강조">명시적 형 변환 </span>큰타입→ 작은타입으로 변환할 때는 ( )로 강제 형 변환 하여야한다. <br>이때 데이터 손실이나 오버플로우가 발생 할 수 있다. <span id="필기">int num10 = (int) 3.14; 이때 0.14 값은 손실된다.</span></li>
-        <li>System.out.println((int) ch1); // 문자 유니코드값 출력</li>
       </ul>
 
       <h3>etc</h3>
       <ul>
-        <li>System.out.println("H"); <span id="강조">→String</span></li>
+        <li>"H" <span id="강조">→1글자지만 String</span></li>
         <li>System.out.println("Hello \"World\""); <span id=강조>→escape</span></li>
         <li>System.out.println("Hello <span id=강조>→줄바꿈 불가능</span>
             <br>World"); </li>
-        <li>System.out.println("Hello " <span id=강조>→OK</span>
+        <li>System.out.println("Hello " <span id=필기>→OK</span>
             <br>+ "World");</li>
-        <li>System.out.println("6"+"6"); <span id=강조>→66</span></li>
-        <li>System.out.println("6"*"6"); <span id=강조>→문자열 *연산 불가</span></li>
-        <li>System.out.println("1111".length()); <span id=강조>→문자열 길이는 4</span></li>
-        <li>System.out.println(1111.length()); <span id=강조>→Error</span></li>
+        <li>"6"+"6" <span id=필기>→66</span></li>
+        <li>"6"*"6" <span id=필기>→문자열 *연산 불가</span></li>
+        <li>"1111".length(); <span id=필기>→문자열 길이는 4</span></li>
+        <li>1111.length(); <span id=필기>→Error</span></li>
+        <li>System.out.println((int) ch1); <span id=강조>→char를 int로 형변환하여 유니코드값 출력</span></li>
+        <li>System.out.println(변수.getClass()); <span id=강조>→변수의 자료형 출력</span></li>
       </ul>
 
       <h2>Print & Scanner</h2>
