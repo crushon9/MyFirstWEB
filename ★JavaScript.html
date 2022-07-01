@@ -1,283 +1,347 @@
 <!doctype html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script><!--jQuery CDN-->
-    <title>WEB_JavaScript</title>
-  </head>
 
-  <link rel="stylesheet" href="CSS_Style.css">
+<head>
+  <meta charset="utf-8">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <!--jQuery CDN-->
+  <title>WEB_JavaScript</title>
+</head>
 
-  <body>
-    <h1 id="큰제목">JavaScript</h1>
-    <div class="grid">
-      <div class="gridleft">
-        <ul>
-          <a href="★WEB.html"><li>WEB</li></a>
-            <ol>
-              <a href="★HTML.html"><li>HTML</li></a>
-              <a href="★CSS.html"><li>CSS</li></a>
-              <a href="★JavaScript.html"><li id="active">JavaScript</li></a>
-              <a href="★Java.html"><li>Java</li></a>
-            </ol>
-          <a href="★C.html"><li>C언어</li></a>
-          <a href="★Linux.html"><li>Linux</li></a>
-        </ul>
-        <br>
-        <script src="JavaScript_color button.js"></script>
-        <input id="night" type="button" value="Night로 전환" onclick="함수버튼2 (this);">
-      </div>
+<link rel="stylesheet" href="CSS_Style.css">
 
-      <div class="gridright">
-        <h1>JavaScript : 사용자와 상호작용하는 언어</h1>
-        <p><img src="JavaScript_trans.JPG" width="500px" border="1"></p>
+<body>
+  <h1 id="큰제목">JavaScript</h1>
+  <div class="grid">
+    <div class="gridleft">
+      <ul>
+        <a href="★WEB.html">
+          <li>WEB</li>
+        </a>
+        <ol>
+          <a href="★HTML.html">
+            <li>HTML</li>
+          </a>
+          <a href="★CSS.html">
+            <li>CSS</li>
+          </a>
+          <a href="★JavaScript.html">
+            <li id="active">JavaScript</li>
+          </a>
+          <a href="★Java.html">
+            <li>Java</li>
+          </a>
+        </ol>
+        <a href="★C.html">
+          <li>C언어</li>
+        </a>
+        <a href="★Linux.html">
+          <li>Linux</li>
+        </a>
+      </ul>
+      <br>
+      <script src="JavaScript_color button.js"></script>
+      <input id="night" type="button" value="Night로 전환" onclick="함수버튼2 (this);">
+    </div>
 
-        <h2>HTML에서 JavaScript실행방법</h2>
-        <h3>script 태그</h3>
-        <p>JavaScript 문법을 HTML에 들여올때 script 태그를 이용한다.</p>
+    <div class="gridright">
+      <h1>JavaScript : 사용자와 상호작용하는 언어</h1>
+      <p><img src="JavaScript_trans.JPG" width="500px" border="1"></p>
+
+      <h2>HTML에서 JavaScript실행방법</h2>
+      <h3>script 태그</h3>
+      <p>JavaScript 문법을 HTML에 들여올때 script 태그를 이용한다.</p>
 
 
-        <h3>이벤트 on~속성</h3>
-        <p>input의 on~의 속성에 자바스크립트의 문법이 온다.
-        <br><br><img src="JavaScript_event.JPG" border="1"></p>
-        <p><input type="button" value="button" onclick="alert('Hi')"></p><!--alert은 알림창-->
-        <p><input type="text" onchange="alert('changed')"></p>
+      <h3>이벤트 on~속성</h3>
+      <p>input의 on~의 속성에 자바스크립트의 문법이 온다.
+        <br><br><img src="JavaScript_event.JPG" border="1">
+      </p>
+      <p><input type="button" value="button" onclick="alert('Hi')"></p>
+      <!--alert은 알림창-->
+      <p><input type="text" onchange="alert('changed')"></p>
 
 
-        <h3>on속성을 이용한 버튼</h3>
-        <input type="button" value="Night모드" onclick="
+      <h3>on속성을 이용한 버튼</h3>
+      <input type="button" value="Night모드" onclick="
           document.querySelector('body').style.backgroundColor='black';
           document.querySelector('body').style.color='white';
           ">
-          <!--대소문자를 주의 해야한다-->
-          <!--body 자리에 #id나 .class 선택자를 넣을 수 있다-->
-        <br><input type="button" value="Day모드" onclick="
+      <!--대소문자를 주의 해야한다-->
+      <!--body 자리에 #id나 .class 선택자를 넣을 수 있다-->
+      <br><input type="button" value="Day모드" onclick="
           document.querySelector('body').style.backgroundColor='white';
           document.querySelector('body').style.color='black';
           ">
 
 
-        <h2>콘솔 console</h2>
-        <p>파일을 만들지 않고 웹상에서 바로 console 실행할수 있다. <i>(마우스오른쪽 → 검사→ Elements→ ESC = console 분할화면)</i>
-        <br><i>*F12 크롬개발자도구 <a href="https://opentutorials.org/course/580"target="_blank">(설명페이지)</a></i>
-        <br><br><img src="JavaScript_console.JPG" border="1"></p>
+      <h2>콘솔 console</h2>
+      <p>파일을 만들지 않고 웹상에서 바로 console 실행할수 있다. <i>(마우스오른쪽 → 검사→ Elements→ ESC = console 분할화면)</i>
+        <br><i>*F12 크롬개발자도구 <a href="https://opentutorials.org/course/580" target="_blank">(설명페이지)</a></i>
+        <br><br><img src="JavaScript_console.JPG" border="1">
+      </p>
 
 
-        <h2>Error 확인법</h2>
-        <p><img src="JavaScript_debugger.JPG" width="750px" border="1"></p>
-        <ul><span id="ulh">개발자도구 접근법</span>
-          <li>구글 크롬 : (윈도우)Ctrl+Shift+J / (OSX)커멘트+Alt+J
-          <br>디버거 : 개발자도구 → Sources → F5(새로고침) → breakpoint를 이용하여 디버그가능</li>
-          <li>IE(IE9,10) : F12 → 개발자도구 → 콘솔탭</li>
-          <li>파이어폭스 : (윈도우)Ctrl+Shift+K </li>
-        </ul>
+      <h2>Error 확인법</h2>
+      <p><img src="JavaScript_debugger.JPG" width="750px" border="1"></p>
+      <ul><span id="ulh">개발자도구 접근법</span>
+        <li>구글 크롬 : (윈도우)Ctrl+Shift+J / (OSX)커멘트+Alt+J
+          <br>디버거 : 개발자도구 → Sources → F5(새로고침) → breakpoint를 이용하여 디버그가능
+        </li>
+        <li>IE(IE9,10) : F12 → 개발자도구 → 콘솔탭</li>
+        <li>파이어폭스 : (윈도우)Ctrl+Shift+K </li>
+      </ul>
 
 
-        <h2>주석</h2>
-        <ul>
-          <li>HTML  < !-- --></li>
-          <li>CSS  /* */</li>
-          <li>JavaScript //한줄주석 /*범위주석*/</li>
-          <li>C언어 //한줄주석 /*범위주석*/</li>
-        </ul>
+      <h2>주석</h2>
+      <ul>
+        <li>HTML < !-- -->
+        </li>
+        <li>CSS /* */</li>
+        <li>JavaScript //한줄주석 /*범위주석*/</li>
+        <li>C언어 //한줄주석 /*범위주석*/</li>
+      </ul>
 
-<!--------------------------------------------------------------------------------------------------------------->
-        <h1>데이터 타입</h1>
-        <p>자바스트립트 데이터타입 종류 : <a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Data_structures"target="_blank">https://developer.mozilla.org/ko/docs/Web/JavaScript/Data_structures</a>
-        <br><img src="JavaScript_data type.JPG" border="1"></p>
-
-
-        <h3>Boolean</h3>
-        <p>참(true)과 거짓(false)
-        <br>비교연산자와 조건문, 빈복문에서 쓰인다</p>
+      <!--------------------------------------------------------------------------------------------------------------->
+      <h1>데이터 타입</h1>
+      <p>자바스트립트 데이터타입 종류 : <a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Data_structures"
+          target="_blank">https://developer.mozilla.org/ko/docs/Web/JavaScript/Data_structures</a>
+        <br><img src="JavaScript_data type.JPG" border="1">
+      </p>
 
 
-        <h3>Null과 Undefined</h3>
-        <ul>
-          <li>Null은 값이 없는 것으로 의도적으로 정의한 상태</li>
-          <li>Undefined은 값이 정의되지 않은 상태</li>
-          <li>NaN은 0/0과 같은 연산의 결과로 만들어지는 특수한 데이터 형, 계산할 수 없는 연산</li>
-        </ul>
-        <p>예시 null == undefined /<script>document.write(null == undefined);</script>
-        <br> null === undefined /<script>document.write(null === undefined);</script></p>
+      <h3>Boolean</h3>
+      <p>참(true)과 거짓(false)
+        <br>비교연산자와 조건문, 빈복문에서 쓰인다
+      </p>
 
 
-        <h3>숫자(Nunber)</h3>
-        <ul>
-          <li>자바스크립트에서는 큰따옴표(" ")나 작은따옴표(' ')가 붙지 않은 숫자는 숫자로 인식한다</li>
-          <li>데이터가 문자(string)인지 숫자(number)인지에 따라 결과값이 달라지므로 주의해야한다
-          <br><img src="JavaScript_data.JPG" border="1"></li>
-          <li>숫자 연산(math)
-          <br><img src="JavaScript_math.JPG" border="1"></p></li>
-        </ul>
+      <h3>Null과 Undefined</h3>
+      <ul>
+        <li>Null은 값이 없는 것으로 의도적으로 정의한 상태</li>
+        <li>Undefined은 값이 정의되지 않은 상태</li>
+        <li>NaN은 0/0과 같은 연산의 결과로 만들어지는 특수한 데이터 형, 계산할 수 없는 연산</li>
+      </ul>
+      <p>예시 null == undefined /
+        <script>document.write(null == undefined);</script>
+        <br> null === undefined /
+        <script>document.write(null === undefined);</script>
+      </p>
 
 
-        <h3>문자열(String)</h3>
-        <ul>
-          <li>문자는 " 혹은 ' 로 감싸야 한다. 숫자를 따옴표로 감싸면 문자가 된다
-          <br>큰 따옴표로 시작하면 큰 따옴표로 끝나야하고, 작은 따옴표로 시작하면 작은 따옴표로 끝나야 한다.</li>
-          <li>역슬래쉬\ 바로 뒤의 기호는 문자로 인식한다 (escape)
-          <br><script>document.write('cm\'s bag');</script></li>
-          <li>write에서 줄바꿈(br) alert에서 줄바꿈(\n)
-          <br><script>document.writeln("첫번째줄<br>두번째줄");</script></li>
-          <li>문자열 합칠때는 + 를 이용한다
-          <br><script>document.write("문자"+"열");</script></li>
-          <li>typeof는 값의 데이터 형을 알려주는 명령어이다.
-          <br><script>document.write(typeof "1"); document.write(typeof 1);</script></li>
-        </ul>
+      <h3>숫자(Nunber)</h3>
+      <ul>
+        <li>자바스크립트에서는 큰따옴표(" ")나 작은따옴표(' ')가 붙지 않은 숫자는 숫자로 인식한다</li>
+        <li>데이터가 문자(string)인지 숫자(number)인지에 따라 결과값이 달라지므로 주의해야한다
+          <br><img src="JavaScript_data.JPG" border="1">
+        </li>
+        <li>숫자 연산(math)
+          <br><img src="JavaScript_math.JPG" border="1"></p>
+        </li>
+      </ul>
 
-<!---------------------------------------------------------------------------------------->
-        <h1>연산</h1>
-        <h2>변수(var)와 대입연산자(=)</h2>
-        <ul><span id="ulh">정의</span>
-          <li><span id="강조">var 변수이름 = 상수값</sapn></li>
-          <li>변수(Variable)는 변할 수 있는 값을 담는 그릇과 같은 데이터 타입이다[좌항]</li>
-          <li> = 는 대입연산자</li>
-          <li>상수는 변하지 않는 값 (1, 2..)[우항]</li>
-        </ul>
-        <ul><span id="ulh">호출</span>
-          <li><span id="강조">"+변수이름+"</sapn></li>
-        </ul>
-        <p>예시 var a = 1; //처음 변수를 정의할 때는 반드시 var을 사용하여 정의해야하고, 그 이후에는 var을 생략할 수 있다
-        <br>예시 var a = 'coding', b = 'everybody';  // , 로 변수를 여러개 정의할 수 있다 //변수의 이름은 특수 문자를 제외한 모든 문자로 시작할 수 있다</p>
-        <script>
+
+      <h3>문자열(String)</h3>
+      <ul>
+        <li>문자는 " 혹은 ' 로 감싸야 한다. 숫자를 따옴표로 감싸면 문자가 된다
+          <br>큰 따옴표로 시작하면 큰 따옴표로 끝나야하고, 작은 따옴표로 시작하면 작은 따옴표로 끝나야 한다.
+        </li>
+        <li>역슬래쉬\ 바로 뒤의 기호는 문자로 인식한다 (escape)
+          <br>
+          <script>document.write('cm\'s bag');</script>
+        </li>
+        <li>write에서 줄바꿈(br) alert에서 줄바꿈(\n)
+          <br>
+          <script>document.writeln("첫번째줄<br>두번째줄");</script>
+        </li>
+        <li>문자열 합칠때는 + 를 이용한다
+          <br>
+          <script>document.write("문자" + "열");</script>
+        </li>
+        <li>typeof는 값의 데이터 형을 알려주는 명령어이다.
+          <br>
+          <script>document.write(typeof "1"); document.write(typeof 1);</script>
+        </li>
+      </ul>
+
+      <!---------------------------------------------------------------------------------------->
+      <h1>연산</h1>
+      <h2>변수(var)와 대입연산자(=)</h2>
+      <ul><span id="ulh">정의</span>
+        <li><span id="강조">var 변수이름 = 상수값</sapn>
+        </li>
+        <li>변수(Variable)는 변할 수 있는 값을 담는 그릇과 같은 데이터 타입이다[좌항]</li>
+        <li> = 는 대입연산자</li>
+        <li>상수는 변하지 않는 값 (1, 2..)[우항]</li>
+      </ul>
+      <ul><span id="ulh">호출</span>
+        <li><span id="강조">"+변수이름+"</sapn>
+        </li>
+      </ul>
+      <p>예시 var a = 1; //처음 변수를 정의할 때는 반드시 var을 사용하여 정의해야하고, 그 이후에는 var을 생략할 수 있다
+        <br>예시 var a = 'coding', b = 'everybody'; // , 로 변수를 여러개 정의할 수 있다 //변수의 이름은 특수 문자를 제외한 모든 문자로 시작할 수 있다
+      </p>
+      <script>
         var name = '변수';
-        document.write(" 변수와 대입연산자의 원리를 이용하여 무수히 많은 >"+name+"<의 값은 일괄변경 가능하다");
-        </script>
-        <p id="의문">의문 : 만약 변수이름이 중복되어 쓰이면??
-        <br>답 : var는 중복선언이 가능하며 호출하는 코드 기준 제일 마지막에 선언된 변수를 불러오는 듯하다. 이를 보완하기 위해 let이라는 명령어가 있고, 중복선언이 불가하다</p>
+        document.write(" 변수와 대입연산자의 원리를 이용하여 무수히 많은 >" + name + "<의 값은 일괄변경 가능하다");
+      </script>
+      <p id="의문">의문 : 만약 변수이름이 중복되어 쓰이면??
+        <br>답 : var는 중복선언이 가능하며 호출하는 코드 기준 제일 마지막에 선언된 변수를 불러오는 듯하다. 이를 보완하기 위해 let이라는 명령어가 있고, 중복선언이 불가하다
+      </p>
 
 
-        <h2>비교연산자와 Boolean</h2>
-        <p>비교연산자의 결과는 Boolean 값으로 나온다</p>
-        <ul><span id="ulh">비교연산자의 종류</span>
-          <li>동등과 일치 : == 대략같다 === 정확히같다 <span id="필기">=는 대입연산자</span></li>
-          <li>부정 : !=값은같지않다 !==정확히같은값은아니다</li>
-          <li>부등호 : [&lt;] [&gt;] [&lt;=] [&gt;=]</li>
-        </ul>
-        <ul><span id="ulh">Boolean의 종류</span>
-          <li>true</li>
-          <li>flase</li>
-        </ul>
-        <!--1&lt; = less than / &gt; = greater than 줄임말-->
-        <p>예시 1=='1' /<script>document.write(1=='1');</script> <span id="필기">←엥간하면 사용하지 말것</span>
-        <br> 1==='1' /<script>document.write(1==='1');</script>
-        <br> 1!='1' /<script>document.write(1!='1');</script>
-        <br> 1!=='1' /<script>document.write(1!=='1');</script>
-        <br> 1&lt;2 /<script>document.write(1<2);</script>
-        <p><a href="https://dorey.github.io/JavaScript-Equality-Table"target="_blank">==의 TRUE/FALSE 정리링크</a></p>
-        <p><img src="JavaScript_true=1.JPG" border="1">
-        <br>참고로 비교연산자 ==에서 1을 true, 0을 false으로 간주한다</p>
+      <h2>비교연산자와 Boolean</h2>
+      <p>비교연산자의 결과는 Boolean 값으로 나온다</p>
+      <ul><span id="ulh">비교연산자의 종류</span>
+        <li>동등과 일치 : == 대략같다 === 정확히같다 <span id="필기">=는 대입연산자</span></li>
+        <li>부정 : !=값은같지않다 !==정확히같은값은아니다</li>
+        <li>부등호 : [&lt;] [&gt;] [&lt;=] [&gt;=]</li>
+      </ul>
+      <ul><span id="ulh">Boolean의 종류</span>
+        <li>true</li>
+        <li>flase</li>
+      </ul>
+      <!--1&lt; = less than / &gt; = greater than 줄임말-->
+      <p>예시 1=='1' /
+        <script>document.write(1 == '1');</script> <span id="필기">←엥간하면 사용하지 말것</span>
+        <br> 1==='1' /
+        <script>document.write(1 === '1');</script>
+        <br> 1!='1' /
+        <script>document.write(1 != '1');</script>
+        <br> 1!=='1' /
+        <script>document.write(1 !== '1');</script>
+        <br> 1&lt;2 /
+        <script>document.write(1 < 2);</script>
+      <p><a href="https://dorey.github.io/JavaScript-Equality-Table" target="_blank">==의 TRUE/FALSE 정리링크</a></p>
+      <p><img src="JavaScript_true=1.JPG" border="1">
+        <br>참고로 비교연산자 ==에서 1을 true, 0을 false으로 간주한다
+      </p>
 
-<!--------------------------------------------------------------------------------------------------------------->
-        <h1>조건문과 반복문</h1>
-        <h2>조건문(Conditional statements) if</h2>
-        <p>조건문이란 주어진 조건에 따라서 다르게 동작하도록 하는 것이다.
-        <br>조건결과값은 Boolean(true/false)이 되어야 한다.<a href="https://dorey.github.io/JavaScript-Equality-Table"target="_blank">if의 TRUE/FALSE 정리링크</a></p>
-        <ul><span id="ulh">조건문 종류</span>
-          <li><span id="강조">if(조건) {내용}</span>
-          <br>조건결과값이 true일때 {내용}값을 동작하고, false일때 아무동작하지 않는다.</li>
-          <br><li><span id="강조">if(조건) {내용1} else {내용2}</span>
-          <br>조건결과값이 true일때 {내용1}값을 동작하고, false일때 {내용2}값을 동작한다.</li>
-          <br><li><span id="강조">if(조건1) {내용1} else if(조건2) {내용2} else {내용3}</span>
+      <!--------------------------------------------------------------------------------------------------------------->
+      <h1>조건문과 반복문</h1>
+      <h2>조건문(Conditional statements) if</h2>
+      <p>조건문이란 주어진 조건에 따라서 다르게 동작하도록 하는 것이다.
+        <br>조건결과값은 Boolean(true/false)이 되어야 한다.<a href="https://dorey.github.io/JavaScript-Equality-Table"
+          target="_blank">if의 TRUE/FALSE 정리링크</a>
+      </p>
+      <ul><span id="ulh">조건문 종류</span>
+        <li><span id="강조">if(조건) {내용}</span>
+          <br>조건결과값이 true일때 {내용}값을 동작하고, false일때 아무동작하지 않는다.
+        </li>
+        <br>
+        <li><span id="강조">if(조건) {내용1} else {내용2}</span>
+          <br>조건결과값이 true일때 {내용1}값을 동작하고, false일때 {내용2}값을 동작한다.
+        </li>
+        <br>
+        <li><span id="강조">if(조건1) {내용1} else if(조건2) {내용2} else {내용3}</span>
           <br>조건1 결과값이 true일때 {내용1}값을 동작하고, false일때 조건2를 고려한다. 조건2가 true일때 {내용2}값을 동작하고, false일때 {내용3}값을 동작한다.
-          <br>else if는 중첩이 가능하며, 가장 끝 else는 생략가능하다 생략시 조건전부 false일때 아무동작하지 않는다.</li>
-        </ul>
-        <script>
-          document.write("예제ㄱ"); if(true){document.write("내용<br>");}
-          document.write("예제ㄴ"); if(false){document.write("내용1<br>");} else{document.write("내용2<br>");}
-          document.write("예제ㄷ"); if(false){document.write("내용1<br>");} else if(false){document.write("내용2<br>");} else{document.write("내용3<br>");}
-        </script>
+          <br>else if는 중첩이 가능하며, 가장 끝 else는 생략가능하다 생략시 조건전부 false일때 아무동작하지 않는다.
+        </li>
+      </ul>
+      <script>
+        document.write("예제ㄱ"); if (true) { document.write("내용<br>"); }
+        document.write("예제ㄴ"); if (false) { document.write("내용1<br>"); } else { document.write("내용2<br>"); }
+        document.write("예제ㄷ"); if (false) { document.write("내용1<br>"); } else if (false) { document.write("내용2<br>"); } else { document.write("내용3<br>"); }
+      </script>
 
 
-        <h3>조건문_비교연산자</h3>
-        <p>if(조건) {내용}에서 조건에 비교연산자가 오는 경우</p>
-        <p id="필기">당신의 나이는?
-          <input id="ageInput" type="text" onkeyup="this.value=this.value.replace(/[^0-9]/g,'');" onchange="ageFunction(this);"></p>
-        <script>
-        function ageFunction(){
+      <h3>조건문_비교연산자</h3>
+      <p>if(조건) {내용}에서 조건에 비교연산자가 오는 경우</p>
+      <p id="필기">당신의 나이는?
+        <input id="ageInput" type="text" onkeyup="this.value=this.value.replace(/[^0-9]/g,'');"
+          onchange="ageFunction(this);">
+      </p>
+      <script>
+        function ageFunction() {
           var ageInput = document.getElementById("ageInput").value;
-          if (ageInput>=20){
+          if (ageInput >= 20) {
             var gender = prompt('당신의 성별은? (남/여)');
-              if(gender=='여') {alert(''+ageInput+'세 성인여자');
-              } else {alert(''+ageInput+'세 성인남자');
-              }
-          } else {alert('미성년자');
+            if (gender == '여') {
+              alert('' + ageInput + '세 성인여자');
+            } else {
+              alert('' + ageInput + '세 성인남자');
+            }
+          } else {
+            alert('미성년자');
           }
         }
-        </script>
+      </script>
 
 
-        <h3>조건문_논리연산자</h3>
-        <p>if(조건) {내용}에서 조건에 논리연산자가 오는 경우</p>
-        <ul><span id="ulh">논리연산자종류</span>
-          <li>and연산자( && ) : 모두 참(true)일 때 참이된다. 여러개 중첩가능하다
-          <br>if(조건1 && 조건2 && 조건3) {내용} </li>
-          <br><li>or연산자( || ) : 하나라도 true라면 true가 된다. 여러개 중첩가능하다
-          <br>if(조건1 || 조건2 || 조건3) {내용} </li>
-          <br><li>not연산자( ! ) : 부정의 의미로, Boolean의 값을 역전시킨다. true를 false로 false를 true로 만든다.</li>
-        </ul>
-        <p>응용예시 <span id="필기">if( (조건1 || 조건2) && 조건3 )</span> && 와 || 를 혼용해서 쓸때는 ()를 사용한다</p>
+      <h3>조건문_논리연산자</h3>
+      <p>if(조건) {내용}에서 조건에 논리연산자가 오는 경우</p>
+      <ul><span id="ulh">논리연산자종류</span>
+        <li>and연산자( && ) : 모두 참(true)일 때 참이된다. 여러개 중첩가능하다
+          <br>if(조건1 && 조건2 && 조건3) {내용}
+        </li>
+        <br>
+        <li>or연산자( || ) : 하나라도 true라면 true가 된다. 여러개 중첩가능하다
+          <br>if(조건1 || 조건2 || 조건3) {내용}
+        </li>
+        <br>
+        <li>not연산자( ! ) : 부정의 의미로, Boolean의 값을 역전시킨다. true를 false로 false를 true로 만든다.</li>
+      </ul>
+      <p>응용예시 <span id="필기">if( (조건1 || 조건2) && 조건3 )</span> && 와 || 를 혼용해서 쓸때는 ()를 사용한다</p>
 
-<!----------------------------------------------------------------------------------------->
+      <!----------------------------------------------------------------------------------------->
 
-        <h2>반복문(Loop) while,for</h2>
-        <ul><span id="ulh">반복문 종류</span>
-          <li>while(조건) {코드}
-          <br>조건이 true인 동안 코드를 반복하고, false가 되면 멈춘다</li>
-          <br><li>var i = 0; <span id="필기">*관습적으로 반복문에선 index의 첫글자를 따서 변수 i를 쓰며, 0부터 카운팅한다</span>
-          <br>while (i < 숫자) {코드;
-          <br>i = i + 1;}</li>
-          <br><li>for (초기화; 반복조건; 반복시조건코드세미콜론없이) {코드}
-          <br>for (var i = 0; i < 숫자; i++) {코드}
-          <br><span id="필기">i++ 는 i=i+1 와 같은 의미이다
-          <br>i++ 는 기존의 i를 불러오고 1증가 시킴 / ++i 기존의 값에서 1증가 시킨 후 사용함</span></li>
-        </ul>
-        <script>
-          var i = 0;
-          while (i < 3) {
-            document.write("반복while"+i+"<br>");
-            i = i + 1;
-          }
-          for(var i = 0; i < 3; i++) {document.write("반복for"+i+"");}
-        </script>
-
-
-        <h3>반복문제어</h3>
-        <ul><span id="ulh">Break</span>
-          <li>for(var i = 0; i < 숫자; i++) { if(i===숫자){break;} 코드;}
-          <br>break를 만나면 반복문 밖으로 나온다</li>
-        </ul>
-        <ul><span id="ulh">Continue</span>
-          <li>for(var i = 0; i < 숫자; i++) { if(i===숫자){continue;} 코드;}
-          <br>continue를 만나면 중지되었다가, 다시 반복문이 실행된다</li>
-        </ul>
-        <script>
-          for(var i = 0; i < 5; i++) { if(i===2){break;} document.write("반복break"+i+"<br>");}
-          for(var i = 0; i < 5; i++) { if(i===2){continue;} document.write("반복continue"+i+"<br>");}
-        </script>
+      <h2>반복문(Loop) while,for</h2>
+      <ul><span id="ulh">반복문 종류</span>
+        <li>while(조건) {코드}
+          <br>조건이 true인 동안 코드를 반복하고, false가 되면 멈춘다
+        </li>
+        <br>
+        <li>var i = 0; <span id="필기">*관습적으로 반복문에선 index의 첫글자를 따서 변수 i를 쓰며, 0부터 카운팅한다</span>
+          <br>while (i < 숫자) {코드; <br>i = i + 1;}
+        </li>
+        <br>
+        <li>for (초기화; 반복조건; 반복시조건코드세미콜론없이) {코드}
+          <br>for (var i = 0; i < 숫자; i++) {코드} <br><span id="필기">i++ 는 i=i+1 와 같은 의미이다
+              <br>i++ 는 기존의 i를 불러오고 1증가 시킴 / ++i 기존의 값에서 1증가 시킨 후 사용함</span>
+        </li>
+      </ul>
+      <script>
+        var i = 0;
+        while (i < 3) {
+          document.write("반복while" + i + "<br>");
+          i = i + 1;
+        }
+        for (var i = 0; i < 3; i++) { document.write("반복for" + i + ""); }
+      </script>
 
 
-        <h3>반복문중첩</h3>
-        <ul>
-          <li>for(var i = 0; i < 10; i++) {
-          <br>  for(var j = 0; j < 10; j++) {
-          <br>  코드}}
-          <br>i의 조건이 true이면 j조건이 true일때까지 코드가 실행되다가 false가되면 i조건으로 빠져나와 첫과정을 반복한다</li>
-        </ul>
-        <script>
-          for(var i = 0; i < 10; i++) {
-            for(var j = 0; j < 10; j++) {document.write("반복for"+i+j+"");}}//원래i+j는 더하기로 계산되나 앞에 문자열에붙었기때문에 문자로 취급하여 붙여주기를 한다
-        </script>
+      <h3>반복문제어</h3>
+      <ul><span id="ulh">Break</span>
+        <li>for(var i = 0; i < 숫자; i++) { if(i===숫자){break;} 코드;} <br>break를 만나면 반복문 밖으로 나온다</li>
+      </ul>
+      <ul><span id="ulh">Continue</span>
+        <li>for(var i = 0; i < 숫자; i++) { if(i===숫자){continue;} 코드;} <br>continue를 만나면 중지되었다가, 다시 반복문이 실행된다</li>
+      </ul>
+      <script>
+        for (var i = 0; i < 5; i++) { if (i === 2) { break; } document.write("반복break" + i + "<br>"); }
+        for (var i = 0; i < 5; i++) { if (i === 2) { continue; } document.write("반복continue" + i + "<br>"); }
+      </script>
 
 
-        <h3>조건문, 반복문, this, target을 활용한 리팩토링</h3>
-        <p>리팩토링(refactoring) : 중복을 줄여 코드를 효율적으로 다듬는 과정 (this, target, 조건문, 반복문, 함수, 객체 등)</p>
+      <h3>반복문중첩</h3>
+      <ul>
+        <li>for(var i = 0; i < 10; i++) { <br> for(var j = 0; j < 10; j++) { <br> 코드}}
+              <br>i의 조건이 true이면 j조건이 true일때까지 코드가 실행되다가 false가되면 i조건으로 빠져나와 첫과정을 반복한다</li>
+      </ul>
+      <script>
+        for (var i = 0; i < 10; i++) {
+          for (var j = 0; j < 10; j++) { document.write("반복for" + i + j + ""); }
+        }//원래i+j는 더하기로 계산되나 앞에 문자열에붙었기때문에 문자로 취급하여 붙여주기를 한다
+      </script>
+
+
+      <h3>조건문, 반복문, this, target을 활용한 리팩토링</h3>
+      <p>리팩토링(refactoring) : 중복을 줄여 코드를 효율적으로 다듬는 과정 (this, target, 조건문, 반복문, 함수, 객체 등)</p>
       <!--querySelector는 css선택자 매소드=함수=명령이며, 해당하는 첫번째 태그 하나만 선택한다 -->
       <!--querySelectorALL는 해당태그 전체를 선택한다 -->
       <!--this는 html태그안에서는 태그자체(input태그라면 버튼을 가리킴) / html태그밖에서는 전역개체(윈도우)를 가리킨다
       html태그밖인 자바스크립트 함수에서는 this대신에 self로 대체한다 -->
-        <input id="night_day" type="button" value="Night로전환_조건문" onclick="
+      <input id="night_day" type="button" value="Night로전환_조건문" onclick="
         if(document.querySelector('#night_day').value==='Night로전환_조건문'){
           document.querySelector('body').style.backgroundColor='black';
           document.querySelector('body').style.color='white';
@@ -288,7 +352,7 @@
           document.querySelector('#night_day').value='Night로전환_조건문';
         }
         ">
-        <input type="button" value="Night로 전환_반복문" onclick="
+      <input type="button" value="Night로 전환_반복문" onclick="
         var target = document.querySelector('body');
         if(this.value==='Night로 전환_반복문'){
           target.style.backgroundColor='black';
@@ -315,267 +379,281 @@
           }
         }
         ">
-<!-------------------------------------------------------------------------------------------------->
+      <!-------------------------------------------------------------------------------------------------->
 
-        <h1>함수(function)</h1>
-        <p>함수(function)란 하나의 로직을 재실행 할 수 있도록 하는 데이터 타입이다.
+      <h1>함수(function)</h1>
+      <p>함수(function)란 하나의 로직을 재실행 할 수 있도록 하는 데이터 타입이다.
         <br>재사용성.동일한 긴 코드를 한 줄의 코드로 불러오므로 경제적이고 유지보수가 쉬움
         <br>정확성.완전히 동일한 코드임을 바로 알아보기 쉽다
         <br>가독성.함수에 붙여진 이름을 통해 긴 코드의 용도를 유추하기 쉽다
-        <br>함수에는 내장함수(elert과같은)와 사용자정의함수가 있다</p>
-        <ul><span id="ulh">함수정의와 호출</span>
-          <li>정의 : <span id="강조">function 함수이름() {코드}</span>
-          <br>호출 : <span id="강조">함수이름();</span></li>
-          <br><li>정의 : <span id="강조">function 함수이름(self) {코드}</span>
-          <br>호출 :<span id="강조">함수이름(this);</span></li>
-          <br><li>정의 :<span id="강조">함수이름 = function () {코드}</span>
-          <br>호출 :<span id="강조">함수이름();</span></li>
-          <br><li>익명함수_정의호출동시 :<span id="강조">(function () {코드}) ();</span></li>
+        <br>함수에는 내장함수(elert과같은)와 사용자정의함수가 있다
+      </p>
+      <ul><span id="ulh">함수정의와 호출</span>
+        <li>정의 : <span id="강조">function 함수이름() {코드}</span>
+          <br>호출 : <span id="강조">함수이름();</span>
+        </li>
+        <br>
+        <li>정의 : <span id="강조">function 함수이름(self) {코드}</span>
+          <br>호출 :<span id="강조">함수이름(this);</span>
+        </li>
+        <br>
+        <li>정의 :<span id="강조">함수이름 = function () {코드}</span>
+          <br>호출 :<span id="강조">함수이름();</span>
+        </li>
+        <br>
+        <li>익명함수_정의호출동시 :<span id="강조">(function () {코드}) ();</span></li>
         <!--this는 html태그안에서는 태그자체(input태그라면 버튼을 가리킴) / html태그밖에서는 전역개체(윈도우)를 가리킨다
         html태그밖인 자바스크립트 함수에서는 this대신에 self로 대체한다 -->
-        </ul>
+      </ul>
 
 
-        <h3>함수의 입력과 출력</h3>
-        <p>함수는 입력값에는 여러개의 매개변수를 넣고, 출력시에는 하나의 값만 나오는 구조이다</P>
-        <ul><span id="ulh">정의</span>
-          <li><span id="강조">function 함수이름 (매개변수) { return 변환내용 }</span></li>
-        </ul>
-        <ul><span id="ulh">호출</span>
-          <li><span id="강조">함수이름 (인자);</span></li>
-        </ul>
-        <ul><span id="ulh">입력</span>
-          <li>매개변수(parameter)와 인자(argument)
+      <h3>함수의 입력과 출력</h3>
+      <p>함수는 입력값에는 여러개의 매개변수를 넣고, 출력시에는 하나의 값만 나오는 구조이다</P>
+      <ul><span id="ulh">정의</span>
+        <li><span id="강조">function 함수이름 (매개변수) { return 변환내용 }</span></li>
+      </ul>
+      <ul><span id="ulh">호출</span>
+        <li><span id="강조">함수이름 (인자);</span></li>
+      </ul>
+      <ul><span id="ulh">입력</span>
+        <li>매개변수(parameter)와 인자(argument)
           <br>인자(argument)는 함수로 유입되는 입력 값, 어떤 값을 인자로 전달하느냐에 따라서 함수가 반환하는 값이나 메소드의 동작방법을 다르게 할 수 있다.
-          <br>매개변수는 인자가 유입되는 위치를 지정해준다.</li>
-        </ul>
-        <ul><span id="ulh">출력</span>
-          <li>리턴(return)
+          <br>매개변수는 인자가 유입되는 위치를 지정해준다.
+        </li>
+      </ul>
+      <ul><span id="ulh">출력</span>
+        <li>리턴(return)
           <br>함수 내에서 return 뒤에 따라오는 값을 함수의 결과로 반환한다.
-          <br>동시에 함수를 종료시키므로 리턴코드; 다음에 오는 코드는 동작하지 않는다</li>
-        </ul>
-        <script>
+          <br>동시에 함수를 종료시키므로 리턴코드; 다음에 오는 코드는 동작하지 않는다
+        </li>
+      </ul>
+      <script>
         //매개변수와 리턴을 사용한 함수정의
-        function sum1(a,b) {//a,b는 매개변수이자 입력값
-          return a+b;//리턴은 출력값
-          return a/b;//첫번째 리턴; 다음의 코드는 동작하지 않는다
+        function sum1(a, b) {//a,b는 매개변수이자 입력값
+          return a + b;//리턴은 출력값
+          return a / b;//첫번째 리턴; 다음의 코드는 동작하지 않는다
         }
         //함수호출
-        document.write('<div style="color:red">'+sum1(2,3)+'</div>');
+        document.write('<div style="color:red">' + sum1(2, 3) + '</div>');
 
         //리턴을 사용하지 않은 함수정의
-        function sum2(a,b) {
-          document.write('<div style="color:blue">'+(a+b)+'</div>');
+        function sum2(a, b) {
+          document.write('<div style="color:blue">' + (a + b) + '</div>');
         }
         //함수호출
-        sum2(2,3); // 2,3은 인자
-        </script>
+        sum2(2, 3); // 2,3은 인자
+      </script>
 
 
-        <h3>함수를 활용한 리팩토링</h3>
-        <script>
-        function LinksSetColor(color){
+      <h3>함수를 활용한 리팩토링</h3>
+      <script>
+        function LinksSetColor(color) {
           var alist = document.querySelectorAll('a');
           var i = 0;
-          while(i < alist.length){
+          while (i < alist.length) {
             alist[i].style.color = color;
             i = i + 1;
           }
         }
-        function BodySetColor(color){
-          document.querySelector('body').style.color=color;
+        function BodySetColor(color) {
+          document.querySelector('body').style.color = color;
         }
-        function BodySetBackgroundColor(color){
-          document.querySelector('body').style.backgroundColor=color;
+        function BodySetBackgroundColor(color) {
+          document.querySelector('body').style.backgroundColor = color;
         }
         //
-        function 함수버튼 (self) {
+        function 함수버튼(self) {
           var target = document.querySelector('body');
-            if(self.value==='Night로 전환_함수'){
-              BodySetBackgroundColor('black');
-              BodySetColor('white');
-              self.value='Day로 전환_함수';
-              LinksSetColor('powderblue');//함수이름을 불러올때 대소문자를 구분한다
+          if (self.value === 'Night로 전환_함수') {
+            BodySetBackgroundColor('black');
+            BodySetColor('white');
+            self.value = 'Day로 전환_함수';
+            LinksSetColor('powderblue');//함수이름을 불러올때 대소문자를 구분한다
           } else {
-              BodySetBackgroundColor('white');
-              BodySetColor('black');
-              self.value='Night로 전환_함수';
-              LinksSetColor('blue');
+            BodySetBackgroundColor('white');
+            BodySetColor('black');
+            self.value = 'Night로 전환_함수';
+            LinksSetColor('blue');
           }
         }
-        </script>
-        <input type="button" value="Night로 전환_함수" onclick="
+      </script>
+      <input type="button" value="Night로 전환_함수" onclick="
         함수버튼 (this);">
 
 
-<!------------------------------------------------------------------>
-        <h1>배열(Array) [ ]</h1>
-        <p>배열(array)이란 연관된 데이터를 모아서 관리하기 위해서 사용하는 데이터 타입이다. 변수(var)는 하나의 변수에 하나의 데이터를 저장하고, 배열은 하나의 변수에 여러개의 데이터를 저장한다.
-        <ul><span id="ulh">정의</span>
+      <!------------------------------------------------------------------>
+      <h1>배열(Array) [ ]</h1>
+      <p>배열(array)이란 연관된 데이터를 모아서 관리하기 위해서 사용하는 데이터 타입이다. 변수(var)는 하나의 변수에 하나의 데이터를 저장하고, 배열은 하나의 변수에 여러개의 데이터를 저장한다.
+      <ul><span id="ulh">정의</span>
         <li>기본형 :<span id="강조"> var 배열이름 = ['원소0','Element1','Element2'];</span></li>
         <li>함수응용 :<span id="강조"> function 함수이름() {return ['원소0','Element1','Element2'];} / var 변수이름 = 함수이름</span></li>
-        </ul>
-        <ul><span id="ulh">호출</span>
+      </ul>
+      <ul><span id="ulh">호출</span>
         <li>전체호출 :<span id="강조"> 배열이름</span></li>
         <li>특정호출 :<span id="강조"> 배열이름[i]</span> *index(색인)은 0부터 카운팅</li>
-        </ul>
-        <script>
-          var array = ['빨강','노랑','파랑'];
-          document.write(array+"<br>");
-          document.write(array[0]+"<br>");
-          document.write(array.length+"<br>");//해당 코드 위에 추가된값까지 갯수를 셈다
-          array.push('추가값');//배열안의 값 추가하기
-          document.write(array+"<br>");
-        </script>
+      </ul>
+      <script>
+        var array = ['빨강', '노랑', '파랑'];
+        document.write(array + "<br>");
+        document.write(array[0] + "<br>");
+        document.write(array.length + "<br>");//해당 코드 위에 추가된값까지 갯수를 셈다
+        array.push('추가값');//배열안의 값 추가하기
+        document.write(array + "<br>");
+      </script>
 
 
-        <h3>배열편집</h3>
-        <p>배열에 Method를 결합할때는 <i>배열이름.Method</i> 혹은 <i>배열이름[i].Method</i> 형태를 사용한다</p>
-        <ul><span id="ulh">추가</span>
+      <h3>배열편집</h3>
+      <p>배열에 Method를 결합할때는 <i>배열이름.Method</i> 혹은 <i>배열이름[i].Method</i> 형태를 사용한다</p>
+      <ul><span id="ulh">추가</span>
         <li>끝에 한개추가 :<i> array.push('값');</i></li>
         <li>끝에 복수추가 :<i> array.concat(['값1','값2');</i></li>
         <li>앞에 한개추가 :<i> array.unshift('값1');</i></li>
         <li>중간에 추가 :<i> array.splice(추가할위치색인,앞색인부터삭제할원소수,추가할값);</i></li>
         <script>
-          var arrayadd = ['빨강','노랑','파랑'];
-          arrayadd.splice(1,1,'주황','검정');
-          document.write(arrayadd+"<br>");
+          var arrayadd = ['빨강', '노랑', '파랑'];
+          arrayadd.splice(1, 1, '주황', '검정');
+          document.write(arrayadd + "<br>");
         </script>
-        </ul>
-        <ul><span id="ulh">제거</span>
+      </ul>
+      <ul><span id="ulh">제거</span>
         <li>첫번째원소제거 :<i> array.shift();</i></li>
         <li>끝원소제거 :<i> array.pop();</i></li>
-        </ul>
-        <ul><span id="ulh">정렬</span>
+      </ul>
+      <ul><span id="ulh">정렬</span>
         <li>크기갯수 :<i> array.length();</i></li>
         <li>일반정렬 :<i> array.sort();</i></li>
         <li>역순정렬 :<i> array.reverse();</i></li>
         <li>사용자지정 정렬 :<i> array.sort(function);</i></li>
-        </ul>
+      </ul>
 
 
-        <h3>배열과 반복문</h3>
-        <p>배열의 진가는 반복문과 결합했을 때 나타난다. 반복문으로 리스트에 담긴 정보를 하나씩 꺼내서 처리 할 수 있기 때문이다.</p>
-        <script>
-          function animal(){
-            return ['tiger','sheep','pig'];
-          }
-          var array_test = animal();
+      <h3>배열과 반복문</h3>
+      <p>배열의 진가는 반복문과 결합했을 때 나타난다. 반복문으로 리스트에 담긴 정보를 하나씩 꺼내서 처리 할 수 있기 때문이다.</p>
+      <script>
+        function animal() {
+          return ['tiger', 'sheep', 'pig'];
+        }
+        var array_test = animal();
 
-          for(var i = 0; i < array_test.length; i++){
-            document.write(array_test[i].toUpperCase()+'<br/>');
-          }
-        </script>
-<!------------------------------------------------------------------>
-        <h1>객체(Object) { }</h1>
-        <p>연관된 복수의 데이터를 관리하는 데이터타입 변수는 배열과 객체가 있다.
+        for (var i = 0; i < array_test.length; i++) {
+          document.write(array_test[i].toUpperCase() + '<br/>');
+        }
+      </script>
+      <!------------------------------------------------------------------>
+      <h1>객체(Object) { }</h1>
+      <p>연관된 복수의 데이터를 관리하는 데이터타입 변수는 배열과 객체가 있다.
         <br>배열은 index로 자동, 순서대로, 숫자가 부여되고
         <br>객체는 key로 수기, 순서없이, 문자를 부여할 수 있다.
-        <br>객체와 같은 개념의 다른언어 데이터 타입 : 연관배열(associative array)_PHP, 맵(map)_JAVA, 딕셔너리(Dictionary)_Python</p>
-        <ul><span id="ulh">정의</span>
+        <br>객체와 같은 개념의 다른언어 데이터 타입 : 연관배열(associative array)_PHP, 맵(map)_JAVA, 딕셔너리(Dictionary)_Python
+      </p>
+      <ul><span id="ulh">정의</span>
         <li><span id="강조"> var 객체이름 = {"key1":"value1" , "key2":"value2"};</span></li>
-        <br><li><span id="강조">var 객체이름 = {};
-        <br>객체이름['key1'] = 'value1';
-        <br>객체이름['key2'] = 'value2';</span></li>
-        <br><li><span id="강조">var 객체이름 = new Object();
-        <br>객체이름['key1'] = 'value1';
-        <br>객체이름['key2'] = 'value2';</span></li>
-        </ul>
-        <ul><span id="ulh">접근</span>
+        <br>
+        <li><span id="강조">var 객체이름 = {};
+            <br>객체이름['key1'] = 'value1';
+            <br>객체이름['key2'] = 'value2';</span></li>
+        <br>
+        <li><span id="강조">var 객체이름 = new Object();
+            <br>객체이름['key1'] = 'value1';
+            <br>객체이름['key2'] = 'value2';</span></li>
+      </ul>
+      <ul><span id="ulh">접근</span>
         <li><span id="강조"> 객체이름.key</span> </li>
         <li><span id="강조"> 객체이름['key']</span> </li>
         <li><span id="강조"> 객체이름['ke'+'y'] 문자열결합가능</span> *객체이름.'ke'+'y'은 SyntaxError</li>
         <li>*전체호출은 반복문을 통해서한다</li>
-        </ul>
-        <ul><span id="ulh">추가</span>
+      </ul>
+      <ul><span id="ulh">추가</span>
         <li><span id="강조"> 객체이름.key = 'value';</span></li>
         <li><span id="강조"> 객체이름['key'] = 'value';</span></li>
-        </ul>
-        <script>
-          var object1 = {
-            "국어":50, "수학":80
-          };
-          document.write(object1.국어);
-          document.write(object1['국어']);
-          object1.영어 = '100';
-          object1['과학'] = '100';
+      </ul>
+      <script>
+        var object1 = {
+          "국어": 50, "수학": 80
+        };
+        document.write(object1.국어);
+        document.write(object1['국어']);
+        object1.영어 = '100';
+        object1['과학'] = '100';
 
-          var object2 = {};
-            object2['국어'] = 50;
-            object2['수학'] = 80;
-          document.write(object1.수학);
-          document.write(object2['수학']);
-          document.write(object2['수'+'학']);
-        </script>
+        var object2 = {};
+        object2['국어'] = 50;
+        object2['수학'] = 80;
+        document.write(object1.수학);
+        document.write(object2['수학']);
+        document.write(object2['수' + '학']);
+      </script>
 
 
-        <h3>객체의 value</h3>
-        <p>객체의 value로는 문자뿐 아니라 다양한 데이터가 올 수 있다.
+      <h3>객체의 value</h3>
+      <p>객체의 value로는 문자뿐 아니라 다양한 데이터가 올 수 있다.
         <br>객체안에 객체를 담을 수도 있다. 객체안에 함수를 담을 수도 있다.
         <script>
-        var 객객체 = {
-          '과목점수' : {"국어":50, "수학":80}
-        }
-        document.write(객객체['과목점수']['국어']);
+          var 객객체 = {
+            '과목점수': { "국어": 50, "수학": 80 }
+          }
+          document.write(객객체['과목점수']['국어']);
         </script>
 
 
-        <h3>객체반복문(Iterate)</h3>
-        <p>객체안의 모든값을 순회하여 열거하는 기능</p>
-        <ul><span id="ulh">for in 문</span>
-          <li><span id="강조">for(var key in 객체이름) { document.write(key); }</span> *모든key 불러오기</li>
-          <li><span id="강조">for(var key in 객체이름) { document.write(객체이름[key]); }</span> *모든value 불러오기</li>
-          <li>*배열도 동일한 형식으로 사용가능하며 key란을 아무글자로 바꿔도 동작한다</li>
-        </ul>
-        <script>
-          for(var key in object1) { //객체순회
-          document.write(key+object1[key]+'<br>');
+      <h3>객체반복문(Iterate)</h3>
+      <p>객체안의 모든값을 순회하여 열거하는 기능</p>
+      <ul><span id="ulh">for in 문</span>
+        <li><span id="강조">for(var key in 객체이름) { document.write(key); }</span> *모든key 불러오기</li>
+        <li><span id="강조">for(var key in 객체이름) { document.write(객체이름[key]); }</span> *모든value 불러오기</li>
+        <li>*배열도 동일한 형식으로 사용가능하며 key란을 아무글자로 바꿔도 동작한다</li>
+      </ul>
+      <script>
+        for (var key in object1) { //객체순회
+          document.write(key + object1[key] + '<br>');
         }
-          for(var index in array) { //배열순회
-          document.write(index+array[index]+'<br>');
+        for (var index in array) { //배열순회
+          document.write(index + array[index] + '<br>');
         }
-        </script>
+      </script>
 
 
 
-        <h3>객체지향(Property & Method)</h3>
-        <p>객체안에 함수를 담았을때
+      <h3>객체지향(Property & Method)</h3>
+      <p>객체안에 함수를 담았을때
         <br>Method = 객체에 소속된 함수 / Property = 객체의 변수(key값)
-        <br>객체안 함수의 this는 객체를 가리킨다</p>
-        <ul><span id="ulh">정의</span>
-          <li><span id="강조">var 객체이름 = { Property : function(변수){코드} }</span></li>
-          <li><span id="강조">객체이름.Property = function(변수){코드}</span></li>
-        </ul>
-        <ul><span id="ulh">호출</span>
-          <li><span id="강조">객체이름.Property();</span></li>
-        </ul>
-        <script>
-        var object3 = { "레드":'빨강', "그린":'초록',
-            showALL1 : function(){
-            for(var key in this) {
-            document.write(key+this[key]+'<br>');
+        <br>객체안 함수의 this는 객체를 가리킨다
+      </p>
+      <ul><span id="ulh">정의</span>
+        <li><span id="강조">var 객체이름 = { Property : function(변수){코드} }</span></li>
+        <li><span id="강조">객체이름.Property = function(변수){코드}</span></li>
+      </ul>
+      <ul><span id="ulh">호출</span>
+        <li><span id="강조">객체이름.Property();</span></li>
+      </ul>
+      <script>
+        var object3 = {
+          "레드": '빨강', "그린": '초록',
+          showALL1: function () {
+            for (var key in this) {
+              document.write(key + this[key] + '<br>');
             }
           }
         }
         object3.showALL1();//호출
 
-        object3.showALL2 = function(){
-          for(var key in object3) {
-          document.write(key+object3[key]+'<br>');
+        object3.showALL2 = function () {
+          for (var key in object3) {
+            document.write(key + object3[key] + '<br>');
           }
         }
         object3.showALL2();
-        </script>
+      </script>
 
 
 
-        <h3>객체를 활용한 리팩토링</h3>
-        <script>
+      <h3>객체를 활용한 리팩토링</h3>
+      <script>
         var Links = {
-          SetColor: function (color){
+          SetColor: function (color) {
             var alist = document.querySelectorAll('a');
             var i = 0;
-            while(i < alist.length){
+            while (i < alist.length) {
               alist[i].style.color = color;
               i = i + 1;
             }
@@ -583,188 +661,204 @@
         }
 
         var Body = {
-          SetColor: function (color){document.querySelector('body').style.color=color;
+          SetColor: function (color) {
+            document.querySelector('body').style.color = color;
           },
-          SetBackgroundColor: function (color){document.querySelector('body').style.backgroundColor=color;
+          SetBackgroundColor: function (color) {
+            document.querySelector('body').style.backgroundColor = color;
           }
         }
         //
-        function 객체버튼 (self) {
+        function 객체버튼(self) {
           var target = document.querySelector('body');
-            if(self.value==='Night로 전환_객체'){
-              Body.SetBackgroundColor('black');
-              Body.SetColor('white');
-              self.value='Day로 전환_객체';
-              Links.SetColor('powderblue');
+          if (self.value === 'Night로 전환_객체') {
+            Body.SetBackgroundColor('black');
+            Body.SetColor('white');
+            self.value = 'Day로 전환_객체';
+            Links.SetColor('powderblue');
           } else {
-              Body.SetBackgroundColor('white');
-              Body.SetColor('black');
-              self.value='Night로 전환_객체';
-              Links.SetColor('blue');
+            Body.SetBackgroundColor('white');
+            Body.SetColor('black');
+            self.value = 'Night로 전환_객체';
+            Links.SetColor('blue');
           }
         }
-        </script>
-        <input type="button" value="Night로 전환_객체" onclick="
+      </script>
+      <input type="button" value="Night로 전환_객체" onclick="
         객체버튼 (this);">
-<!------------------------------------------------------------------>
-        <h1>모듈(module)</h1>
-        <p>코드를 부품과 같이 여러개의 파일로 분리하여 생산성을 높이는 것
-        <br>순수 JavaScript에서는 모듈(module)이라는 개념이 분명하게 존재하지 않으나, 호스트 환경(구동되는 환경)에 따라서 다른 모듈화 방법이 제공된다.</p>
-        <ul><span id="ulh">JavaScript와 호스트</span>
+      <!------------------------------------------------------------------>
+      <h1>모듈(module)</h1>
+      <p>코드를 부품과 같이 여러개의 파일로 분리하여 생산성을 높이는 것
+        <br>순수 JavaScript에서는 모듈(module)이라는 개념이 분명하게 존재하지 않으나, 호스트 환경(구동되는 환경)에 따라서 다른 모듈화 방법이 제공된다.
+      </p>
+      <ul><span id="ulh">JavaScript와 호스트</span>
         <li>언어: JavaScript - 호스트환경: 웹브라우저(클라이언트)</li>
         <li>언어: node.js - 호스트환경: 서버</li>
         <li>언어: google apps script - 호스트환경: 구글제품</li>
-        </ul>
-        <p>웹 모듈화 방법 : js파일을 만든 뒤 /script src="파일이름.js" 로 불러올 수 있다</p>
+      </ul>
+      <p>웹 모듈화 방법 : js파일을 만든 뒤 /script src="파일이름.js" 로 불러올 수 있다</p>
 
 
-        <h3>라이브러리(livrary)</h3>
-        <p>livrary는 부품조립집합
+      <h3>라이브러리(livrary)</h3>
+      <p>livrary는 부품조립집합
         <br>대표적인 JavaScript의 livrary로는 jQuery가 있다
         <br>CDN을 이용하면 livrary파일을 다운받지않고 로딩할 수 있다
-        <br>livrary를 로딩하는 script src태그는 livrary변수($)를 사용하는 코드보다 앞에 위치하도록 둔다.</p>
-        <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>jQuery 로딩 태그 헤드영역에 추가해놓음-->
-        <script>
+        <br>livrary를 로딩하는 script src태그는 livrary변수($)를 사용하는 코드보다 앞에 위치하도록 둔다.
+      </p>
+      <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>jQuery 로딩 태그 헤드영역에 추가해놓음-->
+      <script>
         var Links = {
-          SetColor: function (color){
+          SetColor: function (color) {
             // var alist = document.querySelectorAll('a');
             // var i = 0;
             // while(i < alist.length){
             //   alist[i].style.color = color;
             //   i = i + 1;
             // }
-            $('a').css('color',color);
+            $('a').css('color', color);
           }
         }
 
         var Body = {
-          SetColor: function (color){
-          //document.querySelector('body').style.color=color;
-          $('body').css('color',color);
+          SetColor: function (color) {
+            //document.querySelector('body').style.color=color;
+            $('body').css('color', color);
           },
-          SetBackgroundColor: function (color){
-          //document.querySelector('body').style.backgroundColor=color;
-          $('body').css('backgroundColor',color);
+          SetBackgroundColor: function (color) {
+            //document.querySelector('body').style.backgroundColor=color;
+            $('body').css('backgroundColor', color);
           }
         }
         //
-        function $버튼 (self) {
+        function $버튼(self) {
           var target = document.querySelector('body');
-            if(self.value==='Night로 전환_$'){
-              Body.SetBackgroundColor('black');
-              Body.SetColor('white');
-              self.value='Day로 전환_$';
-              Links.SetColor('powderblue');
+          if (self.value === 'Night로 전환_$') {
+            Body.SetBackgroundColor('black');
+            Body.SetColor('white');
+            self.value = 'Day로 전환_$';
+            Links.SetColor('powderblue');
           } else {
-              Body.SetBackgroundColor('white');
-              Body.SetColor('black');
-              self.value='Night로 전환_$';
-              Links.SetColor('blue');
+            Body.SetBackgroundColor('white');
+            Body.SetColor('black');
+            self.value = 'Night로 전환_$';
+            Links.SetColor('blue');
           }
         }
-        </script>
-        <input type="button" value="Night로 전환_$" onclick="
+      </script>
+      <input type="button" value="Night로 전환_$" onclick="
         $버튼 (this);">
 
 
-        <h3>프레임워크(framework)</h3>
-        <p>framework는 반제품
-        <br><img src="WEB_framework.JPG" border="1"></p>
+      <h3>프레임워크(framework)</h3>
+      <p>framework는 반제품
+        <br><img src="WEB_framework.JPG" border="1">
+      </p>
 
-<!------------------------------------------------------------------>
-        <h1>정규표현식(regular expression)</h1>
-        <P>문자열에서 특정한 문자를 검색,치환,추출하는 도구
-        <br>정규표현식은 하나의 방대한 언어라고 할 수 있다. JavaScript에서는 정규표현식을 어떻게 사용하는가를 알아보자.</p>
-
-
-        <h3>정규표현식_컴파일(compile)</h3>
-        <P>컴파일은 검출하고자 하는 패턴을 만드는 일이다. 즉 정규표현식 객체를 생성하는 것</P>
-        <ul><span id="ulh">패턴을 만드는 방식</span>
-        	<li>정규표현식 리터럴 <span id="필기">var pattern = /표현/옵션</span></li>
-          <li>정규표현식 객체생성자 <span id="필기">var pattern = new RegExp('표현','옵션');</span></li>
-        </ul>
+      <!------------------------------------------------------------------>
+      <h1>정규표현식(regular expression)</h1>
+      <P>문자열에서 특정한 문자를 검색,치환,추출하는 도구
+        <br>정규표현식은 하나의 방대한 언어라고 할 수 있다. JavaScript에서는 정규표현식을 어떻게 사용하는가를 알아보자.
+      </p>
 
 
-        <h3>정규표현식_옵션(i,g)</h3>
-        <P>생성된 객체에 옵션을 추가 할 수 있다.</P>
-        <ul><span id="ulh">옵션</span>
-        	<li>i옵션을 추가하면 대소문자를 구분하지 않는다. <span id="필기">var pattern = /표현/i;</span></li>
-          <li>g옵션을 추가하면 검색된 모든 결과를 리턴한다. <span id="필기">var pattern = /표현/g;</span>
-          <br>*g를 추가하지 않으면 처음 검색된 결과만 리턴한다</li>
-          <li>i와 g옵션은 중복사용 가능하다 <span id="필기">var pattern = /표현/ig;</span></li>
-        </ul>
+      <h3>정규표현식_컴파일(compile)</h3>
+      <P>컴파일은 검출하고자 하는 패턴을 만드는 일이다. 즉 정규표현식 객체를 생성하는 것</P>
+      <ul><span id="ulh">패턴을 만드는 방식</span>
+        <li>정규표현식 리터럴 <span id="필기">var pattern = /표현/옵션</span></li>
+        <li>정규표현식 객체생성자 <span id="필기">var pattern = new RegExp('표현','옵션');</span></li>
+      </ul>
 
 
-        <h3>정규표현식_실행(execution)</h3>
-        <P>생성한 정규표현식 객체를 실행하는 여러방식이 있다.</P>
-        <ul><span id="ulh">실행(execution)</span>
-        	<li>추출(execution) <span id="필기">pattern.exec("문자열"); → ["표현"] / null</span></li>
-          <li>match <span id="필기">"문자열".match(pattern); → ["표현"] / null</span></li>
-          <li>존재유무(test) <span id="필기">pattern.test("문자열"); → true / false</span></li>
-          <li>치환(replace) <span id="필기">"문자열".replace(pattern, "치환할표현");</span></li>
-        </ul>
+      <h3>정규표현식_옵션(i,g)</h3>
+      <P>생성된 객체에 옵션을 추가 할 수 있다.</P>
+      <ul><span id="ulh">옵션</span>
+        <li>i옵션을 추가하면 대소문자를 구분하지 않는다. <span id="필기">var pattern = /표현/i;</span></li>
+        <li>g옵션을 추가하면 검색된 모든 결과를 리턴한다. <span id="필기">var pattern = /표현/g;</span>
+          <br>*g를 추가하지 않으면 처음 검색된 결과만 리턴한다
+        </li>
+        <li>i와 g옵션은 중복사용 가능하다 <span id="필기">var pattern = /표현/ig;</span></li>
+      </ul>
 
 
-        <h3>정규표현식_캡쳐</h3>
-        <P>표현에 여러 기호를 사용하여 구조를 만들 수 있다</P>
-        <ul><span id="ulh">캡쳐 표현 기호</span>
-          <li>() : 그룹</li>
-          <li>\w : a-z,A-Z,0-9</li>
-          <li>\s : 공백</li>
-          <li>+ : 1개이상</li>
-          <li>$숫자 : n번째그룹을의미</li>
-        </ul>
-        <p>
+      <h3>정규표현식_실행(execution)</h3>
+      <P>생성한 정규표현식 객체를 실행하는 여러방식이 있다.</P>
+      <ul><span id="ulh">실행(execution)</span>
+        <li>추출(execution) <span id="필기">pattern.exec("문자열"); → ["표현"] / null</span></li>
+        <li>match <span id="필기">"문자열".match(pattern); → ["표현"] / null</span></li>
+        <li>존재유무(test) <span id="필기">pattern.test("문자열"); → true / false</span></li>
+        <li>치환(replace) <span id="필기">"문자열".replace(pattern, "치환할표현");</span></li>
+      </ul>
+
+
+      <h3>정규표현식_캡쳐</h3>
+      <P>표현에 여러 기호를 사용하여 구조를 만들 수 있다</P>
+      <ul><span id="ulh">캡쳐 표현 기호</span>
+        <li>() : 그룹</li>
+        <li>\w : a-z,A-Z,0-9</li>
+        <li>\s : 공백</li>
+        <li>+ : 1개이상</li>
+        <li>$숫자 : n번째그룹을의미</li>
+      </ul>
+      <p>
         var pattern = /(\w+)\s(\w+)/;
         <br>var test = "coding everybody";
         <br>var result = test.replace(pattern, "$2 $1");
         <br>console.log(result); →everybody coding
-        </p>
+      </p>
 
 
-        <h3>정규표현식_치환예제</h3>
-        <P>"문자열".replace(pattern, "치환할표현");</P>
-        <p>var URLPattern = /\b(?:https?):\/\/[a-z0-9-+&@#\/%?=~_|!:,.;]*/gim;
+      <h3>정규표현식_치환예제</h3>
+      <P>"문자열".replace(pattern, "치환할표현");</P>
+      <p>var URLPattern = /\b(?:https?):\/\/[a-z0-9-+&@#\/%?=~_|!:,.;]*/gim;
         <br>var URL예문 = '생활코딩 : http://opentutorials.org/course/1 입니다. 네이버 : http://naver.com 입니다. ';
-        <br>var 치환결과 = URL예문.replace(URLPattern, function(url){return "<\a href='"+url+"'>"+url+"<\/a>";});
-        <br>console.log(치환결과);
-        <br>생활코딩 : <\a href='http://opentutorials.org/course/1'>http://opentutorials.org/course/1<\/a> 입니다. 네이버 : <\a href='http://naver.com'>http://naver.com<\/a> 입니다.</p>
+        <br>var 치환결과 = URL예문.replace(URLPattern, function(url){return "<\a href='"+url+"'>"+url+"<\ /a>";});
+            <br>console.log(치환결과);
+            <br>생활코딩 : <\a href='http://opentutorials.org/course/1'>http://opentutorials.org/course/1<\ /a> 입니다. 네이버 :
+                <\a href='http://naver.com'>http://naver.com<\ /a> 입니다.
+      </p>
 
-<!------------------------------------------------------------------>
-        <h1>UI 와 API</h1>
-        <ul><span id="ulh">UI (User Interface)</span>
+      <!------------------------------------------------------------------>
+      <h1>UI 와 API</h1>
+      <ul><span id="ulh">UI (User Interface)</span>
         <li>사용자를 위한 조작장치
-        <br>키보드나 웹브라우저 버튼처럼 사용자가 원하는 바를 시스템에 전달할 수 있는장치</li>
-        </ul>
-        <ul><span id="ulh">API (Application Programming Interface)</span>
+          <br>키보드나 웹브라우저 버튼처럼 사용자가 원하는 바를 시스템에 전달할 수 있는장치
+        </li>
+      </ul>
+      <ul><span id="ulh">API (Application Programming Interface)</span>
         <li>프로그래밍을 위한 조작장치
-        <br>alert과 같이 내장된 기능을 가진 코드들이 Interface이다. 개발자는 API를 사용한다.
-        <br>그럼 alert은 누가 만들까? 개발자는 층이 있고 각 층에 기반으로 제공되는 것이 Interface이다
-        <br><img src="JavaScript_API.JPG" width="400px" border="1">
-        <br><img src="JavaScript_API2.JPG" width="400px" border="1"></li>
-        </ul>
+          <br>alert과 같이 내장된 기능을 가진 코드들이 Interface이다. 개발자는 API를 사용한다.
+          <br>그럼 alert은 누가 만들까? 개발자는 층이 있고 각 층에 기반으로 제공되는 것이 Interface이다
+          <br><img src="JavaScript_API.JPG" width="400px" border="1">
+          <br><img src="JavaScript_API2.JPG" width="400px" border="1">
+        </li>
+      </ul>
 
 
-        <h3>튜토리얼(Tutorial)</h3>
-        <P>언어의 기본적인 문법을 설명하는 안내서</P>
+      <h3>튜토리얼(Tutorial)</h3>
+      <P>언어의 기본적인 문법을 설명하는 안내서</P>
 
 
-        <h3>레퍼런스(Reference)</h3>
-        <P>명령어사전 즉 API사전</P>
-        <ul><span id="ulh">JavaScript 공통 Reference</span>
-        	<li><a href="http://www.ecma-international.org/publications/standards/Ecma-262.htm" target="_blank">ECMAScript(표준문서) <span id="필기">→독학하기 어려움</span></a></li>
-        	<li><a href="http://opentutorials.org/course/50" target="_blank">자바스크립트 사전(생활코딩) <span id="필기">→MDN참고로 만듬</span></a></li>
-        	<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference" target="_blank">mozilla JavaScript Reference(MDN)</a></li>
-        	<li><a href="http://msdn.microsoft.com/ko-kr/library/vstudio/z688wt03(v=vs.100).aspx" target="_blank">microsoft jScript Reference(MSDN)</a></li>
-        </ul>
-        <ul><span id="ulh">호스트 환경에 따른 Reference</span>
-        	<li><a href="https://developer.mozilla.org/en-US/docs/Web/API" target="_blank">웹브라우저 API</a></li>
-        	<li><a href="http://nodejs.org/api/" target="_blank">Node.js API</a></li>
-        	<li><a href="https://developers.google.com/apps-script/" target="_blank">Google AppsScript API</a></li>
-        </ul>
+      <h3>레퍼런스(Reference)</h3>
+      <P>명령어사전 즉 API사전</P>
+      <ul><span id="ulh">JavaScript 공통 Reference</span>
+        <li><a href="http://www.ecma-international.org/publications/standards/Ecma-262.htm"
+            target="_blank">ECMAScript(표준문서) <span id="필기">→독학하기 어려움</span></a></li>
+        <li><a href="http://opentutorials.org/course/50" target="_blank">자바스크립트 사전(생활코딩) <span id="필기">→MDN참고로
+              만듬</span></a></li>
+        <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference" target="_blank">mozilla
+            JavaScript Reference(MDN)</a></li>
+        <li><a href="http://msdn.microsoft.com/ko-kr/library/vstudio/z688wt03(v=vs.100).aspx" target="_blank">microsoft
+            jScript Reference(MSDN)</a></li>
+      </ul>
+      <ul><span id="ulh">호스트 환경에 따른 Reference</span>
+        <li><a href="https://developer.mozilla.org/en-US/docs/Web/API" target="_blank">웹브라우저 API</a></li>
+        <li><a href="http://nodejs.org/api/" target="_blank">Node.js API</a></li>
+        <li><a href="https://developers.google.com/apps-script/" target="_blank">Google AppsScript API</a></li>
+      </ul>
 
 
-      </div>
     </div>
-  </body>
+  </div>
+</body>
+
 </html>

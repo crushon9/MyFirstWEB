@@ -1,36 +1,46 @@
 <!doctype html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>css grid</title>
 
-    <style>
-      #grid{
-        border: 20px solid red;
-        padding: 0px;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-      }
+<head>
+  <meta charset="utf-8">
+  <title>css grid</title>
 
-      div {border: 10px solid gray; padding:10px;}
-      span {border: 10px solid gray; padding:10px;}
+  <style>
+    #grid {
+      border: 20px solid red;
+      padding: 0px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
 
-    </style>
-  </head>
+    div {
+      border: 10px solid gray;
+      padding: 10px;
+    }
 
-  <body>
-    <a href="★CSS.html">돌아가기</a>
+    span {
+      border: 10px solid gray;
+      padding: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <a href="★CSS.html">돌아가기</a>
 
 
-    <div id="grid">
-      <div>grid1</div>
-      <div>grid2</div>
-    </div>
+  <div id="grid">
+    <div>grid1</div>
+    <div>grid2</div>
+  </div>
 
-    <div>div는 한줄 전체를 차지한다</div> <!--디자인을 위한 block level element (의미X)-->
-    <div>div는 한줄 전체를 차지한다</div>
-    <span>span은 글자모양만 차지한다</span> <!--디자인을 위한 inline element (의미X)-->
-    <span>span은 글자모양만 차지한다</span>
+  <div>div는 한줄 전체를 차지한다</div>
+  <!--디자인을 위한 block level element (의미X)-->
+  <div>div는 한줄 전체를 차지한다</div>
+  <span>span은 글자모양만 차지한다</span>
+  <!--디자인을 위한 inline element (의미X)-->
+  <span>span은 글자모양만 차지한다</span>
 
-  </body>
+</body>
+
 </html>

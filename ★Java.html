@@ -1,143 +1,173 @@
 <!doctype html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>WEB_Java</title>
-  </head>
 
-  <link rel="stylesheet" href="CSS_Style.css">
+<head>
+  <meta charset="utf-8">
+  <title>WEB_Java</title>
+</head>
 
-  <body>
-    <h1 id="큰제목">Java</h1>
-    <div class="grid">
-      <div class="gridleft">
-        <ul>
-          <a href="★WEB.html"><li>WEB</li></a>
-            <ol>
-              <a href="★HTML.html"><li>HTML</li></a>
-              <a href="★CSS.html"><li>CSS</li></a>
-              <a href="★JavaScript.html"><li>JavaScript</li></a>
-              <a href="★Java.html"><li id="active">Java</li></a> 
-            </ol>
-          <a href="★C.html"><li>C언어</li></a>
-          <a href="★Linux.html"><li>Linux</li></a>
-        </ul>
-        <br>
-      </div>
+<link rel="stylesheet" href="CSS_Style.css">
 
-      <div class="gridright">
-        <h1>Java : 객체 지향 프로그래밍 언어</h1>
-        <h2>Compile & Run</h2>
-        <p>소스코드파일(.java)은 컴파일러(javac.exe)를 통해 컴파일되어 바이트코드파일(.class)이 생성된다. JVM(java.exe)을 통해 실행된다.
-        <br><img src="Java_run.jpg" width="500px" border="1"></p>
-
-        <h2>Data</h2>
-        <br>
-        <table border="1">
-          <thead>
-            <tr>
-              <th>정수</th>
-              <th>Byte</th>
-              <th>범위</th>
-            </tr>
-          </thead>
-            <tr>
-              <td>byte</td>
-              <td>1</td>
-              <td>-2^7 ~ 2^7-1 (-128 ~ 127)</td>
-            </tr>
-            <tr>
-              <td>short</td>
-              <td>2</td>
-              <td>-2^15 ~ 2^15-1 (-32768 ~ 32767)</td>
-            </tr>
-            <tr>
-              <td>int</td>
-              <td>4</td>
-              <td>-2^31 ~ 2^31-1 (-2147483648 ~ 2147483647)</td>
-            </tr>
-            <tr>
-              <td>long</td>
-              <td>8</td>
-              <td>-2^63 ~ 2^63-1 (-9223372036854775808 ~ 9223372036854775807)</td>
-            </tr>
-          <thead>
-            <tr>
-              <th>실수</th>
-              <th>Byte</th>
-              <th>범위</th>
-            </tr>
-          </thead>
-            <tr>
-              <td>float</td>
-              <td>4</td>
-              <td>0x0.000002P-126f ~ 0x1.fffffeP+127f</td>
-            </tr>
-            <tr>
-              <td>double</td>
-              <td>8</td>
-              <td>0x0.0000000000001P-1022 ~ 0x1.fffffffffffffP+1023  </td>
-            </tr>
-          <thead>
-            <tr>
-              <th>문자</th>
-              <th>Byte</th>
-              <th>범위</th>
-            </tr>
-          </thead>
-            <tr>
-              <td>char</td>
-              <td>2</td>
-              <td>\u0000 ~ \uffff (0 ~ 2^15-1) * 자바에서 unsgined로 동작하는 자료형</td>
-            </tr>
-          <thead>
-            <tr>
-              <th>논리</th>
-              <th>Bit</th>
-              <th>범위</th>
-            </tr>
-          </thead>
-            <tr>
-              <td>boolean</td>
-              <td>1bit</td>
-              <td>true, false</td>
-            </tr>
-          </table>
-
-        <h3>Variable</h3>
-        <p>변수란 하나의 값을 저장할 수 있는 메모리 공간이다</p>
-
-        <h3>Constant</h3>
-        <p>상수는 선언과 동시에 초기화를 해야하며, 이후 변경이 불가하다.
-        <br><span id=강조>상수를 선언하는 방법은 변수 앞에 final을 붙여준다</span></p>
-
-        <h3>Literal</h3>
-        <p>값 그 자체</p>
-
-        <h3>String</h3>
-        <ul>
-          <li><span id="필기">System.out.println('H'); </span>//char</li>
-          <li><span id="강조">System.out.println("H"); </span>//string</li>
-          <li><span id="필기">System.out.println("Hello \"World\""); </span>//escape</li>
-          <li><span id="강조">System.out.println("Hello
-          <br>World"); </span>//error</li>
-          <li><span id="강조">System.out.println("Hello "
-          <br>+ "World"); </span>//ok</li>
-          <li><span id="필기">System.out.println("Hello, [[[name]]] ... bye".replace("[[[name]]]", "Sophie")); </span>//replace</li>
-        </ul>
-
-        <ul><span id="ulh">Number & String 비교</span>
-          <li><span id="필기">System.out.println(6); </span>//number</li>
-          <li><span id="필기">System.out.println("6"); </span>//string</li>
-          <li><span id="필기">System.out.println("6"+"6"); </span>//66</li>
-          <li><i>System.out.println("6"*"6"); </i>//Error</li>
-          <li><span id="필기">System.out.println("1111".length()); </span>//4</li>
-          <li><i>System.out.println(1111.length); </i>//Error</li>
-        </ul>
-
-        <h3>Casting</h3>
-
-      </div>
+<body>
+  <h1 id="큰제목">Java</h1>
+  <div class="grid">
+    <div class="gridleft">
+      <ul>
+        <a href="★WEB.html">
+          <li>WEB</li>
+        </a>
+        <ol>
+          <a href="★HTML.html">
+            <li>HTML</li>
+          </a>
+          <a href="★CSS.html">
+            <li>CSS</li>
+          </a>
+          <a href="★JavaScript.html">
+            <li>JavaScript</li>
+          </a>
+          <a href="★Java.html">
+            <li id="active">Java</li>
+          </a>
+        </ol>
+        <a href="★C.html">
+          <li>C언어</li>
+        </a>
+        <a href="★Linux.html">
+          <li>Linux</li>
+        </a>
+      </ul>
+      <br>
     </div>
-  </body>
+
+    <div class="gridright">
+      <h1>Java : 객체 지향 프로그래밍 언어</h1>
+      <h2>Compile & Run</h2>
+      <p>소스코드파일(.java)은 컴파일러(javac.exe)를 통해 컴파일되어 바이트코드파일(.class)이 생성된다. JVM(java.exe)을 통해 실행된다.
+        <br><img src="Java_run.jpg" width="500px" border="1">
+      </p>
+
+      <h2>Data</h2>
+      <br>
+      <table border="1">
+        <thead>
+          <tr>
+            <th>정수</th>
+            <th>Byte</th>
+            <th>범위</th>
+          </tr>
+        </thead>
+        <tr>
+          <td>byte</td>
+          <td>1</td>
+          <td>-2^7 ~ 2^7-1 (-128 ~ 127)</td>
+        </tr>
+        <tr>
+          <td>short</td>
+          <td>2</td>
+          <td>-2^15 ~ 2^15-1 (-32768 ~ 32767)</td>
+        </tr>
+        <tr>
+          <td>int</td>
+          <td>4</td>
+          <td>-2^31 ~ 2^31-1 (-2147483648 ~ 2147483647)</td>
+        </tr>
+        <tr>
+          <td>long</td>
+          <td>8</td>
+          <td>-2^63 ~ 2^63-1 (-9223372036854775808 ~ 9223372036854775807)</td>
+        </tr>
+        <thead>
+          <tr>
+            <th>실수</th>
+            <th>Byte</th>
+            <th>범위</th>
+          </tr>
+        </thead>
+        <tr>
+          <td>float</td>
+          <td>4</td>
+          <td>0x0.000002P-126f ~ 0x1.fffffeP+127f</td>
+        </tr>
+        <tr>
+          <td>double</td>
+          <td>8</td>
+          <td>0x0.0000000000001P-1022 ~ 0x1.fffffffffffffP+1023 </td>
+        </tr>
+        <thead>
+          <tr>
+            <th>문자</th>
+            <th>Byte</th>
+            <th>범위</th>
+          </tr>
+        </thead>
+        <tr>
+          <td>char</td>
+          <td>2</td>
+          <td>\u0000 ~ \uffff (0 ~ 2^15-1) * 자바에서 unsgined로 동작하는 자료형</td>
+        </tr>
+        <thead>
+          <tr>
+            <th>논리</th>
+            <th>Bit</th>
+            <th>범위</th>
+          </tr>
+        </thead>
+        <tr>
+          <td>boolean</td>
+          <td>1bit</td>
+          <td>true, false</td>
+        </tr>
+      </table>
+
+      <h3>Variable</h3>
+      <p>변수란 하나의 값을 저장할 수 있는 메모리 공간이다</p>
+
+      <h3>Constant</h3>
+      <p>상수는 선언과 동시에 초기화를 해야하며, 이후 변경이 불가하다.
+        <br><span id=필기>상수를 선언하는 방법 : final int x = 10;</span>
+      </p>
+
+      <h3>Literal</h3>
+      <p>값 그 자체</p>
+
+      <h3>Casting</h3>
+      <p>형 변환이란 변수의 타입을 다른 타입으로 변환하는 것이다. 형 변환하고자 하는 변수나 리터널 앞에 변환하고자 하는 타입을 괄호와 함께 붙여주면 된다.</p>
+      <ul>
+        <li><span id="강조">묵시적 형 변환 (자동형변환) </span></li>
+        <li><span id="강조">명시적 형 변환 (강제형변환) </span></li>
+      </ul>
+
+      <h3>etc</h3>
+      <ul>
+        <li>System.out.println("H"); <span id="강조">→String</span></li>
+        <li>System.out.println("Hello \"World\""); <span id=강조>→escape</span></li>
+        <li>System.out.println("Hello <span id=강조>→줄바꿈 불가능</span>
+            <br>World"); </li>
+        <li>System.out.println("Hello " <span id=강조>→OK</span>
+            <br>+ "World");</li>
+        <li>System.out.println("6"+"6"); <span id=강조>→66</span></li>
+        <li>System.out.println("6"*"6"); <span id=강조>→문자열 *연산 불가</span></li>
+        <li>System.out.println("1111".length()); <span id=강조>→문자열 길이는 4</span></li>
+        <li>System.out.println(1111.length()); <span id=강조>→Error</span></li>
+      </ul>
+
+      <h2>Print & Scanner</h2>
+      <ul><span id="ulh">Print</span>
+        <li><span id="강조">System.out.println(); </span> 출력 후 개행</li>
+        <li><span id="강조">System.out.print(); </span> 개행없이 출력</li>
+        <li><span id="강조">System.out.printf(); </span> 변수의 값을 지시자 형식으로 변환하여 출력</li>
+      </ul>
+      <ul><span id="ulh">Scanner</span>
+        <li><span id="강조">sc.nextInt(); </span> 정수 입력받기</li>
+        <li><span id="강조">sc.next(); </span> 문자열 공백 기준으로 입력받기</li>
+        <li><span id="강조">sc.nextLine(); </span> 문자열 개행 기준으로 입력받기</li>
+        <li><span id="강조">sc.next().charAt(0); </span> 입력받은 문자열중 제일 첫번째 문자 하나만 저장</li>
+      </ul>
+
+
+    </div>
+  </div>
+</body>
+
 </html>
