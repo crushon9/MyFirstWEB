@@ -148,28 +148,28 @@
       <h3>Casting</h3>
       <p>형 변환이란 변수나 리터럴의 타입을 다른 타입으로 변환하는 것이다.</p>
       <ul>
-        <li><span id="강조">묵시적 형 변환 </span>작은타입→ 큰타입으로 변환할 때는 자동으로 형 변환된다. <br>리터럴은 변수 저장시 해당 변수타입에 저장할 수 있는 범위만 넘지 않으면
+        <li><span id="강조">묵시적 형 변환 </span>작은타입 → 큰타입으로 변환할 때는 자동으로 형 변환된다. <br>리터럴은 변수 저장시 해당 변수타입에 저장할 수 있는 범위만 넘지 않으면
           자동 형 변환된다.</li>
-        <li><span id="강조">명시적 형 변환 </span>큰타입→ 작은타입으로 변환할 때는 ( )로 강제 형 변환 하여야한다. <br>이때 데이터 손실이나 오버플로우가 발생 할 수 있다. <span
-            id="필기">int num10 = (int) 3.14; 이때 0.14 값은 손실된다.</span></li>
+        <li><span id="강조">명시적 형 변환 </span>큰타입 → 작은타입으로 변환할 때는 ( )로 강제 형 변환 하여야한다. <br>이때 데이터 손실이나 오버플로우가 발생 할 수 있다.
+          <span id="필기">int num10 = (int) 3.14; 이때 0.14 값은 손실된다.</span></li>
       </ul>
 
       <h3>etc</h3>
       <ul>
-        <li>"H" <span id="강조">→1글자지만 String</span></li>
-        <li>System.out.println("Hello \"World\""); <span id=강조>→escape</span></li>
-        <li>System.out.println("Hello <span id=강조>→줄바꿈 불가능</span>
+        <li>"H" <span id="강조"> →1글자지만 String</span></li>
+        <li>System.out.println("Hello \"World\""); <span id=강조> →escape</span></li>
+        <li>System.out.println("Hello <span id=강조> →줄바꿈 불가능</span>
           <br>World");
         </li>
-        <li>System.out.println("Hello " <span id=필기>→OK</span>
+        <li>System.out.println("Hello " <span id=필기> →OK</span>
           <br>+ "World");
         </li>
-        <li>"6"+"6" <span id=필기>→66</span></li>
-        <li>"6"*"6" <span id=필기>→문자열 *연산 불가</span></li>
-        <li>"1111".length(); <span id=필기>→문자열 길이는 4</span></li>
-        <li>1111.length(); <span id=필기>→Error</span></li>
-        <li>System.out.println((int) ch1); <span id=강조>→char를 int로 형변환하여 유니코드값 출력</span></li>
-        <li>System.out.println(변수.getClass()); <span id=강조>→변수의 자료형 출력</span></li>
+        <li>"6"+"6" <span id=필기> →66</span></li>
+        <li>"6"*"6" <span id=필기> →문자열 *연산 불가</span></li>
+        <li>"1111".length(); <span id=필기> →문자열 길이는 4</span></li>
+        <li>1111.length(); <span id=필기> →Error</span></li>
+        <li>System.out.println((int) ch1); <span id=강조> →char를 int로 형변환하여 유니코드값 출력</span></li>
+        <li>System.out.println(변수.getClass()); <span id=강조> →변수의 자료형 출력</span></li>
       </ul>
 
       <h2>Print & Scanner</h2>
@@ -177,6 +177,7 @@
         <li><span id="강조">System.out.println(); </span> 출력 후 개행</li>
         <li><span id="강조">System.out.print(); </span> 개행없이 출력</li>
         <li><span id="강조">System.out.printf(); </span> 변수의 값을 지시자 형식으로 변환하여 출력</li>
+        <li><span id="필기">System.out.printf("&.3f", 변수); </span> 소수점 셋째자리까지 출력</li>
       </ul>
       <ul><span id="ulh">Scanner</span>
         <li><span id="강조">sc.nextInt(); </span> 정수 입력받기</li>
@@ -187,6 +188,43 @@
 
       <h2>Operator</h2>
 
+      <h3>산술연산자 (+ - * / %)</h3>
+      <p>사칙연산과 나머지연산</p>
+      <ul><span id="제목">정수와 실수의 산술연산</span>
+        <li>5 / 2 = 2</li>
+        <li>5 / 2.0 = 2.5 <span id="필기"> →실수/실수, 실수/정수, 정수/실수 : 소수점까지 계산</span></li>
+        <li>System.out.println(246/0);<span id="필기"> →정수 0으로 나누는 것은 불가능하기 때문에 Exception발생</span></li>
+        <li>System.out.println(246/0.0);<span id="필기"> →실수 0.0으로 나누면 Infinity</span></li>
+      </ul>
+
+      <h3>대입연산자 (=)</h3>
+      <p>오른쪽의 값을 왼쪽의 변수에 저장하는 연산자
+        <br>변수 = 값;
+      </p>
+
+      <h3>복합 대입 연산자 (+= -= *= %=)</h3>
+
+      <h3>증감 연산자 (++ --)</h3>
+      <p>변수의 값을 1 증가 또는 감소할 때 사용하는 연산자. 변수의 앞(prefix)과 뒤(suffix)에 사용 (x++ 또는 --x)
+        <br>증감 연산자가 단독으로 사용되는 경우 전위 후위 모두 동일한 결과이나, 다른 연산자와 함께 사용되는 경우 차이 발생 <span id="강조">섞어쓰지말고 x++만 쓰자</span>
+      </p>
+      <ul><span id="제목">전위 후위 연산 비교</span>
+        <li>result = num++ + 5; <span id="필기"> →num + 5가 먼저 실행되고 result에 값을 저장한 뒤, num을 1 증가</span></li>
+        <li>result = ++num + 5; <span id="필기"> →++num이 먼저 실행되고, num + 5의 값이 result에 저장</span></li>
+        <li>result = num++ + 5 + ++num; <span id="필기"> →num + 5 연산, num++되어 num에 저장, ++num이 실행, 최종적으로 2증가한 num이
+            더해짐</span></li>
+      </ul>
+
+      <h3>비교 연산자 (< >
+          <= >= == !=)</h3>
+      <p>두 값을 범위적으로 비교할 때 사용, 연산 결과로 true, false를 리턴</p>
+
+      <h3>논리 연산자 (&& || !)</h3>
+      <p>boolean 타입의 변수를 사용하여 연산</p>
+      <ul><span id="제목">SCE (Short-circuit evaluation : Lazy Evaluation)</span>
+        <li>A && B 를 계산할 때 A가 false이면, B를 계산하지 않음 <span id="필기"> →B는 Dead code</span></li>
+        <li>A || B 를 계산할 때 A가 true이면, B를 계산하지 않음</li>
+      </ul>
 
     </div>
   </div>
