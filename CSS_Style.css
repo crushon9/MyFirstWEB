@@ -10,7 +10,7 @@
 }
 
 
-#큰제목 {font-size:50px; font-weight: bold; text-align: center; border-bottom:1px solid gray; margin:0px; padding:30px; color: red;}
+#mainhead {font-size:50px; font-weight: bold; text-align: center; border-bottom:1px solid gray; margin:0px; padding:30px; color: red;}
 #active {color:red; text-decoration:underline; font-weight: bold;}
 .gridleft ul {font-weight: bold; width:110px; padding:30px; margin:0px; font-size: 20px;}
 .gridleft ul li {margin-top: 10px; color: blue; font-size: 25px; list-style-type: square;}

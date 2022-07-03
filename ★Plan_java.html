@@ -7,28 +7,15 @@
 </head>
 
 <style>
-  #날짜 {
-    background-color: #d6dff4;
-    font-size: 16px;
-    font-weight: bold;
-    padding-left: 6px;
-  }
-
-  #제목 {
-    background-color: #d6dff4;
-    font-size: 24px;
-  }
-
-  #모서리 {
-    background-color: #d6dff4;
-    font-size: 16px;
-  }
+  #date { background-color: #d6dff4; font-size: 16px; font-weight: bold; padding-left: 6px; }
+  #thead { background-color: #d6dff4; font-size: 24px; }
+  #year { background-color: #d6dff4; font-size: 18px; }
 </style>
 
 <link rel="stylesheet" href="CSS_Style.css">
 
 <body>
-  <h1 id="큰제목">Study Plan</h1>
+  <h1 id="mainhaed">Study Plan</h1>
   <div class="grid">
     <div class="gridleft">
       <ul>
@@ -65,34 +52,34 @@
 
       <body>
         <table border="1" style="margin-top:10px;">
-          <th id="모서리">2022</th>
-          <th id="제목">Java.edu</th>
-          <th id="제목">생활코딩</th>
-          <tr><td id="날짜">6/27</td><td></td><td><input type="checkbox"checked> 자바와 이클립스 설치</td>
-          <tr><td id="날짜">6/28</td><td><input type="checkbox" checked> Variable</td><td><input type="checkbox"checked> 데이터와 연산</td>
-          <tr><td id="날짜">6/29</td><td><input type="checkbox" checked> Operator</td><td><input type="checkbox"checked> 변수</td>
-          <tr><td id="날짜">6/30</td><td><input type="checkbox" checked> Flow Control</td><td><input type="checkbox"checked> 프로그래밍이란?</td>
-          <tr><td id="날짜">7/1</td><td><input type="checkbox"checked> 복습</td><td><input type="checkbox"checked> 입력과출력</td>
-          <tr><td id="날짜">7/2</td><td><input type="checkbox"checked> 복습</td><td><input type="checkbox"checked> 조건문</td>
-          <tr><td id="날짜">7/3</td><td></td><td><input type="checkbox"> 반복문</td>
-          <tr><td id="날짜">7/4</td><td><input type="checkbox"> Array</td><td><input type="checkbox"> 메소드</td>
-          <tr><td id="날짜"></td><td><input type="checkbox"> Method</td><td><input type="checkbox"> </td>
-          <tr><td id="날짜"></td><td><input type="checkbox"> Class</td><td><input type="checkbox"> </td>
-          <tr><td id="날짜">7/9</td><td></td><td><input type="checkbox"> 객체지향</td>
-          <tr><td id="날짜">7/10</td><td></td><td><input type="checkbox"> 객체지향</td>
-          <tr><td id="날짜">7/11</td><td><input type="checkbox"> Access</td><td><input type="checkbox"> 상속</td>
-          <tr><td id="날짜"></td><td><input type="checkbox"> Inheritance</td><td><input type="checkbox"> </td>
-          <tr><td id="날짜"></td><td><input type="checkbox"> Interface</td><td><input type="checkbox"> </td>
-          <tr><td id="날짜"></td><td><input type="checkbox"> API</td><td><input type="checkbox"> </td>
-          <tr><td id="날짜">7/15</td><td></td><td><input type="checkbox"> 내 힘으로 컴파일</td>
-          <tr><td id="날짜"></td><td><input type="checkbox"> Collection</td><td><input type="checkbox"> </td>
-          <tr><td id="날짜"></td><td><input type="checkbox"> Inner Class</td><td><input type="checkbox"> </td>
-          <tr><td id="날짜"></td><td><input type="checkbox"> Lambda Expression</td><td><input type="checkbox"> </td>
-          <tr><td id="날짜"></td><td><input type="checkbox"> Exception</td><td><input type="checkbox"> </td>
-          <tr><td id="날짜"></td><td><input type="checkbox"> Thead</td><td><input type="checkbox"> </td>
-          <tr><td id="날짜"></td><td><input type="checkbox"> File</td><td><input type="checkbox"> </td>
-          <tr><td id="날짜"></td><td><input type="checkbox"> GUI</td><td><input type="checkbox"> </td>
-          <tr><td id="날짜"></td><td><input type="checkbox"> JDBC</td><td><input type="checkbox"> </td>
+          <th id="year">2022</th>
+          <th id="thead">Java.edu</th>
+          <th id="thead">생활코딩</th>
+          <tr><td id="date">6/27</td><td></td><td><input type="checkbox"checked> 자바와 이클립스 설치</td>
+          <tr><td id="date">6/28</td><td><input type="checkbox" checked> Variable</td><td><input type="checkbox"checked> 데이터와 연산</td>
+          <tr><td id="date">6/29</td><td><input type="checkbox" checked> Operator</td><td><input type="checkbox"checked> 변수</td>
+          <tr><td id="date">6/30</td><td><input type="checkbox" checked> Flow Control</td><td><input type="checkbox"checked> 프로그래밍이란?</td>
+          <tr><td id="date">7/1</td><td><input type="checkbox"checked> 복습</td><td><input type="checkbox"checked> 입력과출력</td>
+          <tr><td id="date">7/2</td><td><input type="checkbox"checked> 복습</td><td><input type="checkbox"checked> 조건문</td>
+          <tr><td id="date">7/3</td><td></td><td><input type="checkbox"> 반복문</td>
+          <tr><td id="date">7/4</td><td><input type="checkbox"> Array</td><td><input type="checkbox"> 메소드</td>
+          <tr><td id="date"></td><td><input type="checkbox"> Method</td><td><input type="checkbox"> </td>
+          <tr><td id="date"></td><td><input type="checkbox"> Class</td><td><input type="checkbox"> </td>
+          <tr><td id="date">7/9</td><td></td><td><input type="checkbox"> 객체지향</td>
+          <tr><td id="date">7/10</td><td></td><td><input type="checkbox"> 객체지향</td>
+          <tr><td id="date">7/11</td><td><input type="checkbox"> Access</td><td><input type="checkbox"> 상속</td>
+          <tr><td id="date"></td><td><input type="checkbox"> Inheritance</td><td><input type="checkbox"> </td>
+          <tr><td id="date"></td><td><input type="checkbox"> Interface</td><td><input type="checkbox"> </td>
+          <tr><td id="date"></td><td><input type="checkbox"> API</td><td><input type="checkbox"> </td>
+          <tr><td id="date">7/15</td><td></td><td><input type="checkbox"> 내 힘으로 컴파일</td>
+          <tr><td id="date"></td><td><input type="checkbox"> Collection</td><td><input type="checkbox"> </td>
+          <tr><td id="date"></td><td><input type="checkbox"> Inner Class</td><td><input type="checkbox"> </td>
+          <tr><td id="date"></td><td><input type="checkbox"> Lambda Expression</td><td><input type="checkbox"> </td>
+          <tr><td id="date"></td><td><input type="checkbox"> Exception</td><td><input type="checkbox"> </td>
+          <tr><td id="date"></td><td><input type="checkbox"> Thead</td><td><input type="checkbox"> </td>
+          <tr><td id="date"></td><td><input type="checkbox"> File</td><td><input type="checkbox"> </td>
+          <tr><td id="date"></td><td><input type="checkbox"> GUI</td><td><input type="checkbox"> </td>
+          <tr><td id="date"></td><td><input type="checkbox"> JDBC</td><td><input type="checkbox"> </td>
         </table>
 
     </div>
