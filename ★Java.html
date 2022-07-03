@@ -51,7 +51,8 @@
 
 
       <h1>Data</h1>
-      <br><table border="1">
+      <h2>Data Type</h2>
+      <table border="1">
         <thead>
           <tr>
             <th>정수</th>
@@ -128,6 +129,13 @@
         <li><span id="accent">문자 </span> 자료형 char는 java에서 unsgined로 동작 하므로 부호없이 2byte 모두 uni code로 쓰인다.</li>
         <li><span id="accent">논리 </span> 자료형 boolean은 1bit 이다</li>
       </ul>
+      <ul><span id="ulh">etc</span>
+        <li>"H" <span id="accent"> →1글자지만 String</span></li>
+        <li>"6"+"6" <span id="comment"> →66</span></li>
+        <li>"6"*"6" <span id="comment"> →문자열 *연산 불가</span></li>
+        <li>"1111".length(); <span id="comment"> →문자열 길이는 4</span></li>
+        <li>1111.length(); <span id="comment"> →Error</span></li>
+      </ul>
 
       <h2>Variable</h2>
       <p>변수란 하나의 값을 저장할 수 있는 메모리 공간이다</p>
@@ -152,23 +160,9 @@
         <li><span id="accent">명시적 형 변환 </span>큰타입 → 작은타입으로 변환할 때는 ( )로 강제 형 변환 하여야한다. <br>이때 데이터 손실이나 오버플로우가 발생 할 수 있다.
           <span id="comment">int num10 = (int) 3.14; 이때 0.14 값은 손실된다.</span></li>
       </ul>
-
-      <h3>etc</h3>
-      <ul>
-        <li>"H" <span id="accent"> →1글자지만 String</span></li>
-        <li>System.out.println("Hello \"World\""); <span id="accent"> →escape</span></li>
-        <li>System.out.println("Hello <span id="accent"> →줄바꿈 불가능</span>
-          <br>World");
-        </li>
-        <li>System.out.println("Hello " <span id="comment"> →OK</span>
-          <br>+ "World");
-        </li>
-        <li>"6"+"6" <span id="comment"> →66</span></li>
-        <li>"6"*"6" <span id="comment"> →문자열 *연산 불가</span></li>
-        <li>"1111".length(); <span id="comment"> →문자열 길이는 4</span></li>
-        <li>1111.length(); <span id="comment"> →Error</span></li>
-        <li>System.out.println((int) ch1); <span id="accent"> →char를 int로 형변환하여 유니코드값 출력</span></li>
-        <li>System.out.println(변수.getClass()); <span id="accent"> →변수의 자료형 출력</span></li>
+      <ul><span id="ulh">etc</span>
+        <li>System.out.println((int) ch1); <span id="comment"> →char를 int로 형변환하여 유니코드값 출력</span></li>
+        <li>System.out.println(변수.getClass()); <span id="comment"> →변수의 자료형 출력</span></li>
       </ul>
 
       <h2>Primitive & Reference</h2>
@@ -194,18 +188,31 @@
       </ul>
 
       <h2>Print & Scanner</h2>
-      <ul><span id="ulh">Print</span>
+      <h3>Print</h3>
+      <ul>
         <li><span id="accent">System.out.println(); </span> 출력 후 개행</li>
         <li><span id="accent">System.out.print(); </span> 개행없이 출력</li>
         <li><span id="accent">System.out.printf(); </span> 변수의 값을 지시자 형식으로 변환하여 출력</li>
-        <li><span id="comment">System.out.printf("&.3f", 변수); </span> 소수점 셋째자리까지 출력</li>
+ 
       </ul>
-      <ul><span id="ulh">Scanner</span>
+      <ul><span id="ulh">etc</span>
+        <li>System.out.println("Hello \"World\""); <span id="comment"> →escape</span></li>
+        <li>System.out.println("Hello <span id="accent"> →줄바꿈 불가능</span>
+          <br>World");
+        </li>
+        <li>System.out.println("Hello " <span id="comment"> →OK</span>
+          <br>+ "World");
+        </li>
+        <li>System.out.printf("&.3f", 변수) <span id="comment"> →소수점 셋째자리까지 출력</span></li>
+      </ul>
+      <h3>Scanner</h3>
+      <ul>
         <li><span id="accent">sc.nextInt(); </span> 정수 입력받기</li>
         <li><span id="accent">sc.nextLine(); </span> Enter전까지 입력받은 문자열을 리턴 <span id="comment">*엔터버퍼 주의*</span></li>
         <li><span id="accent">sc.next(); </span> Space전까지 입력받은 문자열을 리턴</li>
         <li><span id="accent">sc.next().charAt(0); </span> 입력받은 문자열중 첫번째 문자만 저장</li>
       </ul>
+
 
       <h1>Operator</h1>
 
