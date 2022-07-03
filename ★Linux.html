@@ -39,7 +39,7 @@
       </ul>
 
       <br>
-      <input id="Studyplanbutton" type="button" value="Study Plan" onclick="location.href = '★Plan_C.html' ">
+      <input id="Plan" type="button" value="Study Plan" onclick="location.href = '★Plan_C.html' ">
     </div>
 
     <div class="gridright">
@@ -68,7 +68,7 @@
         <li>Storage : HDD, SDD</li>
         <li>Program : 프로그래밍 언어를 사용하여 수행절차를 표현해 놓은 명령어들의 집합, 컴퓨터에서 어떤 작업을 위해 실행할 수 있는 '정적인 상태'의 파일</li>
         <li>Process : 프로그램이 실행되어 돌아가고 있는 상태, 컴퓨터에서 연속적으로 실행되고 있는 '동적인 상태'의 컴퓨터 프로그램</li>
-        <li><span id="필기">리눅스의 command는 Storage(HDD,SDD)에 Program파일로 저장되어있다가, 실행하면 Memory(RAM)에 적재되고, CPU에 의해 처리되는데 이
+        <li><span id="comment">리눅스의 command는 Storage(HDD,SDD)에 Program파일로 저장되어있다가, 실행하면 Memory(RAM)에 적재되고, CPU에 의해 처리되는데 이
             상태가 Process다.</span></li>
       </ul>
 
@@ -93,7 +93,7 @@
 
       <h3>pwd (print working directory)</h3>
       <p>현재 위치하고 있는 디렉토리를 알려주는 명령어
-        <br><span id="필기">리눅스의 명령어는 현재위치에서 명령이 내려지므로 위치를 파악하는것이 매우 중요하다</span>
+        <br><span id="comment">리눅스의 명령어는 현재위치에서 명령이 내려지므로 위치를 파악하는것이 매우 중요하다</span>
       </p>
 
 
@@ -111,7 +111,7 @@
         <li>cd .. 부모 디렉토리로 이동</li>
         <li>cd ~ home 디렉토리로 이동</li>
       </ul>
-      <p><span id="필기">상대경로는 현재 디렉토리의 위치를 기준으로 다른 디렉토리의 위치를 표현하는 것이고
+      <p><span id="comment">상대경로는 현재 디렉토리의 위치를 기준으로 다른 디렉토리의 위치를 표현하는 것이고
           <br>절대경로는 최상위 디렉토리인 루트디렉토리(/)를 기준으로 경로를 표현하는 것이다</span></p>
 
 
@@ -137,7 +137,7 @@
         <li>cp + 파일명 + 이동할경로</li>
         <li>cp -r + 디렉토리명 + 이동할경로</li>
       </ul>
-      <p><span id="필기">이동시킬 파일(디텍토리)이 명령을 내리는 디렉토리 안에 없을때는 경로를 포함하여 적어준다</span></p>
+      <p><span id="comment">이동시킬 파일(디텍토리)이 명령을 내리는 디렉토리 안에 없을때는 경로를 포함하여 적어준다</span></p>
 
 
       <h3>mv (move)</h3>
@@ -200,7 +200,7 @@
 
       <h3>whereis</h3>
       <p>검색어가 어느 디렉토리에 있는지 주소를 알려줌
-        <br><span id="필기">ls라는 명령어는 /bin 디렉토리에 저장된 프로그램인데, 어떻게 다른 모든 디렉토리에서 실행이 가능한 걸까?
+        <br><span id="comment">ls라는 명령어는 /bin 디렉토리에 저장된 프로그램인데, 어떻게 다른 모든 디렉토리에서 실행이 가능한 걸까?
           <br>$PATH라는 환경변수에 기본경로가 담겨있기때문에 가능하다. ($PATH의 경로들은 편집이 가능하다.)</span>
       </p>
 
@@ -222,15 +222,15 @@
       <p>컴퓨팅에서 표준 스트림을 사용자 지정 위치로 우회할 수 있는 다양한 유닉스 셸을 포함한 대부분의 명령어 인터프리터에 일반적인 명령이다. 방향 지정, 방향 변경으로도 부른다.(IO Stream 통제)
       </p>
       <ul><span id="ulh">Redirection</span>
-        <li>명령어1 > 파일1 <span id="필기">명령어1을 실행한 출력물을 파일1로 내보낸다. 파일1이 존재할땐 기존내용은 지우고 덧씌운다.</span></li>
-        <li>명령어1 >> 파일1 <span id="필기">파일의 끝에 출력물을 추가한다.</span></li>
-        <li>명령어1 < 파일1 <span id="필기">명령어1을 실행하되, 파일1이 입력의 대상이 된다.</span></li>
-        <li>명령어1 < 들어오는파일> 나가는파일 <span id="필기">두 개의 기능을 수행. 명령어1은 들어오는파일에서 내용을 불러들인 뒤 나가는파일에 기록한다.</span></li>
-        <li>명령어 1> 파일a 2> 파일b <span id="필기">표준출력일때 파일a에 Redirection되고 표준오류일때 파일b에 Redirection된다</span></li>
+        <li>명령어1 > 파일1 <span id="comment">명령어1을 실행한 출력물을 파일1로 내보낸다. 파일1이 존재할땐 기존내용은 지우고 덧씌운다.</span></li>
+        <li>명령어1 >> 파일1 <span id="comment">파일의 끝에 출력물을 추가한다.</span></li>
+        <li>명령어1 < 파일1 <span id="comment">명령어1을 실행하되, 파일1이 입력의 대상이 된다.</span></li>
+        <li>명령어1 < 들어오는파일> 나가는파일 <span id="comment">두 개의 기능을 수행. 명령어1은 들어오는파일에서 내용을 불러들인 뒤 나가는파일에 기록한다.</span></li>
+        <li>명령어 1> 파일a 2> 파일b <span id="comment">표준출력일때 파일a에 Redirection되고 표준오류일때 파일b에 Redirection된다</span></li>
       </ul>
       <br>
       <ul><span id="ulh">Pipe</span>
-        <li>Pipe (A | B) <span id="필기">A 커맨드의 표준 출력을 B 커맨드의 표준 입력으로 사용한다</span></li>
+        <li>Pipe (A | B) <span id="comment">A 커맨드의 표준 출력을 B 커맨드의 표준 입력으로 사용한다</span></li>
       </ul>
 
       <h2>명령접속사</h2>
@@ -257,12 +257,12 @@
       <h3>Package Manager</h3>
       <p>패키지매니저를 통해 소프트웨어를 간단하게 설치할 수 있다. 다양한 패키지매니저 중에 apt 사용방법을 알아보자</p>
       <ul><span id="ulh">실행방법</span>
-        <li>sudo apt-get update; <span id="필기">→ 최신목록업데이트</span></li>
-        <li>sudo apt-cache search + 검색어; <span id="필기">→ 검색</span></li>
-        <li>sudo apt-get install + 프로그램이름; <span id="필기">→ 설치</span></li>
-        <li>sudo apt-get upgrade + 프로그램이름; <span id="필기">→ 특정 프로그램 업그레이드</span></li>
-        <li>sudo apt-get upgrade; <span id="필기">→ 전체 프로그램 업그레이드</span></li>
-        <li>sudo apt-get remove + 프로그램이름; <span id="필기">→ 삭제</span></li>
+        <li>sudo apt-get update; <span id="comment">→ 최신목록업데이트</span></li>
+        <li>sudo apt-cache search + 검색어; <span id="comment">→ 검색</span></li>
+        <li>sudo apt-get install + 프로그램이름; <span id="comment">→ 설치</span></li>
+        <li>sudo apt-get upgrade + 프로그램이름; <span id="comment">→ 특정 프로그램 업그레이드</span></li>
+        <li>sudo apt-get upgrade; <span id="comment">→ 전체 프로그램 업그레이드</span></li>
+        <li>sudo apt-get remove + 프로그램이름; <span id="comment">→ 삭제</span></li>
       </ul>
 
 
@@ -393,7 +393,7 @@
       <p>IP 주소는 컴퓨터 네트워크에서 장치들이 서로를 인식하고 통신을 하기 위해서 사용하는 특수한 번호이다.</p>
       <ul><span id="ulh">public address와 private address
           <br><img src="Linux_IP.JPG" border="1" width="600px"></span>
-        <li><span id="필기">통신사에서 부여하는 public address와 공유기때문에 부여되는 private address가 다른 경우가 많다</span></li>
+        <li><span id="comment">통신사에서 부여하는 public address와 공유기때문에 부여되는 private address가 다른 경우가 많다</span></li>
         <li>ip addr : 내선번호와 같은 private address ip를 출력하는 명령어</li>
         <li>curl ipinfo.io/ip : 외부에 접속할때 사용하는 public address ip를 출력</li>
         <li>ip 127.0.0.1 / domain localhost : 하나의 컴퓨터로 서버와 클라이언트를 수행할때 자기자신을 가르키는 특별한주소</li>
@@ -402,7 +402,7 @@
       <h3>Domain name</h3>
       <p>도메인 네임은 넓은 의미로는 네트워크상에서 컴퓨터를 식별하는 호스트명을 가리키며, 좁은 의미에서는 도메인 레지스트리에게서 등록된 이름을 의미한다. domain name과 ip address는
         전화번호부에 저장된이름과 전화번호와 같은 관계이다. <br>DNS(Domain Name Server)에는 거대한 전화번호부와 같이 모든 ip의 domain이 저장되어있다.
-        <br><span id="필기">ip 127.0.0.1 / domain localhost : 하나의 컴퓨터로 서버와 클라이언트를 수행할때 자기자신을 가르키는 특별한주소</span>
+        <br><span id="comment">ip 127.0.0.1 / domain localhost : 하나의 컴퓨터로 서버와 클라이언트를 수행할때 자기자신을 가르키는 특별한주소</span>
         <br><img src="WEB_server.JPG" width="500px" border=1>
       </p>
 

@@ -168,14 +168,14 @@
       <h1>연산</h1>
       <h2>변수(var)와 대입연산자(=)</h2>
       <ul><span id="ulh">정의</span>
-        <li><span id="강조">var 변수이름 = 상수값</sapn>
+        <li><span id="\!">var 변수이름 = 상수값</sapn>
         </li>
         <li>변수(Variable)는 변할 수 있는 값을 담는 그릇과 같은 데이터 타입이다[좌항]</li>
         <li> = 는 대입연산자</li>
         <li>상수는 변하지 않는 값 (1, 2..)[우항]</li>
       </ul>
       <ul><span id="ulh">호출</span>
-        <li><span id="강조">"+변수이름+"</sapn>
+        <li><span id="\!">"+변수이름+"</sapn>
         </li>
       </ul>
       <p>예시 var a = 1; //처음 변수를 정의할 때는 반드시 var을 사용하여 정의해야하고, 그 이후에는 var을 생략할 수 있다
@@ -185,7 +185,7 @@
         var name = '변수';
         document.write(" 변수와 대입연산자의 원리를 이용하여 무수히 많은 >" + name + "<의 값은 일괄변경 가능하다");
       </script>
-      <p id="의문">의문 : 만약 변수이름이 중복되어 쓰이면??
+      <p id="\?">만약 변수이름이 중복되어 쓰이면??
         <br>답 : var는 중복선언이 가능하며 호출하는 코드 기준 제일 마지막에 선언된 변수를 불러오는 듯하다. 이를 보완하기 위해 let이라는 명령어가 있고, 중복선언이 불가하다
       </p>
 
@@ -193,7 +193,7 @@
       <h2>비교연산자와 Boolean</h2>
       <p>비교연산자의 결과는 Boolean 값으로 나온다</p>
       <ul><span id="ulh">비교연산자의 종류</span>
-        <li>동등과 일치 : == 대략같다 === 정확히같다 <span id="필기">=는 대입연산자</span></li>
+        <li>동등과 일치 : == 대략같다 === 정확히같다 <span id="comment">=는 대입연산자</span></li>
         <li>부정 : !=값은같지않다 !==정확히같은값은아니다</li>
         <li>부등호 : [&lt;] [&gt;] [&lt;=] [&gt;=]</li>
       </ul>
@@ -203,7 +203,7 @@
       </ul>
       <!--1&lt; = less than / &gt; = greater than 줄임말-->
       <p>예시 1=='1' /
-        <script>document.write(1 == '1');</script> <span id="필기">←엥간하면 사용하지 말것</span>
+        <script>document.write(1 == '1');</script> <span id="comment">←엥간하면 사용하지 말것</span>
         <br> 1==='1' /
         <script>document.write(1 === '1');</script>
         <br> 1!='1' /
@@ -225,15 +225,15 @@
           target="_blank">if의 TRUE/FALSE 정리링크</a>
       </p>
       <ul><span id="ulh">조건문 종류</span>
-        <li><span id="강조">if(조건) {내용}</span>
+        <li><span id="\!">if(조건) {내용}</span>
           <br>조건결과값이 true일때 {내용}값을 동작하고, false일때 아무동작하지 않는다.
         </li>
         <br>
-        <li><span id="강조">if(조건) {내용1} else {내용2}</span>
+        <li><span id="\!">if(조건) {내용1} else {내용2}</span>
           <br>조건결과값이 true일때 {내용1}값을 동작하고, false일때 {내용2}값을 동작한다.
         </li>
         <br>
-        <li><span id="강조">if(조건1) {내용1} else if(조건2) {내용2} else {내용3}</span>
+        <li><span id="\!">if(조건1) {내용1} else if(조건2) {내용2} else {내용3}</span>
           <br>조건1 결과값이 true일때 {내용1}값을 동작하고, false일때 조건2를 고려한다. 조건2가 true일때 {내용2}값을 동작하고, false일때 {내용3}값을 동작한다.
           <br>else if는 중첩이 가능하며, 가장 끝 else는 생략가능하다 생략시 조건전부 false일때 아무동작하지 않는다.
         </li>
@@ -247,7 +247,7 @@
 
       <h3>조건문_비교연산자</h3>
       <p>if(조건) {내용}에서 조건에 비교연산자가 오는 경우</p>
-      <p id="필기">당신의 나이는?
+      <p id="comment">당신의 나이는?
         <input id="ageInput" type="text" onkeyup="this.value=this.value.replace(/[^0-9]/g,'');"
           onchange="ageFunction(this);">
       </p>
@@ -281,7 +281,7 @@
         <br>
         <li>not연산자( ! ) : 부정의 의미로, Boolean의 값을 역전시킨다. true를 false로 false를 true로 만든다.</li>
       </ul>
-      <p>응용예시 <span id="필기">if( (조건1 || 조건2) && 조건3 )</span> && 와 || 를 혼용해서 쓸때는 ()를 사용한다</p>
+      <p>응용예시 <span id="comment">if( (조건1 || 조건2) && 조건3 )</span> && 와 || 를 혼용해서 쓸때는 ()를 사용한다</p>
 
       <!----------------------------------------------------------------------------------------->
 
@@ -291,12 +291,12 @@
           <br>조건이 true인 동안 코드를 반복하고, false가 되면 멈춘다
         </li>
         <br>
-        <li>var i = 0; <span id="필기">*관습적으로 반복문에선 index의 첫글자를 따서 변수 i를 쓰며, 0부터 카운팅한다</span>
+        <li>var i = 0; <span id="comment">*관습적으로 반복문에선 index의 첫글자를 따서 변수 i를 쓰며, 0부터 카운팅한다</span>
           <br>while (i < 숫자) {코드; <br>i = i + 1;}
         </li>
         <br>
         <li>for (초기화; 반복조건; 반복시조건코드세미콜론없이) {코드}
-          <br>for (var i = 0; i < 숫자; i++) {코드} <br><span id="필기">i++ 는 i=i+1 와 같은 의미이다
+          <br>for (var i = 0; i < 숫자; i++) {코드} <br><span id="comment">i++ 는 i=i+1 와 같은 의미이다
               <br>i++ 는 기존의 i를 불러오고 1증가 시킴 / ++i 기존의 값에서 1증가 시킨 후 사용함</span>
         </li>
       </ul>
@@ -389,19 +389,19 @@
         <br>함수에는 내장함수(elert과같은)와 사용자정의함수가 있다
       </p>
       <ul><span id="ulh">함수정의와 호출</span>
-        <li>정의 : <span id="강조">function 함수이름() {코드}</span>
-          <br>호출 : <span id="강조">함수이름();</span>
+        <li>정의 : <span id="\!">function 함수이름() {코드}</span>
+          <br>호출 : <span id="\!">함수이름();</span>
         </li>
         <br>
-        <li>정의 : <span id="강조">function 함수이름(self) {코드}</span>
-          <br>호출 :<span id="강조">함수이름(this);</span>
+        <li>정의 : <span id="\!">function 함수이름(self) {코드}</span>
+          <br>호출 :<span id="\!">함수이름(this);</span>
         </li>
         <br>
-        <li>정의 :<span id="강조">함수이름 = function () {코드}</span>
-          <br>호출 :<span id="강조">함수이름();</span>
+        <li>정의 :<span id="\!">함수이름 = function () {코드}</span>
+          <br>호출 :<span id="\!">함수이름();</span>
         </li>
         <br>
-        <li>익명함수_정의호출동시 :<span id="강조">(function () {코드}) ();</span></li>
+        <li>익명함수_정의호출동시 :<span id="\!">(function () {코드}) ();</span></li>
         <!--this는 html태그안에서는 태그자체(input태그라면 버튼을 가리킴) / html태그밖에서는 전역개체(윈도우)를 가리킨다
         html태그밖인 자바스크립트 함수에서는 this대신에 self로 대체한다 -->
       </ul>
@@ -410,10 +410,10 @@
       <h3>함수의 입력과 출력</h3>
       <p>함수는 입력값에는 여러개의 매개변수를 넣고, 출력시에는 하나의 값만 나오는 구조이다</P>
       <ul><span id="ulh">정의</span>
-        <li><span id="강조">function 함수이름 (매개변수) { return 변환내용 }</span></li>
+        <li><span id="\!">function 함수이름 (매개변수) { return 변환내용 }</span></li>
       </ul>
       <ul><span id="ulh">호출</span>
-        <li><span id="강조">함수이름 (인자);</span></li>
+        <li><span id="\!">함수이름 (인자);</span></li>
       </ul>
       <ul><span id="ulh">입력</span>
         <li>매개변수(parameter)와 인자(argument)
@@ -485,12 +485,12 @@
       <h1>배열(Array) [ ]</h1>
       <p>배열(array)이란 연관된 데이터를 모아서 관리하기 위해서 사용하는 데이터 타입이다. 변수(var)는 하나의 변수에 하나의 데이터를 저장하고, 배열은 하나의 변수에 여러개의 데이터를 저장한다.
       <ul><span id="ulh">정의</span>
-        <li>기본형 :<span id="강조"> var 배열이름 = ['원소0','Element1','Element2'];</span></li>
-        <li>함수응용 :<span id="강조"> function 함수이름() {return ['원소0','Element1','Element2'];} / var 변수이름 = 함수이름</span></li>
+        <li>기본형 :<span id="\!"> var 배열이름 = ['원소0','Element1','Element2'];</span></li>
+        <li>함수응용 :<span id="\!"> function 함수이름() {return ['원소0','Element1','Element2'];} / var 변수이름 = 함수이름</span></li>
       </ul>
       <ul><span id="ulh">호출</span>
-        <li>전체호출 :<span id="강조"> 배열이름</span></li>
-        <li>특정호출 :<span id="강조"> 배열이름[i]</span> *index(색인)은 0부터 카운팅</li>
+        <li>전체호출 :<span id="\!"> 배열이름</span></li>
+        <li>특정호출 :<span id="\!"> 배열이름[i]</span> *index(색인)은 0부터 카운팅</li>
       </ul>
       <script>
         var array = ['빨강', '노랑', '파랑'];
@@ -547,25 +547,25 @@
         <br>객체와 같은 개념의 다른언어 데이터 타입 : 연관배열(associative array)_PHP, 맵(map)_JAVA, 딕셔너리(Dictionary)_Python
       </p>
       <ul><span id="ulh">정의</span>
-        <li><span id="강조"> var 객체이름 = {"key1":"value1" , "key2":"value2"};</span></li>
+        <li><span id="\!"> var 객체이름 = {"key1":"value1" , "key2":"value2"};</span></li>
         <br>
-        <li><span id="강조">var 객체이름 = {};
+        <li><span id="\!">var 객체이름 = {};
             <br>객체이름['key1'] = 'value1';
             <br>객체이름['key2'] = 'value2';</span></li>
         <br>
-        <li><span id="강조">var 객체이름 = new Object();
+        <li><span id="\!">var 객체이름 = new Object();
             <br>객체이름['key1'] = 'value1';
             <br>객체이름['key2'] = 'value2';</span></li>
       </ul>
       <ul><span id="ulh">접근</span>
-        <li><span id="강조"> 객체이름.key</span> </li>
-        <li><span id="강조"> 객체이름['key']</span> </li>
-        <li><span id="강조"> 객체이름['ke'+'y'] 문자열결합가능</span> *객체이름.'ke'+'y'은 SyntaxError</li>
+        <li><span id="\!"> 객체이름.key</span> </li>
+        <li><span id="\!"> 객체이름['key']</span> </li>
+        <li><span id="\!"> 객체이름['ke'+'y'] 문자열결합가능</span> *객체이름.'ke'+'y'은 SyntaxError</li>
         <li>*전체호출은 반복문을 통해서한다</li>
       </ul>
       <ul><span id="ulh">추가</span>
-        <li><span id="강조"> 객체이름.key = 'value';</span></li>
-        <li><span id="강조"> 객체이름['key'] = 'value';</span></li>
+        <li><span id="\!"> 객체이름.key = 'value';</span></li>
+        <li><span id="\!"> 객체이름['key'] = 'value';</span></li>
       </ul>
       <script>
         var object1 = {
@@ -599,8 +599,8 @@
       <h3>객체반복문(Iterate)</h3>
       <p>객체안의 모든값을 순회하여 열거하는 기능</p>
       <ul><span id="ulh">for in 문</span>
-        <li><span id="강조">for(var key in 객체이름) { document.write(key); }</span> *모든key 불러오기</li>
-        <li><span id="강조">for(var key in 객체이름) { document.write(객체이름[key]); }</span> *모든value 불러오기</li>
+        <li><span id="\!">for(var key in 객체이름) { document.write(key); }</span> *모든key 불러오기</li>
+        <li><span id="\!">for(var key in 객체이름) { document.write(객체이름[key]); }</span> *모든value 불러오기</li>
         <li>*배열도 동일한 형식으로 사용가능하며 key란을 아무글자로 바꿔도 동작한다</li>
       </ul>
       <script>
@@ -620,11 +620,11 @@
         <br>객체안 함수의 this는 객체를 가리킨다
       </p>
       <ul><span id="ulh">정의</span>
-        <li><span id="강조">var 객체이름 = { Property : function(변수){코드} }</span></li>
-        <li><span id="강조">객체이름.Property = function(변수){코드}</span></li>
+        <li><span id="\!">var 객체이름 = { Property : function(변수){코드} }</span></li>
+        <li><span id="\!">객체이름.Property = function(변수){코드}</span></li>
       </ul>
       <ul><span id="ulh">호출</span>
-        <li><span id="강조">객체이름.Property();</span></li>
+        <li><span id="\!">객체이름.Property();</span></li>
       </ul>
       <script>
         var object3 = {
@@ -764,29 +764,29 @@
       <h3>정규표현식_컴파일(compile)</h3>
       <P>컴파일은 검출하고자 하는 패턴을 만드는 일이다. 즉 정규표현식 객체를 생성하는 것</P>
       <ul><span id="ulh">패턴을 만드는 방식</span>
-        <li>정규표현식 리터럴 <span id="필기">var pattern = /표현/옵션</span></li>
-        <li>정규표현식 객체생성자 <span id="필기">var pattern = new RegExp('표현','옵션');</span></li>
+        <li>정규표현식 리터럴 <span id="comment">var pattern = /표현/옵션</span></li>
+        <li>정규표현식 객체생성자 <span id="comment">var pattern = new RegExp('표현','옵션');</span></li>
       </ul>
 
 
       <h3>정규표현식_옵션(i,g)</h3>
       <P>생성된 객체에 옵션을 추가 할 수 있다.</P>
       <ul><span id="ulh">옵션</span>
-        <li>i옵션을 추가하면 대소문자를 구분하지 않는다. <span id="필기">var pattern = /표현/i;</span></li>
-        <li>g옵션을 추가하면 검색된 모든 결과를 리턴한다. <span id="필기">var pattern = /표현/g;</span>
+        <li>i옵션을 추가하면 대소문자를 구분하지 않는다. <span id="comment">var pattern = /표현/i;</span></li>
+        <li>g옵션을 추가하면 검색된 모든 결과를 리턴한다. <span id="comment">var pattern = /표현/g;</span>
           <br>*g를 추가하지 않으면 처음 검색된 결과만 리턴한다
         </li>
-        <li>i와 g옵션은 중복사용 가능하다 <span id="필기">var pattern = /표현/ig;</span></li>
+        <li>i와 g옵션은 중복사용 가능하다 <span id="comment">var pattern = /표현/ig;</span></li>
       </ul>
 
 
       <h3>정규표현식_실행(execution)</h3>
       <P>생성한 정규표현식 객체를 실행하는 여러방식이 있다.</P>
       <ul><span id="ulh">실행(execution)</span>
-        <li>추출(execution) <span id="필기">pattern.exec("문자열"); → ["표현"] / null</span></li>
-        <li>match <span id="필기">"문자열".match(pattern); → ["표현"] / null</span></li>
-        <li>존재유무(test) <span id="필기">pattern.test("문자열"); → true / false</span></li>
-        <li>치환(replace) <span id="필기">"문자열".replace(pattern, "치환할표현");</span></li>
+        <li>추출(execution) <span id="comment">pattern.exec("문자열"); → ["표현"] / null</span></li>
+        <li>match <span id="comment">"문자열".match(pattern); → ["표현"] / null</span></li>
+        <li>존재유무(test) <span id="comment">pattern.test("문자열"); → true / false</span></li>
+        <li>치환(replace) <span id="comment">"문자열".replace(pattern, "치환할표현");</span></li>
       </ul>
 
 
@@ -842,8 +842,8 @@
       <P>명령어사전 즉 API사전</P>
       <ul><span id="ulh">JavaScript 공통 Reference</span>
         <li><a href="http://www.ecma-international.org/publications/standards/Ecma-262.htm"
-            target="_blank">ECMAScript(표준문서) <span id="필기">→독학하기 어려움</span></a></li>
-        <li><a href="http://opentutorials.org/course/50" target="_blank">자바스크립트 사전(생활코딩) <span id="필기">→MDN참고로
+            target="_blank">ECMAScript(표준문서) <span id="comment">→독학하기 어려움</span></a></li>
+        <li><a href="http://opentutorials.org/course/50" target="_blank">자바스크립트 사전(생활코딩) <span id="comment">→MDN참고로
               만듬</span></a></li>
         <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference" target="_blank">mozilla
             JavaScript Reference(MDN)</a></li>
