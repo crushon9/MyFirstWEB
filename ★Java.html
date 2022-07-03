@@ -122,11 +122,11 @@
         </tr>
       </table>
       <ul>
-        <li><span id="\!">정수 </span>는 1bit가 부호정보를 저장하기 때문에 자료형 byte크기에서 1bit를 뺀 수의 제곱으로 표현 범위를 구할 수 있다. 각 타입의 정확한 최대와
+        <li><span id="accent">정수 </span>는 1bit가 부호정보를 저장하기 때문에 자료형 byte크기에서 1bit를 뺀 수의 제곱으로 표현 범위를 구할 수 있다. 각 타입의 정확한 최대와
           최소는 Integer.MIN_VALUE;</li>
-        <li><span id="\!">실수 </span><span id="\?">범위가 왜 저렇게 나오지??</span></li>
-        <li><span id="\!">문자 </span> 자료형 char는 java에서 unsgined로 동작 하므로 부호없이 2byte 모두 uni code로 쓰인다.</li>
-        <li><span id="\!">논리 </span> 자료형 boolean은 1bit 이다</li>
+        <li><span id="accent">실수 </span><span id="question">범위가 왜 저렇게 나오지??</span></li>
+        <li><span id="accent">문자 </span> 자료형 char는 java에서 unsgined로 동작 하므로 부호없이 2byte 모두 uni code로 쓰인다.</li>
+        <li><span id="accent">논리 </span> 자료형 boolean은 1bit 이다</li>
       </ul>
 
       <h2>Variable</h2>
@@ -147,17 +147,17 @@
       <h2>Casting</h2>
       <p>형 변환이란 변수나 리터럴의 타입을 다른 타입으로 변환하는 것이다.</p>
       <ul>
-        <li><span id="\!">묵시적 형 변환 </span>작은타입 → 큰타입으로 변환할 때는 자동으로 형 변환된다. <br>리터럴은 변수 저장시 해당 변수타입에 저장할 수 있는 범위만 넘지 않으면
+        <li><span id="accent">묵시적 형 변환 </span>작은타입 → 큰타입으로 변환할 때는 자동으로 형 변환된다. <br>리터럴은 변수 저장시 해당 변수타입에 저장할 수 있는 범위만 넘지 않으면
           자동 형 변환된다.</li>
-        <li><span id="\!">명시적 형 변환 </span>큰타입 → 작은타입으로 변환할 때는 ( )로 강제 형 변환 하여야한다. <br>이때 데이터 손실이나 오버플로우가 발생 할 수 있다.
+        <li><span id="accent">명시적 형 변환 </span>큰타입 → 작은타입으로 변환할 때는 ( )로 강제 형 변환 하여야한다. <br>이때 데이터 손실이나 오버플로우가 발생 할 수 있다.
           <span id="comment">int num10 = (int) 3.14; 이때 0.14 값은 손실된다.</span></li>
       </ul>
 
       <h3>etc</h3>
       <ul>
-        <li>"H" <span id="\!"> →1글자지만 String</span></li>
-        <li>System.out.println("Hello \"World\""); <span id="\!"> →escape</span></li>
-        <li>System.out.println("Hello <span id="\!"> →줄바꿈 불가능</span>
+        <li>"H" <span id="accent"> →1글자지만 String</span></li>
+        <li>System.out.println("Hello \"World\""); <span id="accent"> →escape</span></li>
+        <li>System.out.println("Hello <span id="accent"> →줄바꿈 불가능</span>
           <br>World");
         </li>
         <li>System.out.println("Hello " <span id="comment"> →OK</span>
@@ -167,20 +167,20 @@
         <li>"6"*"6" <span id="comment"> →문자열 *연산 불가</span></li>
         <li>"1111".length(); <span id="comment"> →문자열 길이는 4</span></li>
         <li>1111.length(); <span id="comment"> →Error</span></li>
-        <li>System.out.println((int) ch1); <span id="\!"> →char를 int로 형변환하여 유니코드값 출력</span></li>
-        <li>System.out.println(변수.getClass()); <span id="\!"> →변수의 자료형 출력</span></li>
+        <li>System.out.println((int) ch1); <span id="accent"> →char를 int로 형변환하여 유니코드값 출력</span></li>
+        <li>System.out.println(변수.getClass()); <span id="accent"> →변수의 자료형 출력</span></li>
       </ul>
 
       <h2>Primitive & Reference</h2>
       <p><img src="Java_data.jpg" width="500px" border="1"></p>
       <ul><span id="ulh">Primitive Type</span>
-        <li><span id="\!">원시자료형, 더이상 쪼개어지지않음</span></li>
+        <li><span id="accent">원시자료형, 더이상 쪼개어지지않음</span></li>
         <li><span id="comment">8가지 : boolean, byte, short, int, long, char, float, double</span></li>
         <li>기본값이 있기 때문에 Null이 존재하지 않는다</li>
         <li>실제 값을 저장하는 공간으로 스택(Stack) 메모리에 저장</li>
       </ul>
       <ul><span id="ulh">Reference Type</span>
-        <li><span id="\!">원시자료형을 제외한 모든 타입은 참조자료형, 객체(Object)의 주소를 참조한다.</span></li>
+        <li><span id="accent">원시자료형을 제외한 모든 타입은 참조자료형, 객체(Object)의 주소를 참조한다.</span></li>
         <li><span id="comment">Class(String), Interface, Enum, Array</span></li>
         <li>빈 객체를 의미하는 Null이 기본값이다</li>
         <li>힙(Heap)영역에 생성된 객체의 주소값이 스택(Stack)영역에 참조자료형으로 저장된다. 즉 스택에는 참조값만 있고 실제값은 힙에 존재한다</li>
@@ -195,16 +195,16 @@
 
       <h2>Print & Scanner</h2>
       <ul><span id="ulh">Print</span>
-        <li><span id="\!">System.out.println(); </span> 출력 후 개행</li>
-        <li><span id="\!">System.out.print(); </span> 개행없이 출력</li>
-        <li><span id="\!">System.out.printf(); </span> 변수의 값을 지시자 형식으로 변환하여 출력</li>
+        <li><span id="accent">System.out.println(); </span> 출력 후 개행</li>
+        <li><span id="accent">System.out.print(); </span> 개행없이 출력</li>
+        <li><span id="accent">System.out.printf(); </span> 변수의 값을 지시자 형식으로 변환하여 출력</li>
         <li><span id="comment">System.out.printf("&.3f", 변수); </span> 소수점 셋째자리까지 출력</li>
       </ul>
       <ul><span id="ulh">Scanner</span>
-        <li><span id="\!">sc.nextInt(); </span> 정수 입력받기</li>
-        <li><span id="\!">sc.nextLine(); </span> Enter전까지 입력받은 문자열을 리턴 <span id="comment">*엔터버퍼 주의*</span></li>
-        <li><span id="\!">sc.next(); </span> Space전까지 입력받은 문자열을 리턴</li>
-        <li><span id="\!">sc.next().charAt(0); </span> 입력받은 문자열중 첫번째 문자만 저장</li>
+        <li><span id="accent">sc.nextInt(); </span> 정수 입력받기</li>
+        <li><span id="accent">sc.nextLine(); </span> Enter전까지 입력받은 문자열을 리턴 <span id="comment">*엔터버퍼 주의*</span></li>
+        <li><span id="accent">sc.next(); </span> Space전까지 입력받은 문자열을 리턴</li>
+        <li><span id="accent">sc.next().charAt(0); </span> 입력받은 문자열중 첫번째 문자만 저장</li>
       </ul>
 
       <h1>Operator</h1>
@@ -215,7 +215,7 @@
         <li>5 / 2 = 2</li>
         <li>5 / 2.0 = 2.5 <span id="comment"> →실수/실수, 실수/정수, 정수/실수 : 소수점까지 계산</span></li>
         <li>System.out.println(246/0);<span id="comment"> →정수 0으로 나누는 것은 불가능하기 때문에 Exception발생</span></li>
-        <li>System.out.println(246/0.0);<span id="comment"> →실수 0.0으로 나누면 Infinity</span> <span id="\?">왜?? 0.0은 뒤에 소수점땜에 완전한 0이 아닌가?</span></li>
+        <li>System.out.println(246/0.0);<span id="comment"> →실수 0.0으로 나누면 Infinity</span> <span id="question">왜?? 0.0은 뒤에 소수점땜에 완전한 0이 아닌가?</span></li>
       </ul>
 
       <h3>대입연산자 (=)</h3>
@@ -226,7 +226,7 @@
 
       <h3>증감 연산자 (++ --)</h3>
       <p>변수의 값을 1 증가 또는 감소할 때 사용하는 연산자. 변수의 앞(prefix)과 뒤(suffix)에 사용 (x++ 또는 --x)
-        <br>증감 연산자가 단독으로 사용되는 경우 전위 후위 모두 동일한 결과이나, 다른 연산자와 함께 사용되는 경우 차이 발생 <span id="\!">섞어쓰지말고 x++만 쓰자</span>
+        <br>증감 연산자가 단독으로 사용되는 경우 전위 후위 모두 동일한 결과이나, 다른 연산자와 함께 사용되는 경우 차이 발생 <span id="accent">섞어쓰지말고 x++만 쓰자</span>
       </p>
       <ul><span id="제목">전위 후위 연산 비교</span>
         <li>result = num++ + 5; <span id="comment"> →num + 5가 먼저 실행되고 result에 값을 저장한 뒤, num을 1 증가</span></li>

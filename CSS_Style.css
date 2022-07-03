@@ -34,8 +34,8 @@ body{margin: 0px; margin-right: 50px;}
 
 #ulh {color:dimgray; font-weight: bold; font-size: 18px; }
 #comment {color:deeppink; font-style:italic;}
-#\! {color:deeppink; font-weight: bold;}
-#\? {color:white; background: red; font-style:italic; font-weight: bold;}
+#accent {color:deeppink; font-weight: bold;}
+#question {color:white; background: red; font-style:italic; font-weight: bold;}
 
 table {margin-left: 30px; margin-top: 0px; border-spacing: 0; font-size: 14px;}
 th {background-color:lightgray; padding: 3px;}
