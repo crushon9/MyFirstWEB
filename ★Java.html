@@ -261,45 +261,61 @@
       </ul>
 
       <h1>Flow Control</h1>
-      <h2>조건문</h2>
+      <p>프로그램의 실행 흐름을 원하는 방향으로 바꾸는 제어문. 제어문에는 조건문과 반복문이 있다.</p>
+      <h2>Conditional statement</h2>
       <h3>if</h3>
       <ul>
         <li>if</li>
         <li>if - else</li>
-        <li>if - else if - else</li>
+        <li>if - else if - else <span id="comment">else if는 위의 조건식을 제외한 나머지영역에서 조건 검사를 한다</span></li>
       </ul>
       <p><span id ="comment"> if 중첩문은 else if로 바꿀 수 있는지 확인하기</span></p>
       <h3>switch</h3>
-      <p>if문은 경우의 수가 많을때 조건식을 계산 처리하는 시간이 많이 걸린다 switch문은 단 하나의 표현식으로 많은 경우의 수를 처리하기 용이하다</p>
+      <p>if문은 경우의 수가 많을때 조건식을 계산 처리하는 시간이 많이 걸린다 switch문은 단 하나의 표현식으로 많은 경우의 수를 처리하기 용이하다 <span id="comment">switch조건은 ==일치 연산만 가능</span>
+      </p>
       <ul>
-        <li>switch (표현식) {
-      <br>  case 값1 :
-      <br>    코드
-      <br>    break;
-      <br>    .
-      <br>    .
-      <br>  default :
-      <br>      코드
+        <li>switch (변수) {
+      <br>&nbsp;&nbsp; case 값1 :
+      <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 코드
+      <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; break;
+      <br>&nbsp;&nbsp; case 값2 :
+      <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 코드
+      <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; break;
+      <br>&nbsp;&nbsp; default :
+      <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 코드
+      <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; break;
       <br> }
-        </li>
+      </li>
       </ul>
-      <h2>반복문</h2>
+      <p><span id="comment">case가 선택된순간 다른 case는 꺼지고 다음 break를 만나기 전까지의 코드가 실행된다. 예를들어 case 1: case 2: case 3: 코드; break; 에서 조건이 2일때 case 3은 꺼지고 다음 코드가 실행되고 break된다</span></p>
+      <h2>Loops and iteration</h2>
       <h3>for</h3>
       <ul>
-        <li>for : for (초기식; 조건식; 증감식) { 코드 }</li>
-        <li>for - each</li>
+        <li>for (초기식; 조건식; 증감식) { 코드 }</li>
+        <li>실행순서 1.초기식 2.조건식 3.본문 4.증감식</li>
+        <li>증감식에는 ++뿐 아니라, 다양한 식을 활용할 수 있다</li>
       </ul>
       <h3>while</h3>
       <ul>
-        <li>while</li>
-        <li>do - while</li>
+        <li>while (조건식) { 코드 }</li>
+      </ul>
+      <h3>do - while</h3>
+      <ul>
+        <li>do { 코드 } while (조건)</li>
+        <li><span id="comment">무조건 한 번 본문을 실행한 후 반복문의 조건에 따라 반복 실행</span></li>
       </ul>
       <h3>break & continue</h3>
       <ul>
-        <li>break;는 해당 반복문 { } 자체를 탈출</li>
-        <li>continue;는 아래 명령을 실행하지 않고, 반복문의 조건식으로 돌아가 다음 반복문 절차를 수행</li>
+        <li><span id="accent">break;가 포함된 가장 가까움 반복문 { }을 자체를 탈출하고 종료</span></li>
+        <li><span id="accent">continue;는 아래 명령을 실행하지 않고, 반복문의 조건식으로 돌아가 다음 반복문 절차를 수행</span></li>
+        <li>while (true) 무한루프와 if를 함께 사용한다</li>
       </ul>
-     
+      <h3>for - each</h3>
+      <ul>
+        <li>for-each문 (향상된 for문) : 배열에 있는 모든 테이터를 접근할 때 사용</li>
+        <li>for (타입 변수이름 : 배열) { ... }</li>
+        <li><span id="comment">0번째부터 끝까지 접근, 거꾸로 불가, 인덱스없이 변수에 계속 바꿔담으면서 접근</span></li>
+      </ul>
 
     </div>
   </div>
