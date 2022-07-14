@@ -189,6 +189,10 @@
         <li>equals()는 담긴 데이터가 같은지 비교하는 메소드이다 (Reference type에 사용)</li>
         <li>java에서 문자열처럼 객체를 비교할 때는 equals()를 사용해야 한다 (String만 예외로 ==가 동작하기도 한다)</li>
       </ul>
+      <ul>
+        <li>call by value 값을 넘겨줘서 해당 값을 저장하여 작업</li>
+        <li>call by reference 주소값을 전달하기 때문에 어느 위치에서든 같은 객체 (메소드로 리턴값으로 주고받지않아도 원본값이 수정됨)</li>
+      </ul>
 
       <h2>Print & Scanner</h2>
       <h3>Print</h3>
@@ -348,8 +352,8 @@
       <p>1차원 배열을 원소로 갖는 배열</p>
       <ul><span id="ulh">선언</span>
         <li><span id="accent">타입[행][열] 변수이름;</span></li>
-        <li><span id="accent">타입 변수이름[행][열];</span></li>
-        <li><span id="accent">타입[행] 변수이름[열];</span></li>
+        <li><span id="comment">타입 변수이름[행][열];</span></li>
+        <li><span id="comment">타입[행] 변수이름[열];</span></li>
       </ul>
       <ul><span id="ulh">길이</span>
         <li><span id="accent">array.length</span> 행의 갯수</li>
@@ -358,7 +362,31 @@
 
       <h1>Method</h1>
       <p>메소드는 특정 작업을 수행하는 일련의 문장들을 하나로 묶은 것
-      <br>어떤 값을 입력하면 이 값으로 작업을 수행해서 결과를 반환</p>
+      <br>어떤 값을 입력(parameter)하면 이 값으로 작업을 수행해서 결과를 반환(return)</p>
+      <h2>정의</h2>
+      <ul>
+        <li><span id="accent">수식어 리턴타입 메소드이름(매개변수1, 매개변수2 ..) {본문}</span></li>
+        <li><span id="comment">수식어</span> : public(생략가능), private, static ..</li>
+        <li><span id="comment">리턴타입</span> : 타입(int, class ..) / 없을땐 void</li>
+        <li><span id="comment">매개변수</span> : 메소드를 호출할 때 input 데이터 / 없을땐 생략</li>
+        <li><span id="comment">본문</span> : 메소드의 본체body. 수행해야할 기능을 작성</li>
+        <li>메소드는 클래스의 내부이며, 다른 메소드의 외부인 영역에서 정의해야 한다.</li>
+        <li>자바 컴파일시 모든 메소드를 자동으로 앞쪽에 선언하기 때문에 호출위치와 선언위치의 순서는 상관없다</li>
+      </ul>
+      <h2>호출</h2>
+      <ul>
+        <li>메소드를 정의하여도 호출하지 않으면 동작하지 않는다</li>
+        <li><span id="accent">메소드이름(argument);</span> argument없을때 생략</li>
+      </ul>
+
+      <h2>Overloading</h2>
+      <p>매개변수가 다르면, 메소드의 이름을 동일하게 정의 할 수 있다</p>
+      <ul>
+        <li>매개변수의 개수가 다르거나</li>
+        <li>매개변수의 타입이 다른거나</li>
+        <li>매개변수의 순서가 다른경우</li>
+        <li><span id="comment">메소드의 리턴타입만 다른 경우는 같은 이름으로 메소드를 정의할 수 없음 </span> ->호출할때 구분안되니깐</li>
+      </ul>
 
     </div>
   </div>
