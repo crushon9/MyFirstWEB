@@ -64,22 +64,27 @@
         <tr>
           <td>byte</td>
           <td>1</td>
-          <td>-2⁷ ~ 2⁷-1 (-128 ~ 127)</td>
+          <td>-2⁷ ~ (2⁷-1) (-128 ~ 127)</td>
+        </tr>
+        <tr>
+          <td>char(문자)</td>
+          <td>2</td>
+          <td>0 ~ (2¹⁶-1) (0 ~ 65,535) 유니코드 \u0000 ~ \uFFFF **unsgined</td>
         </tr>
         <tr>
           <td>short</td>
           <td>2</td>
-          <td>-2¹⁵ ~ 2¹⁵-1 (-32,768 ~ 32,767)</td>
+          <td>-2¹⁵ ~ (2¹⁵-1) (-32,768 ~ 32,767)</td>
         </tr>
         <tr>
           <td>int</td>
           <td>4</td>
-          <td>-2³¹ ~ 2³¹-1 (-2,147,483,648 ~ 2,147,483,647)</td>
+          <td>-2³¹ ~ (2³¹-1) (-2,147,483,648 ~ 2,147,483,647)</td>
         </tr>
         <tr>
           <td>long</td>
           <td>8</td>
-          <td>-2⁶³ ~ 2⁶³-1 (-9,223,372,036,854,775,808 ~ 9,223,372,036,854,775,807)</td>
+          <td>-2⁶³ ~ (2⁶³-1) (-9,223,372,036,854,775,808 ~ 9,223,372,036,854,775,807)</td>
         </tr>
         <thead>
           <tr>
@@ -100,18 +105,6 @@
         </tr>
         <thead>
           <tr>
-            <th>문자</th>
-            <th>Byte</th>
-            <th>범위</th>
-          </tr>
-        </thead>
-        <tr>
-          <td>char</td>
-          <td>2</td>
-          <td>0 ~ 2¹⁶-1 (65,535) 유니코드 \u0000 ~ \uFFFF **unsgined</td>
-        </tr>
-        <thead>
-          <tr>
             <th>논리</th>
             <th>Bit</th>
             <th>범위</th>
@@ -124,8 +117,9 @@
         </tr>
       </table>
       <ul>
-        <li><span id="accent">정수 </span>는 1bit가 부호정보를 저장하기 때문에 자료형 byte크기에서 1bit를 뺀 수의 제곱으로 표현 범위를 구할 수 있다. 각 타입의 정확한 최대와
-          최소는 Integer.MIN_VALUE;</li>
+        <li><span id="accent">정수 </span>는 최상위비트 1bit가 부호정보를 저장하기 때문에 자료형 byte크기에서 1bit를 뺀 수의 제곱으로 표현 범위를 구할 수 있다. 만약 최상위비트가 1이라면 음의 정수이고, 십진수로 나타내려면 나머지 bit를 보수로 역전시킨 뒤 1을 더한 값에 -를 붙이면 된다.
+        <br>정확한 최대와
+          최소는 Integer.MAX_VALUE; </li>
         <li><span id="accent">실수 </span><span id="question">범위가 왜 저렇게 나오지??</span></li>
         <li><span id="accent">문자 </span> 자료형 char는 java에서 unsgined로 동작 하므로 부호없이 2byte 모두 uni code로 쓰인다.</li>
         <li><span id="accent">논리 </span> 자료형 boolean은 1bit 이다 <span id="comment">Java에서는 boolean을 0과 1로 표기하지않음</span></li>
@@ -139,7 +133,8 @@
       </ul>
 
       <h2>Variable</h2>
-      <p>변수란 하나의 값을 저장할 수 있는 메모리 공간이다</p>
+      <p>변수란 하나의 값을 저장할 수 있는 메모리 공간이다
+      <br> 변수는 선언된 { } 블록내에서만 사용 가능하다</p>
 
       <h3>Constant</h3>
       <p>상수는 선언과 동시에 초기화를 해야하며, 이후 변경이 불가하다.
@@ -250,7 +245,7 @@
         <li>System.out.println(246/0.0);<span id="comment"> →실수 0.0으로 나누면 Infinity</span> <span id="question">왜?? 0.0은 뒤에 소수점땜에 완전한 0이 아닌가?</span></li>
       </ul>
 
-      <h3>비교 연산자 (< > <= >= == !=)</h3>
+      <h3>비교 연산자 (&lt; > &lt;= >= == !=)</h3>
       <p>대소 연산자는 boolean을 제외한 기본 타입에 사용할 수 있고, 동등 연산자는 모든 타입에 사용가능, 연산 결과로 true/false를 리턴</p>
 
       <h3>논리 연산자 (&& || !)</h3>
