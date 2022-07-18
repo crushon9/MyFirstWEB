@@ -161,12 +161,12 @@
 
       <h2>Promotion & Casting</h2>
       <p>형 변환이란 변수나 리터럴의 타입을 다른 타입으로 변환하는 것이다.</p>
-      <ul><span id="accent">자동(묵시적) 타입 변환</span>
+      <ul><span id="accent">자동(묵시적implicit) 타입 변환</span>
         <li>작은타입 → 큰타입</li>
         <li>리터럴은 변수 저장시 해당 변수타입 저장 범위를 넘지 않으면 자동 타입 변환된다.</li>
         <li><span id="comment">예외 : int → float 자동변환시 int값이 float의 가수 23bit로 표현가능한 범위를 넘을 경우 정밀도 손상이 일어난다</span></li>
         </ul>
-      <ul><span id="accent">강제(명시적) 타입 변환</span>
+      <ul><span id="accent">강제(명시적explicit) 타입 변환</span>
         <li>( )큰타입 → 작은타입</li>
         <li>( )로 명시하며, 데이터 손실이나 오버플로우가 발생 할 수 있다</li>
         <li><span id="comment">int num10 = (int) 3.14; 이때 0.14 값은 손실된다.</span></li>
@@ -423,10 +423,10 @@
       <h1>Class</h1>
       <p>만들고자 하는 대상의 속성 정보들을 "멤버필드(멤버변수, 멤버상수)"로 선언하고, 대상이 가져야 할 기능들을 "멤버메소드"로 정의하는, 새로이 만드는 "데이터 타입"</p>
       <ul><span id="ulh">클래스 구성</span>
-        <li>클래스헤더(선언) : [접근제한자(public,private)] [클래스종류(final,abstract)] class [클래스명] {</li>
-        <li>멤버필드(속성) : 멤버변수, 멤버상수로 구성</li>
-        <li>생성자</li>
-        <li>멤버메소드(동작)</li>
+        <li><span id="accent">클래스헤더(선언) :</span> [접근제한자(public,private)] [클래스종류(final,abstract)] class [클래스명] {</li>
+        <li><span id="accent">멤버필드(속성) :</span> 멤버변수, 멤버상수로 구성</li>
+        <li><span id="accent">생성자 : </span> 기본생성자, 매개변수있는생성자</li>
+        <li><span id="accent">멤버메소드(동작)</span></li>
       </ul>
 
       <h2>Object</h2>
@@ -459,18 +459,75 @@
       <br>this() : 다른 생성자를 호출하는 용도
       </p>
 
-      <h2>ststic</h2>
-      <p>변수의 종류를 결정짓는 중요한 요소는 '변수의 선언된 위치'이므로 변수의 종류를 파악하기 위해서는 변수가 어느 영역에 선언되었는지를 확인하는 것이 중요하다. 멤버 변수를 제외한 나머지 변수들은 모두 지역 변수이며 멤버 변수 중 static 붙은 것은 클래스 변수, 붙지 않는 것이 인스턴스 변수이다.</p>
-      <ul>
-        <li><span id="accent">클래스 변수 : </span> 클래스 영역에 선언되며 클래스의 인스턴스를 생성할 때 만들어진다. 인스턴스 변수의 값을 읽어오거나 저장하기 위해서는 먼저 인스턴스를 생성해야 한다. 인스턴스 변수는 인스턴스가 생성될 때마다 생성되므로 인스턴스마다 각기 다른 값을 유지한다</li>
-        <li><span id="accent">인스턴스 변수 : </span> 클래스 변수를 선언하는 방법은 인스턴스 변수 앞에 static을 붙이기만 하면 된다. 클래스 변수는 모든 인스턴스가 공통된 저장공간( 변수 )을 공유하게 된다.클래스 변수는 인스턴스 변수와 달리 인스턴스를 생성하지 않고도 언제라도 바로 사용할 수 있는 특징이 있으며 '클래스 이름. 클래스 변수'와 같은 형식으로 사용된다. method static 메모리 영역에 생성</li>
-        <li><span id="accent">지역 변수 : </span> 선언된 블록{} 내에서만 사용 가능하며 블록을 벗어나면 소멸되어 사용할 수 없게 된다.</li>
-      </ul>
+      
       
       <h2>Object Array</h2>
       <p>객체 배열은 주소를 저장한 참조변수의 주소값을 원소로 가진다. 각 원소에 해당하는 인스턴스는 독립적이다</p>
 
       <h1>Access</h1>
+      <p>제어자란 클래스, 변수 또는 메소드의 선언부에 함께 사용되어 부가적인 의미를 부여한다. 제어자의 종류는 크게 접근 제어자와 그 외의 제어자로 나눌 수 있다.</p>
+
+      <h2>접근제어자</h2>
+      <ul>
+        <li><span id="accent">public</span> </li>
+        <li><span id="accent">protected</span> </li>
+        <li><span id="accent">( package )</span> </li>
+        <li><span id="accent">private</span> </li>
+      </ul>
+      <br>
+      <table border="1">
+      <tr>
+      <th>제어자</th>
+      <th>같은클래스</th>
+      <th>같은패키지</th>
+      <th>자손클래스</th>
+      <th>전체</th>
+      </tr>
+      <tr>
+      <td>public</td>
+      <td>O</td>
+      <td>O</td>
+      <td>O</td>
+      <td>O</td>
+      </tr>
+      <tr>
+      <td>protected</td>
+      <td>O</td>
+      <td>O</td>
+      <td>O</td>
+      <td>X</td>
+      </tr>
+      <tr>
+      <td>( package )</td>
+      <td>O</td>
+      <td>O</td>
+      <td>X</td>
+      <td>X</td>
+      </tr>
+      <tr>
+      <td>private</td>
+      <td>O</td>
+      <td>X</td>
+      <td>X</td>
+      <td>X</td>
+      </tr>
+      <tr>
+      <th colspan="5">&nbsp;&nbsp; private &lt; ( package ) &lt; protected &lt; public</th>
+      </tr>
+      </table>
+
+      <h2>encapsulation</h2>
+
+      <h2>static</h2>
+      <p>변수의 종류를 결정짓는 중요한 요소는 '변수의 선언된 위치'이므로 변수의 종류를 파악하기 위해서는 변수가 어느 영역에 선언되었는지를 확인하는 것이 중요하다. 변수에는 두종류가 있는데 '멤버변수' 와 '지역변수' 이다. 멤버 변수 중 static 붙은 것은 클래스변수, 붙지 않는 것이 인스턴스변수이다. 멤버변수는 자동초기화가 지원된다. 멤버변수를 제외한 나머지 모든 변수는 지역변수이며 지역변수는 초기화가 필수이다</p>
+      <ul>
+        <li><span id="accent">클래스 변수 : </span> 클래스 영역에 선언되며 클래스가 메모리에 올라갈때 생성된다. 클래스 변수를 선언하는 방법은 인스턴스 변수 앞에 static을 붙이기만 하면 된다. 클래스 변수는 다든 인스턴스가 공통된 저장공간( 변수 )을 공유하게 된다.클래스 변수는 인스턴스 변수와 달리 인스턴스를 생성하지 않고도 언제라도 바로 사용할 수 있는 특징이 있으며 '클래스 이름. 클래스 변수'와 같은 형식으로 사용된다. method static 메모리 영역에 생성</li>
+        <li><span id="accent">인스턴스 변수 : </span> 인스턴스가 생성되었을때 인스턴스변수가 생성된다. 인스턴스 변수는 인스턴스가 생성될 때마다 생성되므로 인스턴스마다 각기 다른 값을 유지한다</li>
+        <li><span id="accent">지역 변수 : </span> 선언된 블록{} 내에서만 사용 가능하며 블록을 벗어나면 소멸되어 사용할 수 없게 된다.</li>
+      </ul>
+
+      <h2>final</h2>
+      <p>변수에 사용되면 값을 변경할 수 없는 상수가 되며, 메소드에 사용되면 오버라이딩 불가, 클래스에 사용되면 자손클래스를 정의하지 못한다.</p>
       
      
 
