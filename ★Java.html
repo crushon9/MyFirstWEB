@@ -179,9 +179,9 @@
       <h2>Runtime Data Area</h2>
       <p><img src="Java_memory.jpg" width="700px" border="1"></p>
       <ul><span id="ulh"></span>
-        <li><span id="accent">Method 영역(static) : </span>JVM이 시작할 때 생성되고 모든 스레드가 공유하는 영역</li>
-        <li><span id="accent">Heap 영역 : </span> 객체(배열포함)가 생성되고 참조된다. 참조하는 변수가 필드가 없는 객체는 의미없는 쓰레기이므로 Garbage collector가 자동으로 제거한다</li>
-        <li><span id="accent">Stack 영역 : </span>스택 영역은 각 스레드가 시작될 때 하나씩 할당된다. JVM 스택은 메소드를 호출할 때마다 flame을 push(추가)하고 종료되면 pop(제거)한다</li>
+        <li><span id="accent">Method 영역(static) : </span>static으로 선언한 변수, 메소드의 실행 코드들이 저장되는 메모리 영역. JVM이 시작할 때 생성되고 모든 스레드가 공유하는 영역</li>
+        <li><span id="accent">Heap 영역 : </span> 인스턴스(참조 자료형)가 저장되는 메모리 영역. 참조되지않는 객체는 의미없으므로 Garbage collector가 자동으로 제거한다</li>
+        <li><span id="accent">Stack 영역 : </span>지역 변수들이 저장되는 메모리 영역. 스택 영역은 각 스레드가 시작될 때 하나씩 할당된다. JVM 스택은 메소드를 호출할 때마다 flame을 push(추가)하고 종료되면 pop(제거)한다</li>
       </ul> 
 
       <h2>Primitive & Reference</h2>
@@ -421,19 +421,15 @@
       </ul>
 
       <h1>Class</h1>
-      <p>만들고자 하는 대상의 속성 정보들을 "멤버필드(멤버변수, 멤버상수)"로 선언하고, 대상이 가져야 할 기능들을 "멤버메소드"로 정의하는, 새로이 만드는 "데이터 타입"</p>
+      <p>만들고자 하는 대상의 속성 정보들을 <span id="accent">멤버필드(멤버변수, 멤버상수)</span>로 선언하고, 대상이 가져야 할 기능동작들을 <span id="accent">멤버메소드</span>로 정의하는, 새로이 만드는 <span id="accent">데이터 타입</span></p>
       <ul><span id="ulh">클래스 구성</span>
         <li><span id="accent">클래스헤더(선언) :</span> [접근제한자(public,private)] [클래스종류(final,abstract)] class [클래스명] {</li>
         <li><span id="accent">멤버필드(속성) :</span> 멤버변수, 멤버상수로 구성</li>
-        <li><span id="accent">생성자 : </span> 기본생성자, 매개변수있는생성자</li>
+        <li><span id="accent">생성자 : </span> 기본생성자 매개변수있는생성자</li>
         <li><span id="accent">멤버메소드(동작)</span></li>
       </ul>
 
-      <h2>Object</h2>
-      <p>객체는 속성과 동작, 두 종류의 구성요소로 이루어져 있으며 이를 그 객체의 member라고 한다
-      </p>
-
-      <h2>Instance</h2>
+      <h2>Object & Instance</h2>
       <p>클래스로부터 객체를 만드는 과정을 클래스의 인스턴스화라고 하며, 어떤 클래스로부터 만들어진 객체를 그 클래스의 인스턴스라고 한다
       <br>클래스의 타입으로 선언되었을 때 객체라고 부르고, 그 객체가 메모리에 할당되어 실제 사용될 때 인스턴스라고 부른다.
       </p>
@@ -455,24 +451,26 @@
       <p>연산자 new에 의해서 heap 메모리에 클래스의 인스턴스가 생성된다.</p>
 
       <h2>This</h2>
-      <p>this는 참조 변수로 이후 생성될 인스턴스 자기 자신을 가리킨다 (고로 static 영역에서는 this 키워드를 사용할 수 없다.)
+      <p>this는 참조 변수로 생성될 인스턴스 자기 자신을 가리킨다 (Class1 this = new Class1();)
+      <br>고로 static 영역에서는 this 키워드를 사용할 수 없다)
       <br>this() : 다른 생성자를 호출하는 용도
       </p>
 
-      
-      
       <h2>Object Array</h2>
       <p>객체 배열은 주소를 저장한 참조변수의 주소값을 원소로 가진다. 각 원소에 해당하는 인스턴스는 독립적이다</p>
 
-      <h1>Access</h1>
-      <p>제어자란 클래스, 변수 또는 메소드의 선언부에 함께 사용되어 부가적인 의미를 부여한다. 제어자의 종류는 크게 접근 제어자와 그 외의 제어자로 나눌 수 있다.</p>
+      <h1>Modifier</h1>
+      <p>제어자란 클래스, 변수, 메소드, 생성자의 선언부에 함께 사용되어 부가적인 의미를 부여한다. 제어자의 종류는 크게 접근 제어자와 그 외의 제어자로 나눌 수 있다.</p>
 
-      <h2>접근제어자</h2>
+      <h2>Access modifier</h2>
+      <p>멤버변수, 메소드, 생성자, 클래스에 대한 접근 권한을 설정
+      <br>클래스는 public, (package) 두 가지만 사용가능하며, public class의 이름은 반드시 java 파일의 이름과 같아야 함! 하나의 java 파일에 여러 개의 클래스를 정의하는 것은 가능하지만, 같은 파일에서는 public class는 오직 하나만 있어야 한다</p>
+
       <ul>
-        <li><span id="accent">public</span> </li>
-        <li><span id="accent">protected</span> </li>
-        <li><span id="accent">( package )</span> </li>
-        <li><span id="accent">private</span> </li>
+        <li><span id="accent">public</span> 어디서든지 직접 접근 가능</li>
+        <li><span id="accent">protected</span> 같은 패키지에 있거나 상속받는 클래스들에서 직접 접근 가능</li>
+        <li><span id="accent">( package )</span> 같은 패키지에 있는 클래스에서 직접 접근 가능</li>
+        <li><span id="accent">private</span> 선언(정의)된 클래스 안에서 직접 접근 가능</li>
       </ul>
       <br>
       <table border="1">
@@ -515,20 +513,56 @@
       <th colspan="5">&nbsp;&nbsp; private &lt; ( package ) &lt; protected &lt; public</th>
       </tr>
       </table>
+      <h3>import</h3>
+      <p><span id="comment">범위구조 : 프로젝트 > 패키지 > 클래스 > 멤버변수/메소드 > 지역변수</span>
+      <br>다른 패키지의 클래스를 들일때는 inmport 하며, 다른 프로젝트간의 import는 불가하다</p>
+     
+      <h3>encapsulation</h3>
+      <p>클래스를 설계할 때 멤버 변수들을 private로 선언하여 외부 클래스에 필드들을 직접 접근해서 읽거나 쓰지 못하게 하는 것이며, 필요한 경우에 한하여 public 메소드(getter, setter)를 정의하여 private 멤버 변수를 간접적으로 읽거나 쓰는 것을 가능하게 할 수 있다</p>
 
-      <h2>encapsulation</h2>
-
+      <h3>singleton design pattern</h3>
+      <p>클래스의 인스턴스를 오직 하나만 생성할 수 있도록 작성하는 설계 기법으로 인스턴스에 저장된 값을 공유해야할 때 해당기법을 사용한다. 처음 생성한 인스턴스는 변경이 불가능 (주소값이 같음)</p>
+      <ul>
+        <li style="list-style: decimal;">클래스 자신 타입의 private static 변수를 선언</li>
+        <li style="list-style: decimal;">생성자는 private 로 선언</li>
+        <li style="list-style: decimal;">public static 메소드를 제공해서 인스턴스를 생성할 수 있도록 설계 (if_null)</li>
+      </ul>
+      
       <h2>static</h2>
-      <p>변수의 종류를 결정짓는 중요한 요소는 '변수의 선언된 위치'이므로 변수의 종류를 파악하기 위해서는 변수가 어느 영역에 선언되었는지를 확인하는 것이 중요하다. 변수에는 두종류가 있는데 '멤버변수' 와 '지역변수' 이다. 멤버 변수 중 static 붙은 것은 클래스변수, 붙지 않는 것이 인스턴스변수이다. 멤버변수는 자동초기화가 지원된다. 멤버변수를 제외한 나머지 모든 변수는 지역변수이며 지역변수는 초기화가 필수이다</p>
+      <p>멤버변수 또는 메소드를 선언(정의)할 때 사용, 인스턴스 생성 이전에 프로그램이 처음 시작될 때 static 메모리 영역에 자동으로 생성</p>
+      <ul><span id="accent">클래스 변수,메소드 (static 변수,메소드)</span>
+        <li>static으로 선언한 멤버변수,메소드</li>
+        <li>인스턴스를 생성하지 않아도 사용 가능 / static->static(가능), static->인스턴스(가능)</li>
+        <li><span id="comment">static 변수는 생성되는 모든 인스턴스들이 공유하기 때문에 값의 변경에 대해서 주의해야 함</span></li>
+        <li>변수사용형식 : 클래스이름.변수이름</li>
+        <li>메소드사용형식 : 클래스이름.메소드()</li>
+      </ul>
+      <ul><span id="accent">인스턴스 변수,메소드</span>
+        <li>static이 선언되지 않은 멤버변수,메소드</li>
+        <li>인스턴스를 생성한 후에만 사용가능 / 인스턴스->인스턴스(가능), 인스턴스->static(불가능)</li>
+        <li>변수사용형식 : 참조변수.변수이름</li>
+        <li>메소드사용형식 : 참조변수.메소드()</li>
+      </ul>
+
+
+      <h3>변수의 종류</h3>
+      <p>변수의 종류를 결정짓는 중요한 요소는 <span id="accent">변수의 선언된 위치</span>이므로 변수의 종류를 파악하기 위해서는 변수가 어느 영역에 선언되었는지를 확인하는 것이 중요하다.
+      <br>변수에는 두종류가 있는데 <span id="accent">멤버변수</span> 와 <span id="accent">지역변수</span> 이다. 멤버 변수 중 static 붙은 것은 클래스변수, 붙지 않는 것이 인스턴스변수이다. 멤버변수는 자동초기화가 지원된다.
+      <br>멤버변수를 제외한 나머지 모든 변수는 지역변수이며 지역변수는 초기화가 필수이다</p>
       <ul>
         <li><span id="accent">클래스 변수 : </span> 클래스 영역에 선언되며 클래스가 메모리에 올라갈때 생성된다. 클래스 변수를 선언하는 방법은 인스턴스 변수 앞에 static을 붙이기만 하면 된다. 클래스 변수는 다든 인스턴스가 공통된 저장공간( 변수 )을 공유하게 된다.클래스 변수는 인스턴스 변수와 달리 인스턴스를 생성하지 않고도 언제라도 바로 사용할 수 있는 특징이 있으며 '클래스 이름. 클래스 변수'와 같은 형식으로 사용된다. method static 메모리 영역에 생성</li>
         <li><span id="accent">인스턴스 변수 : </span> 인스턴스가 생성되었을때 인스턴스변수가 생성된다. 인스턴스 변수는 인스턴스가 생성될 때마다 생성되므로 인스턴스마다 각기 다른 값을 유지한다</li>
-        <li><span id="accent">지역 변수 : </span> 선언된 블록{} 내에서만 사용 가능하며 블록을 벗어나면 소멸되어 사용할 수 없게 된다.</li>
+        <li><span id="accent">지역 변수 : </span> 선언된 블록{} 내에서만 사용 가능하며 블록을 벗어나면 소멸되어 사용할 수 없게 된다. static 안의 지역변수의 이름은 멤버변수와 동일하게 선언되면 안된다(this불가하기때문)</li>
       </ul>
 
       <h2>final</h2>
-      <p>변수에 사용되면 값을 변경할 수 없는 상수가 되며, 메소드에 사용되면 오버라이딩 불가, 클래스에 사용되면 자손클래스를 정의하지 못한다.</p>
-      
+      <p>초기화된 값을 바꿀 수 없음.
+      <br>변수에 사용되면 값을 변경할 수 없는 상수가 되며, 메소드에 사용되면 override 불가, 클래스에 사용되면 상속 불가</p>
+      <ul><span id="ulh">작명규칙</span>
+      <li>모든 글자는 대문자, 구분자로 _ 사용</li>
+      <li><span style="font-weight: bold; color: deeppink;">FINAL_VARIABLE</span></li>
+      </ul>
+
      
 
     </div>
