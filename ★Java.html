@@ -421,11 +421,12 @@
       </ul>
 
       <h1>Class</h1>
-      <p>만들고자 하는 대상의 속성 정보들을 <span id="accent">멤버필드(멤버변수, 멤버상수)</span>로 선언하고, 대상이 가져야 할 기능동작들을 <span id="accent">멤버메소드</span>로 정의하는, 새로이 만드는 <span id="accent">데이터 타입</span></p>
+      <p>class에는 객체가 가져야할 구성 member가 선언된다.
+      <br>객체의 속성을 <span id="accent">필드(멤버변수, 멤버상수)</span>로 선언하고, 객체의 기능동작을 <span id="accent">메소드</span>로 정의하여 새로운 <span id="accent">데이터 타입</span>을 생성한다</p>
       <ul><span id="ulh">클래스 구성</span>
-        <li><span id="accent">클래스헤더(선언) :</span> [접근제한자(public,private)] [클래스종류(final,abstract)] class [클래스명] {</li>
+        <li><span id="accent">클래스헤더(선언) :</span> [접근제한자(public,private)] [클래스종류(final,abstract)] class [클래스명(대문자로시작)] {</li>
         <li><span id="accent">멤버필드(속성) :</span> 멤버변수, 멤버상수로 구성</li>
-        <li><span id="accent">생성자 : </span> 기본생성자 매개변수있는생성자</li>
+        <li><span id="accent">생성자 : </span> 기본생성자, 매개변수있는생성자</li>
         <li><span id="accent">멤버메소드(동작)</span></li>
       </ul>
 
@@ -435,25 +436,30 @@
       </p>
       <ul><span id="ulh">인스턴스 생성</span>
         <li><span id="accent">클래스 변수이름;</span> 클래스의 객체를 참조하기 위해 참조 변수 선언 (stack 영역에 생성)</li>
-        <li><span id="accent">변수이름 = new 생성자();</span> 클래스의 객체를 생성한 후 (heap 영역에 생성), 객체의 주소를 참조 변수에 저장</li>
+        <li><span id="accent">변수이름 = new 생성자();</span> 클래스의 인스턴스를 생성한 후 (heap 영역에 생성), 주소를 참조 변수에 저장</li>
         <li>인스턴스는 참조 변수를 통해서만 다룰 수 있으며, 참조 변수의 타입은 인스턴스의 타입과 일치해야 한다</li>
-        <li>같은 클래스로부터 생성되었을지라도 각 인스턴스는 서로 독립적이다</li>
-        <li>객체를 생성하게 되면 클래스의 멤버 변수들은 기본값으로 초기화됨</li>
+        <li>인스턴스를 생성하게 되면 클래스의 멤버 변수들은 기본값으로 초기화되고, 각 인스턴스는 서로 독립적이다</li>
+        <li>생성된 객체는 . 도트연산자를 통해 필드와 메소드에 접근된다</li>
       </ul>
 
       <h2>Constructor</h2>
-      <p>생성자는 인스턴스가 생성될 때 호출되는 '인스턴스 초기화 메소드'이다
-      <br>생성자의 이름은 클래스의 이름과 같아야하며 리턴값이 없다. overloading 가능, 상속이 안되는 유일한 멤버메소드
-      <br>모든 클래스는 반드시 하나 이상의 생성자가 정의되어야 하며, 없을 경우 컴파일러가 기본생성자(default constructor)를 자동으로 정의한다. 생성자를 하나라도 정의한 경우에는, 자동으로 기본 생성자를 만들지 않으므로 주의해야한다
-      </p>
+      <p>생성자는 인스턴스가 생성될 때 호출되는 인스턴스 초기화 메소드이다</p>
+      <ul>
+        <li>생성자의 이름은 클래스의 이름과 같아야한다</li>
+        <li>매개변수는 있을 수도 있고, 리턴값은 없다</li>
+        <li>overloading 가능</li>
+        <li>상속이 안되는 유일한 멤버메소드</li>
+        <li>모든 클래스는 반드시 하나 이상의 생성자가 정의되어야 하며, 없을 경우 컴파일러가 기본생성자(default constructor)를 자동으로 정의</li>
+        <li>생성자를 하나라도 정의한 경우에는, 자동으로 기본 생성자를 만들지 않으므로 주의해야한다</li>
+      </ul>
 
       <h2>New</h2>
-      <p>연산자 new에 의해서 heap 메모리에 클래스의 인스턴스가 생성된다.</p>
+      <p>연산자 new와 생성자에 의해서 heap 메모리에 클래스의 인스턴스가 생성된다.</p>
 
       <h2>This</h2>
-      <p>this는 참조 변수로 생성될 인스턴스 자기 자신을 가리킨다 (Class1 this = new Class1();)
-      <br>고로 static 영역에서는 this 키워드를 사용할 수 없다)
-      <br>this() : 다른 생성자를 호출하는 용도
+      <p>this는 참조 변수로 생성될 인스턴스 자기 자신을 가리킨다 (Class this = new Class();)
+      <br><span id="comment"> 고로 static 영역에서는 this 키워드를 사용할 수 없다</span>
+      <br>this() 는 다른 생성자를 호출하는 생성자이다
       </p>
 
       <h2>Object Array</h2>
@@ -517,10 +523,10 @@
       <p><span id="comment">범위구조 : 프로젝트 > 패키지 > 클래스 > 멤버변수/메소드 > 지역변수</span>
       <br>다른 패키지의 클래스를 들일때는 inmport 하며, 다른 프로젝트간의 import는 불가하다</p>
      
-      <h3>encapsulation</h3>
+      <h3>Encapsulation</h3>
       <p>클래스를 설계할 때 멤버 변수들을 private로 선언하여 외부 클래스에 필드들을 직접 접근해서 읽거나 쓰지 못하게 하는 것이며, 필요한 경우에 한하여 public 메소드(getter, setter)를 정의하여 private 멤버 변수를 간접적으로 읽거나 쓰는 것을 가능하게 할 수 있다</p>
 
-      <h3>singleton design pattern</h3>
+      <h3>Singleton design pattern</h3>
       <p>클래스의 인스턴스를 오직 하나만 생성할 수 있도록 작성하는 설계 기법으로 인스턴스에 저장된 값을 공유해야할 때 해당기법을 사용한다. 처음 생성한 인스턴스는 변경이 불가능 (주소값이 같음)</p>
       <ul>
         <li style="list-style: decimal;">클래스 자신 타입의 private static 변수를 선언</li>
