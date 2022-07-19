@@ -139,7 +139,7 @@
       <h2>Variable</h2>
       <p>변수란 하나의 값을 저장할 수 있는 메모리 공간이다
       <br> 변수는 선언된 { } 블록내에서만 사용 가능하다</p>
-      <ul><span id="ulh">변수 명명 규칙</span>
+      <ul><span id="ulh">변수 작명 규칙</span>
         <li>첫 번재 글자는 문자이거나, '$' '_' 이어야 하고 숫자로 시작할 수 없다(필수)</li>
         <li>영어 대소문자가 구분된다(필수)</li>
         <li>첫 문자는 영어 소문자로 시작하되, 다른 단어가 붙을 경우 첫 문자를 대문자로 한다(관례)</li>
@@ -394,22 +394,32 @@
 
       <h1>Method</h1>
       <p>메소드는 특정 작업을 수행하는 일련의 문장들을 하나로 묶은 것
-      <br>어떤 값을 입력(parameter)하면 이 값으로 작업을 수행해서 결과를 반환(return)</p>
-      <h2>정의</h2>
+      <br>어떤 값을 입력(parameter)하면 이 값으로 작업을 수행해서 결과를 반환(return)
+      <br>모든 메소드는 클래스내부에 소속되어, 객체의 멤버이다</p>
+      <h3>정의</h3>
       <ul>
         <li><span id="accent">수식어 리턴타입 메소드이름(매개변수1, 매개변수2 ..) {본문}</span></li>
-        <li><span id="comment">수식어</span> : public(생략가능), private, static ..</li>
+        <li><span id="comment">수식어</span> : public, private, static ..</li>
         <li><span id="comment">리턴타입</span> : 타입(int, class ..) / 없을땐 void</li>
-        <li><span id="comment">매개변수</span> : 메소드를 호출할 때 input 데이터 / 없을땐 생략</li>
+        <li><span id="comment">매개변수</span> : 타입 변수이름 / 없을땐 생략 / 갯수모를땐 배열</li>
         <li><span id="comment">본문</span> : 메소드의 본체body. 수행해야할 기능을 작성</li>
         <li>메소드는 클래스의 내부이며, 다른 메소드의 외부인 영역에서 정의해야 한다.</li>
         <li>자바 컴파일시 모든 메소드를 자동으로 앞쪽에 선언하기 때문에 호출위치와 선언위치의 순서는 상관없다</li>
       </ul>
-      <h2>호출</h2>
+     
+      <ul><span id="ulh">메소드 작명 관례</span>
+        <li>소문자로 시작, 뒤이어오는 단어의 첫머리 글자는 대문자(Camel Case)</li>
+        <li>testMethod</li>
+      </ul>
+
+      <h3>호출</h3>
       <ul>
         <li>메소드를 정의하여도 호출하지 않으면 동작하지 않는다</li>
         <li><span id="accent">메소드이름(argument);</span> argument없을때 생략</li>
       </ul>
+
+      <h2>Return</h2>
+      <p>return문이 실행되면 해당 메소드가 종료된다. 리턴값이 없는 void 메소드도 단독 return; 사용 가능하다</p>
 
       <h2>Overloading</h2>
       <p>매개변수가 다르면, 메소드의 이름을 동일하게 정의 할 수 있다</p>
@@ -418,16 +428,18 @@
         <li>매개변수의 타입이 다른거나</li>
         <li>매개변수의 순서가 다른경우</li>
         <li><span id="comment">메소드의 리턴타입만 다른 경우는 같은 이름으로 메소드를 정의할 수 없음 </span> ->호출할때 구분안되니깐</li>
+        <li><span id="comment">매개변수 타입이 다른데 호출이 가능할수도 있다. 왜냐면 JVM은 1.일치하는 타입이 있는지 검사하고 2.없을경우 자동타입변환이 가능한지 검사하여 호출하기 때문에</span></li>
       </ul>
+  
 
       <h1>Class</h1>
       <p>class에는 객체가 가져야할 구성 member가 선언된다.
       <br>객체의 속성을 <span id="accent">필드(멤버변수, 멤버상수)</span>로 선언하고, 객체의 기능동작을 <span id="accent">메소드</span>로 정의하여 새로운 <span id="accent">데이터 타입</span>을 생성한다</p>
       <ul><span id="ulh">클래스 구성</span>
         <li><span id="accent">클래스헤더(선언) :</span> [접근제한자(public,private)] [클래스종류(final,abstract)] class [클래스명(대문자로시작)] {</li>
-        <li><span id="accent">멤버필드(속성) :</span> 멤버변수, 멤버상수로 구성</li>
+        <li><span id="accent">필드(속성) :</span> 멤버변수, 멤버상수로 구성</li>
         <li><span id="accent">생성자 : </span> 기본생성자, 매개변수있는생성자</li>
-        <li><span id="accent">멤버메소드(동작)</span></li>
+        <li><span id="accent">메소드(동작)</span></li>
       </ul>
 
       <h2>Object & Instance</h2>
@@ -437,6 +449,7 @@
       <ul><span id="ulh">인스턴스 생성</span>
         <li><span id="accent">클래스 변수이름;</span> 클래스의 객체를 참조하기 위해 참조 변수 선언 (stack 영역에 생성)</li>
         <li><span id="accent">변수이름 = new 생성자();</span> 클래스의 인스턴스를 생성한 후 (heap 영역에 생성), 주소를 참조 변수에 저장</li>
+        <li>이때 메소드는 객체마다 존재하지 않고 메소드 영역에 저장되고 공유된다</li>
         <li>인스턴스는 참조 변수를 통해서만 다룰 수 있으며, 참조 변수의 타입은 인스턴스의 타입과 일치해야 한다</li>
         <li>인스턴스를 생성하게 되면 클래스의 멤버 변수들은 기본값으로 초기화되고, 각 인스턴스는 서로 독립적이다</li>
         <li>생성된 객체는 . 도트연산자를 통해 필드와 메소드에 접근된다</li>
@@ -535,7 +548,7 @@
       </ul>
       
       <h2>static</h2>
-      <p>멤버변수 또는 메소드를 선언(정의)할 때 사용, 인스턴스 생성 이전에 프로그램이 처음 시작될 때 static 메모리 영역에 자동으로 생성</p>
+      <p>정적 멤버는 클래스에 고정된 멤버로서 객체를 생성하지 않고 사용할 수 있는 필드와 메소드를 말한다. 인스턴스 생성 이전에 프로그램이 처음 시작될 때 static 메모리 영역에 자동으로 생성</p>
       <ul><span id="accent">클래스 변수,메소드 (static 변수,메소드)</span>
         <li>static으로 선언한 멤버변수,메소드</li>
         <li>인스턴스를 생성하지 않아도 사용 가능 / static->static(가능), static->인스턴스(가능)</li>
@@ -564,7 +577,7 @@
       <h2>final</h2>
       <p>초기화된 값을 바꿀 수 없음.
       <br>변수에 사용되면 값을 변경할 수 없는 상수가 되며, 메소드에 사용되면 override 불가, 클래스에 사용되면 상속 불가</p>
-      <ul><span id="ulh">작명규칙</span>
+      <ul><span id="ulh">final 작명 관례</span>
       <li>모든 글자는 대문자, 구분자로 _ 사용</li>
       <li><span style="font-weight: bold; color: deeppink;">FINAL_VARIABLE</span></li>
       </ul>
