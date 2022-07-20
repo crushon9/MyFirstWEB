@@ -32,7 +32,7 @@ ul {margin-left: 14px; margin-top: 10px; margin-bottom: 5px;}
 li {list-style-type: square; color: dimgray; margin-bottom:3px;}
 body{margin: 0px; margin-right: 50px;}
 
-#ulh {color:dimgray; font-weight: bold; font-size: 20px;}
+#ulh {color:dimgray; font-weight: bold; font-size: 17px;}
 #comment {color:deeppink; font-style:italic;}
 #accent {color:deeppink; font-weight: bold;}
 #question {color:white; background: red; font-style:italic; font-weight: bold;}
