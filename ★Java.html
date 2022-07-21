@@ -582,7 +582,7 @@
         <li><span id="accent">Instance Variable : </span> 인스턴스가 생성되었을때 인스턴스변수가 생성된다. 인스턴스변수는 인스턴스가 생성될 때마다 생성되므로 인스턴스마다 각기 다른 값을 유지한다</li>
         <li><span id="accent">Local Variable : </span> 선언된 블록{} 내에서만 사용 가능하며 블록을 벗어나면 소멸되어 사용할 수 없게 된다. static { }안의 지역변수의 이름은 멤버변수와 동일하게 선언되면 안된다 (this불가하기때문)</li>
       </ul>
-
+      
       <h2>final</h2>
       <p><span id="accent">변수, 메소드, 클래스에 사용가능</span></p>
       <ul>
@@ -592,20 +592,20 @@
         <li>final 클래스 : 상속 불가</li>
       </ul>
       <ul><span id="ulh">final 작명 관례</span>
-      <li>모든 글자는 대문자, 구분자로 _ 사용</li>
-      <li><span style="font-weight: bold; color: deeppink;">FINAL_VARIABLE</span></li>
+        <li>모든 글자는 대문자, 구분자로 _ 사용</li>
+        <li><span style="font-weight: bold; color: deeppink;">FINAL_VARIABLE</span></li>
       </ul>
-
+      
       <h1>Inheritance</h1>
       <p><span id="accent">자식클래스 extends 부모클래스</span>
-      <br>상속이란 기존클래스를 재사용하여 새로운클래스를 작성하는 것이다.</p>
+        <br>상속이란 기존클래스를 재사용하여 새로운클래스를 작성하는 것이다. 상속은 일대일관계만 허용되며, 상속의 상속은 가능하다</p>
       <ul>
         <li><span id="accent">상위클래스(super class), 부모클래스(parent class), 기본클래스(base class)</span></li>
         <li><span id="accent">하위클래스(sub class), 자식클래스(child class), 유도클래스(derived class)</span></li>
       </ul>
       <ul>
         <li>자식클래스는 부모클래스의 변수와 메소드 접근 가능</li>
-        <li><반/li>와대경우 접근 불가
+        <li><span id="accent">부모클래스는 자식클래스의 변수와 메소드 접근 불가능</span></li>
         <li>부모변수는 자식클래스의 메소드안에서 사용 가능 (필드에서 사용불가)</li>
       </ul>
 
@@ -636,70 +636,28 @@
       </ul>
 
       <h2>Polymorphism</h2>
-     // 다형성(Polymorphism)
-// - 객체(인스턴스)를 여러가지 타입으로 호출 할 수 있는 것
-// - 생성된 인스턴스를 참조하는 참조변수를 선언할 때
-// 	 생성된 인스턴스의 클래스타입으로 선언할 수도 있고 부모타입으로 선언할 수도 있는 것
-// 다형성의 장점
-// 1. 배열을 사용할 때 부모타입으로만 선언해도 그 배열에는 부모/자식타입 모두 저장 가능
-// 2. 메소드를 정의할 때 매개변수나 리턴타입을 부모타입으로만 정의해도
-//	  부모/자식타입 모두 매개변수나 리턴값으로 사용할 수 있음
-// ** 반대로 자식타입으로 선언한 그릇에 부모를 담을 수는 없다
+      <p>다형성이란 객체(인스턴스)를 여러가지 타입으로 호출할 수 있는 것이다</p>
+      <ul>
+        <li>부모타입으로 참조변수를 선언하여 자식 인스턴스 생성 가능</li>
+        <li>부모타입 배열에 부모/자식타입 모두 저장 가능</li>
+        <li>메소드의 매개변수, 리턴타입을 부모타입으로 정의하면 부모/자식타입 모두 사용 가능</li>
+        <li><span id="accent">자식타입에 부모를 담을 수는 없다</span></li>
+      </ul>
 
-// ChildClass 변수이름 = new ChildClass(); 자식-자식 : 당연가능
-// ParentClass 변수이름 = new ChildClass(); 부모-자식 : 다형성 가능
-// ChildClass 변수이름 = new ParentClass(); 자식-부모 : 불가능
-
-		System.out.println(CnC.getX()); // 자식은 ParentClass에 접근가능
-//		System.out.println(PnP.getY()); // 부모는 ChildClass에 접근불가
-
-		System.out.println(PnC.getX()); // 부모에담긴자식 ParentClass에 접근가능
-//		System.out.println(PnC.getY()); // 부모에담긴자식 ChildClass에 접근불가
-// PnC는 ParentClass 타입으로 선언했기때문에 ChildClass에서 정의한 getY메소드를 사용할 수 없음
-		System.out.println(((ChildClass) PnC).getY());
-//		System.out.println(PnC.getY()); // 형변환은 변환이 저장되는게 아니라, 그 순간만 변환됨
-		// 다시 자식으로 강제형변환된 자식은 ChildClass에 접근가능 (클래스간형변환은 상속관계에서만가능)
-
-    	System.out.println((Test1) t2); // 부모자식관계 형변환가능
-		System.out.println((Test1) t3); // 할머니손자관계 형변환가능
-//		System.out.println((Test2) t4); // 형제관계 형변환불가
-		// 모든 클래스는 Object의 자식이니깐 Object 로 형변환 가능하겠네?
-
+      <h3>Class Casting</h3>
+      <p>클래스끼리 상속관계일 때 형변환이 가능하다.</p>
+      <ul>
+        <li>부모-자식 관계 형변환 가능</li>
+        <li>할머니-손자 관계 형변환 가능</li>
+        <li>공통의 부모를 상속한 형제 관계는 형변환 불가</li>
+        <li>모든 클래스는 선조인 Object로 형변환 가능</li>
+      </ul>
 
       <h3>instanceof</h3>
-      //		instanceof 키워드 (연산자)
-//		기본형태 : 참조변수 instanceof 클래스명
-//		참조변수에 담긴 인스턴스가 명시한 클래스와 같으면 true, 다르면 false를 리턴
-//		특정 인스턴스가 원래 어떤 클래스 소속인지 확인할 때 사용 (현재 담긴 타입에 상관없이)
-//		인스턴스 생성될 때 생성자 기준으로 판별하는 듯.. int char 등으로는 연산 안먹힘
-		// 사용방법
-		System.out.println(PnC instanceof ChildClass);
-		if (PnC instanceof ChildClass) {
-			System.out.println("x = " + PnC.getX());
-			System.out.println("y = " + ((ChildClass) PnC).getY());
-		} else {
-			System.out.println("x = " + PnC.getX());
+      <p><span id="accent">참조변수 instanceof 클래스명</span>
+      <br>참조변수에 담긴 인스턴스가 명시한 클래스와 같으면 true, 다르면 false를 리턴</p>
 
-      // employee 객체를 전송할 예정
-	// employee 객체일 수 있고, manager 객체일 수도 있다
-	// 이게 가능한 이유는 employee와 manager가 부모-자식 상속관계이기 때문이다
-	// 그래서, 두가지 타입의 인스턴스가 전송되기 때문에
-	// 조건문과 insanceof를 이용하여 인스턴스 타입에 따라 다르게 처리해야 한다
-
-	public void printEmpInfo(Employee emp) {
-		if (emp instanceof Manager) { // 인스턴스가 자식클래스일때
-			Manager temp = (Manager) emp; // 형변환했다가 emp가 변환이 유지되는게 아니니깐 temp변수에 담아놓아야 함
-			System.out.println("부모에 선언된 name : " + temp.getName());
-			System.out.println("자식에 선언된 type : " + temp.getType());
-		} else if (emp instanceof Employee) { // 인스턴스가 부모클래스일때
-			System.out.println("부모에 선언된 name : " + emp.getName());
-		} else {
-			System.out.println("직원이 아닙니다");
-
-
-    // 상속의 상속도 가능하다
-
-    <h2>abstract</h2>
+      <h2>abstract</h2>
     // abstract 메소드 (추상 메소드)
 // 메소드의 원형(prototype)만 선언하고 메소드의 본체(body)를 구현하지 않는 메소드. 즉{..}없음
 // 선언형태 : abstract 리턴타입 메소드이름(매개변수,,);
