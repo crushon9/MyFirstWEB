@@ -599,15 +599,15 @@
       
       <h1>Inheritance</h1>
       <p><span id="accent">자식클래스 extends 부모클래스</span>
-        <br>상속이란 기존클래스를 재사용하여 새로운클래스를 작성하는 것이다. 상속은 일대일관계만 허용되며, 상속의 상속은 가능하다</p>
+        <br>상속이란 기존클래스를 재사용하여 새로운클래스를 작성하는 것이다. 상속은 일대일만 허용되며, 상속클래스의 재상속은 가능하다</p>
       <ul>
         <li><span id="accent">상위클래스(super class), 부모클래스(parent class), 기본클래스(base class)</span></li>
         <li><span id="accent">하위클래스(sub class), 자식클래스(child class), 유도클래스(derived class)</span></li>
       </ul>
       <ul>
-        <li>자식클래스는 부모클래스의 변수와 메소드 접근 가능</li>
-        <li><span id="accent">부모클래스는 자식클래스의 변수와 메소드 접근 불가능</span></li>
-        <li>부모변수는 자식클래스의 메소드안에서 사용 가능 (필드에서 사용불가)</li>
+        <li>자손클래스는 조상클래스의 변수와 메소드 접근 가능</li>
+        <li><span id="accent">조상클래스는 자손클래스의 변수와 메소드 접근 불가능</span></li>
+        <li>조상멤버변수는 자손클래스의 메소드안에서 사용 가능 (필드에서 사용불가)</li>
       </ul>
 
       <h2>Constructor super()</h2>
@@ -621,19 +621,19 @@
 
       <h2>Override</h2>
       <ul>
-        <li>부모클래스의 메소드를 자식클래스에서 메소드재정의</li>
-        <li>메소드의 리턴타입, 이름, 매개변수 모두 부모클래스의 메소드와 일치해야함 (즉 본문내용만 변경가능)</li>
-        <li>override를 하는이유는 부모메소드로 자식메소드를 한번에 묶기위함</li>
+        <li>조상클래스의 메소드를 자손클래스에서 메소드재정의</li>
+        <li>메소드의 리턴타입, 이름, 매개변수 모두 조상클래스의 메소드와 일치해야함 (즉 본문내용만 변경가능)</li>
+        <li>override를 하면 조상메소드이름으로 자손메소드까지 한번에 묶을 수 있다</li>
       </ul>
 
       <h2>Class Object</h2>
-      <p>자바의 모든 클래스는 java.lang.Object 클래스를 상속받아서 만들어짐</p>
+      <p>java.lang.Object 클래스는 가장 최상위 조상클래스로, 모든 클래스는 Object 클래스를 상속받아 생성된다</p>
 
       <h3>toString</h3>
       <ul>
         <li>toString의 클래스는 Object <span id="comment">java.lang.Object.toString()</span></li>
         <li>toString은 모든 객체에서 접근가능 (모든 클래스가 Object를 상속받았으므로)</li>
-        <li>Java에서는 <span id="accent">객체</span> 와 <span id="accent">객체.toString()</span> 를 같은 값을 리턴하기로 약속</li>
+        <li>Java에서는 <span id="accent">객체.toString()</span> 와 <span id="accent">객체</span> 를 같은 값을 리턴하기로 약속</li>
         <li>기본값은 getClass().getName()+'@'+Integer.toHexString(hashCode()) </li>
         <li>override 하여 재정의 가능</li>
       </ul>
@@ -641,19 +641,18 @@
       <h2>Polymorphism</h2>
       <p>다형성이란 객체(인스턴스)를 여러가지 타입으로 호출할 수 있는 것이다</p>
       <ul>
-        <li>부모타입으로 참조변수를 선언하여 자식 인스턴스 생성 가능</li>
-        <li>부모타입 배열에 부모/자식타입 모두 저장 가능</li>
-        <li>메소드의 매개변수, 리턴타입을 부모타입으로 정의하면 부모/자식타입 모두 사용 가능</li>
-        <li><span id="accent">자식타입에 부모를 담을 수는 없다</span></li>
+        <li>조상타입으로 참조변수를 선언하여 자손 인스턴스 생성 가능</li>
+        <li>조상타입 배열에 조상~자손타입 모두 저장 가능</li>
+        <li>메소드의 매개변수, 리턴타입을 조상타입으로 정의하면 조상~자손타입 모두 사용 가능</li>
+        <li><span id="accent">자손타입에 조상를 담을 수는 없다</span></li>
       </ul>
 
       <h3>Class Casting</h3>
-      <p>클래스끼리 상속관계일 때 형변환이 가능하다.</p>
+      <p>클래스끼리 상속관계일때 casting 가능 <span id="comment">공통의 부모를 상속한 형제관계는 casting 불가</span></p>
       <ul>
-        <li>부모-자식 관계 형변환 가능</li>
-        <li>할머니-손자 관계 형변환 가능</li>
-        <li>공통의 부모를 상속한 형제 관계는 형변환 불가</li>
-        <li>모든 클래스는 선조인 Object로 형변환 가능</li>
+        <li>자손→조상(up casting) : 자동 casting</li>
+        <li>조상→자손(down casting) : 강제 casting</li>
+        <li>모든 클래스는 조상인 Object와 casting 가능</li>
       </ul>
 
       <h3>instanceof</h3>
@@ -661,61 +660,16 @@
       <br>참조변수에 담긴 인스턴스가 명시한 클래스와 같으면 true, 다르면 false를 리턴</p>
 
       <h2>abstract</h2>
-    // abstract 메소드 (추상 메소드)
-// 메소드의 원형(prototype)만 선언하고 메소드의 본체(body)를 구현하지 않는 메소드. 즉{..}없음
-// 선언형태 : abstract 리턴타입 메소드이름(매개변수,,);
-//
-// abstract 클래스 (추상 클래스)
-// 추상메소드를 하나라도 가지고 있다면 추상클래스가 되어야한다.
-// 선언형태 : abstract class 클래스이름{..}
-// 추상클래스는 인스턴스를 생성할수없음 (생성자호출불가)
-// 상속받는 클래스에서 메소드를 override하면 인스턴스를 생성할수없음
+      <h3>abstract Method</h3>
+      <p><span id="accent">abstract 리턴타입 메소드이름(매개변수,,);</span>
+      <br>추상메소드는 메소드의 원형(prototype)만 선언하고 메소드의 본체(body)를 구현하지 않은 메소드이며, 추상클래스에서만 선언 가능하다</p>
 
-abstract class TestAbstract {
-	private int x;
-
-	public int getX() {
-		return x;
-	}
-
-	public void setX(int x) {
-		this.x = x;
-	}
-
-	// 추상 메소드 : 본체{ }가 없는 메소드 -> 추상클래스에서만 선언가능
-	public abstract void hello();
-} // end TestAbstract
-
-class TestChild extends TestAbstract {
-	// 추상클래스를 상속받으면 거기에 정의된 추상메소드를 꼭 Override하여 정의해야함
-	@Override
-	public void hello() {
-		System.out.println("안녕하세요");
-	}
-} // end TestChild
-
-public class InheritMain12 {
-
-	public static void main(String[] args) {
-		// 추상클래스는 인스턴스를 생성할 수 없음
-//		TestAbstract ab = new TestAbstract();
-		// 추상클래스를 상속받은 일반클래스로 인스턴스를 생성해야함
-		TestChild ch = new TestChild();
-		ch.setX(1);
-		ch.hello();
-
-	}
-}
-
-// ---------혼자 테스트
-abstract class TestAbstract2 {
-	// abstract 클래스로 선언한뒤 추상메소드를 정의하지않는것은 가능한가보네?? 그냥 인스턴스를 생성할수없겠지
-}
-
-class TestChild2 extends TestAbstract2 {
-	// 상속한 추상클래스에 정의된 추상메소드가 없다면 Override 할것도 없음
-
-
+      <h3>abstract Class</h3>
+      <p><span id="accent">abstract class 클래스이름{..}</span>
+      <br>추상메소드를 하나라도 가지고 있다면 추상클래스가 되어야한다.
+      <br>추상클래스는 인스턴스를 생성할 수 없기 때문에 (생성자 호출불가) 상속받은 일반클래스로 인스턴스를 생성한다.
+      <br>추상클래스를 상속한 클래스는 부모클래스의 추상메소드를 꼭 Override하여 정의해야한다.
+      </p>
 
     </div>
   </div>
