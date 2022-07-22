@@ -646,6 +646,8 @@
 
       <h2>Polymorphism</h2>
       <p>다형성이란 객체(인스턴스)를 여러가지 타입으로 호출할 수 있는 것이다</p>
+      <p><img src="Java_polymorphism.jpg" width="450px">
+      <br><span id="accent">↑ 참조변수 cat == animal 같은 객체를 참조하고 있으므로 true</span></p>
       <ul>
         <li>조상타입으로 참조변수를 선언하여 자손 인스턴스 생성 가능</li>
         <li>조상타입 배열에 조상~자손타입 모두 저장 가능</li>
@@ -654,30 +656,42 @@
       </ul>
 
       <h3>Class Casting</h3>
-      <p>클래스끼리 상속관계일때 casting 가능 <span id="comment">공통의 부모를 상속한 형제관계는 casting 불가</span></p>
-      <ul>
-        <li>자손→조상(up casting) : 자동 casting</li>
-        <li>조상→자손(down casting) : 강제 casting</li>
+      <p>클래스끼리 직계상속관계일때 casting 가능, 공통의 부모를 상속한 형제관계는 casting 불가
+      <br><span id="comment">상속을하면 자식이 부모내용을 다 품고 있으니까 그 밑에 밑에 자식도 계속 부모를 품고있는 구조겠네 범위로 따지면 부모 &lt; 자식 &lt; 자식2 </span></p>
+      <p><img src="Java_polymorphismCasting.jpg" width="500px"></p>
+      <ul><span id="accent">자손→조상(up casting) : 자동 casting</span>
+        <li>자손이 조상타입으로 자동타입변환되면 조상클래스의 필드와 메소드에만 접근가능하다</li>
+        <li>하지만 메소드가 자손클래스에서 override되었다면 자손클래스의 메소드가 대신호출된다</li>
         <li>모든 클래스는 조상인 Object와 casting 가능</li>
       </ul>
-
+      <ul><span id="accent">조상타입에 담긴 자손→자손(down casting) : 강제 casting</span>
+        <li>강제타입변환은 자식타입이 부모타입으로 변환되어있는 상태에서만 가능</li>
+        <li>부모타입변수가 부모객체를 참조하는 경우 자식타입으로 강제 변환할 수 없다</li>
+        <li>이 과정을 거치면 자식클래스의 필드와 메소드에 정상적으로 접근가능</li>
+      </ul> 
+      
       <h3>instanceof</h3>
       <p><span id="accent">참조변수 instanceof 클래스명</span>
-      <br>참조변수에 담긴 인스턴스가 명시한 클래스와 같으면 true, 다르면 false를 리턴</p>
+      <br>객체 타입 확인 연산자. 참조변수에 담긴 객체가 명시한 클래스와 같으면 true, 다르면 false를 리턴</p>
 
       <h2>abstract</h2>
-      <h3>abstract Method</h3>
-      <p><span id="accent">abstract 리턴타입 메소드이름(매개변수,,);</span>
-      <br>추상메소드는 메소드의 원형(prototype)만 선언하고 메소드의 본체(body)를 구현하지 않은 메소드이며, 추상클래스에서만 선언 가능하다</p>
-
       <h3>abstract Class</h3>
-      <p><span id="accent">abstract class 클래스이름{..}</span>
-      <br>추상메소드를 하나라도 가지고 있다면 추상클래스가 되어야한다.
-      <br>추상클래스는 인스턴스를 생성할 수 없기 때문에 (생성자 호출불가) 상속받은 일반클래스로 인스턴스를 생성한다.
-      <br>추상클래스를 상속한 클래스는 부모클래스의 추상메소드를 꼭 Override하여 정의해야한다.
-      </p>
-
-
+      <ul><span id="accent">abstract class 클래스이름{..}</span>
+        <li>추상클래스는 new 연산자를 사용해서 인스턴스를 생성시키지 못한다</li>
+        <li>따라서 상속받은 일반클래스로 인스턴스를 생성한다</li>
+        <li>추상메소드를 하나라도 가지고 있다면 추상클래스가 되어야한다</li>
+        <li>추상클래스를 상속한 자식클래스는 부모클래스의 추상메소드를 꼭 Override하여 정의해야한다</li>
+      </ul>
+      
+      <h3>abstract Method</h3>
+      <ul><span id="accent">abstract 리턴타입 메소드이름(매개변수,,);</span>
+        <li>추상메소드는 메소드의 원형(prototype)만 선언하고 메소드의 본체(body)를 구현하지 않은 메소드이다</li>
+        <li>추상클래스에서만 선언 가능하다</li>
+        <li></li>
+        <li></li>
+      </ul>
+    
+      
     </div>
   </div>
 </body>
