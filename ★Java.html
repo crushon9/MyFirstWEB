@@ -552,16 +552,18 @@
       </ul>
     
       <h3>Anonymous Class</h3>
-      <p>익명클래스 : 이름없는 내부클래스, 람다표현식 사용가능</p>
+      <p>익명클래스 : 이름없는 내부클래스, 람다표현식 사용가능
+      <br>인터페이스처럼 인스턴스 생성이 불가한 타입이고, 일회용으로 쓸 때, 매번 클래스로 구현하지 않고 익명클래스로 재정의하여 사용가능</p>
      
       <ul><span id="accent">선언</span>
-        <li></li>
+        <li>외부에서 타입의 객체생성시 바로 정의
+        <br>타입 참조변수 = new 타입() { @Override 재정의 }</li>
         <li></li>
         <li></li>
       </ul>
 
       <ul><span id="accent">접근</span>
-        <li style="list-style: decimal;"></li>
+        <li style="list-style: decimal;">참조변수로 사용</li>
         <li style="list-style: decimal;"></li>
         <li style="list-style: decimal;"></li>
         </ul>
@@ -571,11 +573,6 @@
         <li></li>
         <li></li>
       </ul>
-    
-    
-    // 4.  // Hello cat = new Hello(); 원래 인터페이스 Hello는 인스턴스 생성 불가 Hello cat = new Hello() { // 익명클래스로 재정의하여 사용가능 @Override public void hello() { System.out.println("야옹"); } }; // new Hello() { ..본체.. } // 본체 : Hello 인터페이스를 구형하는 클래스의 내용(객체) // 익명클래스를 사용하는 이유 // 인터페이스의 메소드가 한개일때 클래스 외부에서 선언하여 implements하지 않고 사용하기 위해 // 익명 클래스를 사용하면 클래스를 외부에서 생성할 피룡가없음 // 객체를 한번생성하고 더이상 생성하지 않을경우 사용
-    
-
 
       <h1>Modifier</h1>
       <p>제어자란 변수, 메소드, 클래스, 생성자의 선언부에 함께 사용되어 부가적인 의미를 부여한다. <br>제어자의 종류는 크게 접근 제어자와 그 외의 제어자로 나눌 수 있다.</p>
