@@ -391,7 +391,7 @@
       <h1>Method</h1>
       <p>메소드는 특정 작업을 수행하는 일련의 문장들을 하나로 묶은 것
       <br>어떤 값을 입력(parameter)하면 이 값으로 작업을 수행해서 결과를 반환(return)
-      <br>모든 메소드는 클래스내부에 소속되어, 객체의 멤버이다</p>
+      <br>모든 메소드는 클래스내부에 소속되는 멤버이다</p>
       <h3>정의</h3>
       <ul>
         <li><span id="accent">수식어 리턴타입 메소드이름(매개변수1, 매개변수2 ..) {본문}</span></li>
@@ -452,9 +452,8 @@
 
       <h3>This</h3>
       <p>this는 참조 변수로 생성될 인스턴스 자기 자신을 가리킨다 (Class this = new Class();)
-        <br>this() 는 다른 생성자를 호출하는 생성자이다
       </p>
-      
+   
       <h3>Object Array</h3>
       <p>객체 배열은 주소를 저장한 참조변수의 주소값을 원소로 가진다. 각 원소에 해당하는 인스턴스는 독립적이다</p>
 
@@ -472,6 +471,8 @@
       <h3>New</h3>
       <p>연산자 new와 생성자에 의해서 heap 메모리에 클래스의 인스턴스가 생성된다.</p>
       
+      <h3>This()</h3>
+      <p>this() 는 생성자 안에서 같은 클래스의 Overloading된 다른 생성자를 호출하는 생성자이다</p>
       
       <h2>package</h2>
       <p><span id="accent">package 상위패키지.하위패키지;</span>
@@ -774,7 +775,7 @@
       <h1>Interface</h1>
       <p>인터페이스는 객체의 사용 방법을 정의한 타입이다</p>
 
-      <h2>생성</h2>
+      <h2>Define</h2>
       <ul>
         <li><span id="accent">interface 이름 { }</span></li>
         <li>인터페이스 선언은 class 키워드 대신에 interface 키워드를 사용한다</li>
@@ -785,14 +786,14 @@
       </ul>
 
       <h3>Java 8 버전 변경사항</h3>
-      <ul><span id="ulh">인터페이스 멤버</span>
+      <ul><span id="ulh">Interface Member</span>
         <li>public static final 필드 → 7버전과 동일</li>
         <li>public abstract 메소드 → 7버전과 동일</li>
         <li>default 메소드 (인터페이스에 본문작성, 구현클래스의 인스턴스로 호출가능)</li>
         <li>static 메소드 (인터페이스에 본문작성, 인터페이스로 호출가능)</li>
       </ul>
 
-      <h2>구현</h2>
+      <h2>Implements</h2>
       <ul>
         <li>인터페이스 자체로는 인스턴스를 생성 불가. 구현클래스 통해서 생성 가능</li>
         <li>인터페이스의 <span id="accent">구현클래스</span>는 <span id="accent">implements</span> 키워드 사용 (클래스만 구현 가능)</li>
@@ -800,10 +801,10 @@
         <li>인터페이스는 다중 implements 가능</li>
       </ul>
 
-      <h3>익명클래스 구현</h3>
+      <h3>Anonymous Class</h3>
       <p>인터페이스 변수 = new 인터페이스() { 추상메소드의 실체메소드 Override };</p>
 
-      <h3>다형성</h3>
+      <h3>Polymorphism</h3>
       <p>인터페이스도 상속과 동일하게 다형성이 적용된다</p>
 
       <h2>Interface VS Abstract Class</h2>
@@ -844,7 +845,7 @@
       <br><a href="https://docs.oracle.com/en/java/javase/" target="_blank"> >> Java API Ducument &lt;&lt; </a>
       </p>
 
-      <h2>Object 클래스</h2>
+      <h2>Object Class</h2>
       <p>Object 클래스는 암시적으로 자동 상속되기 때문에 Object 클래스 멤버들은 모든 클래스에서 사용 가능하다</p>
       <ul>
         <li>equals() : 객체가 가지고 있는 주소 값을 비교</li>
@@ -852,7 +853,7 @@
         <li>toString() : 객체에 대한 문자정보를 리턴</li>
       </ul>
 
-      <h2>String 클래스</h2>
+      <h2>String Class</h2>
       <p>immutable 클래스 (내용이 바뀌지 않는 클래스)</p>
       <ul>
         <li>equals() : 문자열 내용 비교 (Object 클래스의 메소드를 override)</li>
@@ -860,18 +861,18 @@
         <li>split() : 문자열을 특정 기준으로 나눠서 배열로 리턴</li>
       </ul>
 
-      <h3>StringBuffer, StringBuilder 클래스</h3>
+      <h3>StringBuffer, StringBuilder Class</h3>
       <p>mutable 클래스 (내용을 바꿀 수 있는 클래스)</p>
 
-      <h2>정규표현식</h2>
-      <p>정규 표현식(regular expression, regexp) 특정한 규칙을 가진 문자열의 집합을 표현하는 데 사용하는 형식 언어이다.</p>
+      <h2>Regular Expression (regexp)</h2>
+      <p>정규 표현식 특정한 규칙을 가진 문자열의 집합을 표현하는 데 사용하는 형식 언어이다.</p>
       <ul>
         <li>Pattern 클래스</li>
         <li>split() 사용가능</li>
       </ul>
 
 
-      <h2>Wrapper 클래스</h2>
+      <h2>Wrapper Class</h2>
       <p><span id="accent">Byte, Character, Integer, Float, Double, Boolean, Long, Short 클래스</span>
       <br>자바의 primitive type을 감싸는 클래스
       <br>기본 타입의 데이터를 객체로 표현해야 하는 경우 사용한다. 포장객체
