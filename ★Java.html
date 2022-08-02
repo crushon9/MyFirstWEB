@@ -630,9 +630,10 @@
       <h3>Singleton design pattern</h3>
       <p>클래스의 인스턴스를 오직 하나만 생성할 수 있도록 작성하는 설계 기법으로 인스턴스에 저장된 값을 공유해야할 때 해당기법을 사용한다. 처음 생성한 인스턴스는 변경이 불가능 (주소값이 같음)</p>
       <ul>
-        <li style="list-style: decimal;">private static 클래스 Singleton = new 생성자();</li>
+        <li style="list-style: decimal;">private static 클래스 instance = null;</li>
         <li style="list-style: decimal;">생성자는 private 로 선언</li>
-        <li style="list-style: decimal;">public static 클래스 getInstance() { return Singleton; } </li>
+        <li style="list-style: decimal;">public static 클래스 getInstance(매개변수) {
+        <br>if (instance==null) {instance = new 생성자(매개변수));} return instance; } </li>
       </ul>
       
       <h2>static</h2>
