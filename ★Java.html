@@ -482,7 +482,7 @@
       <p>외부클래스 객체를 생성해야만 사용할 수 있는 멤버 내부클래스
       <br>상속관계로는 묶을 수 없지만 A라는 객체가 생성된 이후에만 존재할수있는 B라는 객체가 있다면 B를 A의 내부 클래스로 정의</p>
       <ul><span id="accent">정의</span>
-        <li>외부클래스의 멤버변수 위치에 내부클래스 정의</li>
+        <li>외부클래스의 멤버변수 위치에 static이 아닌 내부클래스 정의</li>
         <li>내부클래스 멤버로 static은 선언 불가</li>
       </ul>
 
@@ -501,7 +501,7 @@
       </ul>
 
       <h3>Static Member Class </h3>
-      <p>외부클래스로 바로 접근할 수 있는 멤버 내부클래스</p>
+      <p>외부클래스의 인스턴스 생성없이 외부클래스를 통하여 바로 접근할 수 있는 멤버 내부클래스</p>
      
       <ul><span id="accent">정의</span>
         <li>외부클래스의 멤버변수 위치에 static으로 내부클래스 정의</li>
@@ -627,12 +627,13 @@
       </ul>
       
       <h2>static</h2>
-      <p><span id="accent">멤버변수, 메소드에 사용가능</span>
-        <br>정적멤버는 클래스에 고정된 멤버로서 객체를 생성하지 않고 사용할 수 있는 필드(정적필드)와 메소드(정적메소드)를 말한다. 정적멤버는 객체(인스턴스)에 소속되지않고 클래스에 소속된 멤버이기 때문에 클래스멤버 라고도 한다. 프로그램이 처음 시작될 때 static 메모리 영역에 자동으로 생성</p>
+      <p><span id="accent">멤버변수, 메소드에 사용가능 (멤버위치의 내부 클래스에도 사용가능)</span>
+        <br>정적멤버는 클래스에 고정된 멤버로서 객체를 생성하지 않고 사용할 수 있는 필드(정적필드)와 메소드(정적메소드)를 말한다. 정적멤버는 객체(인스턴스)에 소속되지않고 클래스에 소속된 멤버이기 때문에 클래스멤버 라고도 한다. 프로그램이 처음 시작될 때 static 메모리 영역에 자동으로 생성
+       <br><span id="comment">static은 접근통로를 결정짓는 제어자이다. 즉, 그것을 담고있는 바깥클래스의 인스턴스를 생성하느냐 마느냐를 결정한다. 그러므로 가장 바깥의 class는 static 선언이 불가하지만 기본적으로 static의 성질을 띄고있다. 그것을 담고있는 바깥 클래스가 없이 바로 class로 접근하기 때문이다 </span></p>
         <h3>Class Member (Static Member)</h3>
         <ul>
           <li>static으로 선언한 정적필드(멤버변수)와 정적메소드</li>
-          <li><span id="accent">인스턴스를 생성하지 않아도 접근 가능 </span> / static ← static(가능) / static ← instance(가능)</li>
+          <li><span id="accent">담고있는 클래스의 인스턴스를 생성하지 않아도 접근 가능 </span> / static ← static(가능) / static ← instance(가능)</li>
           <li><span id="comment">static 변수는 생성되는 모든 인스턴스들이 공유하기 때문에 값의 변경에 대해서 주의해야 함</span></li>
           <li>변수 사용형식 : 클래스이름.변수이름</li>
           <li>메소드 사용형식 : 클래스이름.메소드()</li>
@@ -641,7 +642,7 @@
         <h3>Instance Member</h3>
         <ul>
         <li>static이 선언되지 않은 인스턴스필드(멤버변수)와 인스턴스메소드</li>
-        <li><span id="accent">인스턴스를 생성한 후에만 접근 가능</span> / instance ← instance(가능) / instance ← static(불가능)</li>
+        <li><span id="accent">담고있는 클래스의 인스턴스를 생성한 후에만 접근 가능</span> / instance ← instance(가능) / instance ← static(불가능)</li>
         <li>변수 사용형식 : 참조변수.변수이름</li>
         <li>메소드 사용형식 : 참조변수.메소드()</li>
       </ul>
@@ -1013,36 +1014,42 @@
       </ul>
      
       <h1>Thread</h1>
-      <p>하나의 작업을 순차적으로 진행하는 실행 코드</p>
-      <h3>Process & Thread</h3>
+      <p>하나의 작업을 순차적으로 진행하는 실행 코드 흐름</p>
+      <h2>Process & Thread</h2>
+      <p><img src="Java_thread.jpg" width="600px"></p>
       <ul><span id="ulh">Process</span>
-        <li>컴퓨터에서 연속적으로 실행되고 있는 컴퓨터 프로그램</li>
+        <li>운영체제에서 연속적으로 실행되고 있는 하나의 애플리케이션</li>
         <li>각각 독립된 메모리 영역(Code, Data, Stack, Heap의 구조)을 할당받아 다른 프로세스 메모리에 직접 접근 불가</li>
         <li>기본적으로 프로세스당 최소 1개의 스레드(main)를 가지고 있다</li>
       </ul>
       
       <ul><span id="ulh">Thread</span>
-        <li>프로세스 내에서 실행되는 여러 흐름의 단위</li>
-        <li>프로세스 내에서 각각 Stack만 따로 할당받고 Code, Data, Heap 영역은 공유</li>
+        <li>한 가닥의 실. 프로세스 내에서 실행되는 작업 실행 흐름의 단위</li>
+        <li>프로세스 내에서 각각 Stack만 따로 할당받고 Code, Data, Heap 영역은 공유하여 서로 영향을 끼침</li>
+        <li>하나의 스레드가 예외를 발생시키면 프로세스 자체가 종료될 수 있다</li>
       </ul>
 
+      <h2>Main Thread & main() method</h2>
+      <p>자바 애플리케이션은 메인 스레드가 main() 메소드를 실행하면서 시작되며 main()의 마지막 코드를 만나거나 return;을 만나면 프로세스가 종료된다
+      <br> 하지만 멀티 스레드는 main() 메소드가 종료되어도 실행 중인 스레드가 있다면 프로세스는 종료되지 않는다</p>
+
       <h2>Multi Thread Program</h2>
-      <p>하나의 프로그램(프로세스)에서 여러개의 쓰레드를 동작하는 프로그램</p>
+      <p>하나의 프로그램(프로세스)에서 여러개의 스레드를 동작하는 프로그램</p>
       <ul><span id="ulh">Thread 생성 (extends Thread)</span>
-        <li style="list-style: decimal">Thread 클래스를 상속받는 새로운 클래스 정의(extends Thread)</li>
-        <li style="list-style: decimal">정의한 새로운 클래스 안에서 run() 메소드를 override 하여 쓰레드가 해야할 기능 구현
+        <li style="list-style: decimal">java.lang.Thread 클래스를 상속받는 새로운 클래스 정의 (extends Thread)</li>
+        <li style="list-style: decimal">정의한 새로운 클래스 안에서 run() 메소드를 override 하여 스레드가 해야할 기능 구현
         <br><span id="comment"> run() 메소드는 Thread 클래스 하나당 하나씩 구현해야한다</span></li>
-        <li style="list-style: decimal">정의한 클래스의 인스턴스를 생성</li>
-        <li style="list-style: decimal">생성된 인스턴스에서 start() 메소드를 호출</li>
-        <li style="list-style: decimal">Thread의 메모리 공간확보, 스케쥴링을 위해 쓰레드 등록, 초기화가 자동으로 이루어진 뒤 run() 메소드 자동실행</li>
+        <li style="list-style: decimal">정의한 클래스의 인스턴스 생성 MyThead th = new MyThead( );</li>
+        <li style="list-style: decimal">생성된 인스턴스에서 start( ) 메소드를 호출 (</li>
+        <li style="list-style: decimal">Thread의 메모리 공간확보, 스케쥴링을 위해 스레드 등록, 초기화가 자동으로 이루어진 뒤 run( ) 메소드 자동실행</li>
       </ul>
 
       <ul><span id="ulh">Thread 생성 (Implements Runnable : 다른클래스를 이미 상속한 경우)</span>
-        <li style="list-style: decimal">Runnable 인터페이스를 구현하는 클래스 정의(Implements Runnable)</li>
-        <li style="list-style: decimal">정의한 클래스에서 run() 메소드를 override</li>
-        <li style="list-style: decimal">정의한 클래스의 인스턴스를 생성</li>
+        <li style="list-style: decimal">Runnable 인터페이스를 구현하는 클래스 정의 (Implements Runnable)</li>
+        <li style="list-style: decimal">정의한 클래스에서 run( ) 메소드를 override</li>
+        <li style="list-style: decimal">정의한 클래스의 인스턴스 생성</li>
         <li style="list-style: decimal">생성한 인스턴스를 매개변수(Runnable 다형성)로 Thread 인스턴스 생성</li>
-        <li style="list-style: decimal">Thread 인스턴스에서 start() 메소드 호출 -> run() 자동호출</li>
+        <li style="list-style: decimal">Thread 인스턴스에서 start( ) 메소드 호출 -> run( ) 자동호출</li>
       </ul>
 
 
