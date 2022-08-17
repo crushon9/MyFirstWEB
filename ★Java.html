@@ -1034,14 +1034,15 @@
       <br> 하지만 멀티 스레드는 main() 메소드가 종료되어도 실행 중인 스레드가 있다면 프로세스는 종료되지 않는다</p>
 
       <h2>Multi Thread Program</h2>
-      <p>하나의 프로그램(프로세스)에서 여러개의 스레드를 동작하는 프로그램</p>
+      <p>하나의 프로그램(프로세스)에서 여러개의 스레드를 동작하는 프로그램
+      <br>자바에서는 JVM의 스레드 스케줄링에 의해 아주 짧은시간에 번갈아 그들의 run()을 실행시킨다. 따라서 스레드의 완전한 우선순위를 코드로 제어할수 없으며, setPriority메소드 또한 우선순위가 높을수록 실행기회를 더 많이 가지는 정도이다.</p>
       <ul><span id="ulh">Thread 생성 (extends Thread)</span>
         <li style="list-style: decimal">java.lang.Thread 클래스를 상속받는 새로운 클래스 정의 (extends Thread)</li>
         <li style="list-style: decimal">정의한 새로운 클래스 안에서 run() 메소드를 override 하여 스레드가 해야할 기능 구현
         <br><span id="comment"> run() 메소드는 Thread 클래스 하나당 하나씩 구현해야한다</span></li>
         <li style="list-style: decimal">정의한 클래스의 인스턴스 생성 MyThead th = new MyThead( );</li>
-        <li style="list-style: decimal">생성된 인스턴스에서 start( ) 메소드를 호출 (</li>
-        <li style="list-style: decimal">Thread의 메모리 공간확보, 스케쥴링을 위해 스레드 등록, 초기화가 자동으로 이루어진 뒤 run( ) 메소드 자동실행</li>
+        <li style="list-style: decimal">생성된 인스턴스에서 start( ) 메소드를 호출</li>
+        <li style="list-style: decimal">(Thread의 메모리 공간확보, 스케중링 등록, 초기화가 자동으로 이루어진 뒤) →run( ) 자동 호출</li>
       </ul>
 
       <ul><span id="ulh">Thread 생성 (Implements Runnable : 다른클래스를 이미 상속한 경우)</span>
@@ -1049,7 +1050,8 @@
         <li style="list-style: decimal">정의한 클래스에서 run( ) 메소드를 override</li>
         <li style="list-style: decimal">정의한 클래스의 인스턴스 생성</li>
         <li style="list-style: decimal">생성한 인스턴스를 매개변수(Runnable 다형성)로 Thread 인스턴스 생성</li>
-        <li style="list-style: decimal">Thread 인스턴스에서 start( ) 메소드 호출 -> run( ) 자동호출</li>
+        <li style="list-style: decimal">Thread 인스턴스에서 start( ) 메소드 호출</li>
+        <li style="list-style: decimal">(Thread의 메모리 공간확보, 스케중링 등록, 초기화가 자동으로 이루어진 뒤) →run( ) 자동 호출</li>
       </ul>
 
 
