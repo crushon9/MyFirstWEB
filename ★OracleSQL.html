@@ -29,8 +29,170 @@
       </div>
 
       <div class="gridright">
-        <h1>OracleSQL : </h1>
+        <h1>OracleSQL : Oracle Structured Query Language</h1>
+        <p>SQL은 관계형데이터베이스 시스템에서 데이터를 다루는 데 사용하는 데이터베이스 질의 언어이다.
+        <br>Query는 데이터베이스에 정보를 요청하는 것</p>
+        <ul>
+          <li>오라클 명령어(CREATE, INSERT 등)은 대소문자 구분하지 않음</li>
+          <li>오라클에서는 테이블 이름과 컬럼 이름을 영대문자로 변환함</li>
+        </ul>
 
+        <h2>CREATE</h2>
+        <p>테이블이름과 컬럼이름을 기입하여 새 테이블 생성</p>
+        <ul>
+        <li>CREATE TABLE 테이블이름 ( 컬럼이름 타입 제약조건, .. ); </li>
+        </ul>
+
+        <h3>Type</h3>
+        <ul>
+          <li>숫자 : NUMBER</li>
+          <li>문자 : CHAR(길이고정), VARCHAR(가변적255길이), VARCHAR2(최대4000byte저장가능)</li>
+          <li>날짜 : DATE</li>
+        </ul>
+
+        <h3>제약조건</h3>
+        <ul>
+          <li>NOT NULL : 데이터를 반드시 입력 </li>
+          <li>UNIQUE : 중복되지 않는 데이터만 입력 가능 </li>
+        </ul>
+
+        <ul><span id="accent">PRIMARY KEY(고유키)</span>
+          <li>NOT NULL + UNIQUE</li>
+          <li>테이블에서 유일한 데이터를 찾을 수 있는 컬럼</li>
+        </ul>
+
+        <ul><span id="ulh">FOREIGN KEY(외래키)</span>
+          <li>테이블 간의 참조 데이터 무결성을 위한 제약 조건</li>
+          <li>반드시 참조하는 테이블이 먼저 생성되어야하며, 참조키가 참조 테이블의 기본키로 설정되어야 함</li>
+        </ul>
+
+        <h3>DEFAULT</h3>
+        <ul>
+          <li>테이블 생성시 데이터의 기본값 설정 명령어</li>
+        </ul>
+
+        <h3>CONSTRAINT</h3>
+        <ul>
+          <li>CONSTRAINT 이름 조건(컬럼이름 조건)</li>
+          <li>CONSTRAINT CHECK_GENDER CHECK (GENDER IN ('남', '여'))</li>
+        </ul>
+
+        <h2>ALTER TABLE</h2>
+        <p>테이블 정보를 변경할때 사용</p>
+        <ul>
+          <li>ALTER TABLE 테이블이름 ADD CONSTRAINT 객체이름 UNIQUE (컬럼이름);</li>
+          <li>ALTER TABLE 테이블이름 RENAME COLUMN COL1 TO TEST1;</li>
+          <li>ALTER TABLE EX9 MODIFY COL2 VARCHAR2(50); -- MODIFY 같은타입의 사이즈변경 성공</li>
+          <li>ALTER TABLE EX9 ADD COL3 DATE; -- ADD 열 추가</li>
+          <li>ALTER TABLE EX9 DROP COLUMN COL3; -- DROP COLUMN 열 삭제</li>
+        </ul>
+
+        <h2>DELETE, TRUNCATE, DROP</h2>
+        <ul>
+          <li>DELETE FROM EX_ORDER; -- 행은 남겨두고 데이터 내용만 삭제</li>
+          <li>TRUNCATE TABLE EX_ORDER; -- 모든 행 자체를 잘라서 삭제</li>
+          <li>DROP TABLE EX_ORDER; -- 테이블 전체 삭제</li>
+        </ul>
+
+        <h2>DESC</h2>
+        <ul>
+          <li>DESCRIBE 테이블 요약정보 출력</li>
+        </ul>
+
+        <h2>COMMIT</h2>
+        <ul>
+          <li>변경사항 저장</li>
+        </ul>
+
+        <h2>SEQUENCE</h2>
+        <p>자동으로 생성되는 유일한 정수를 반환하는 데이터베이스 객체, 주로 PRIMARY KEY 값을 자동으로 생성할 때 사용</p>
+        <ul>
+          <li>CREATE SEQUENCE 이름;</li>
+          <li>SEQUENCE.NEXTVAL : 시퀀스의 최종값(현재값)을 리턴하고, 그 다음 값을 생성</li>
+          <li>SEQUENCE.CURRVAL : 시퀀스의 최종값(현재값)을 리턴</li>
+          <li><span id="comment">NOCACHE : 캐시로 인한 데이터 변형 주의!</span></li>
+        </ul>
+
+        <h2>INSERT</h2>
+        <p>생성된 테이블에 데이터 삽입</p>
+        <ul>
+        <li>INSERT INTO 테이블이름 VALUES ( 값, .. );</li>
+        </ul>
+
+        <h2>SELECT</h2>
+        <p>생성된 테이블에서 데이터 검색</p>
+        <ul>
+          <li>SELECT * FROM EX_MEMBER; 전체 데이터 선택(검색)</li>
+          <li>SELECT ID, PW FROM EX_MEMBER; 특정 열 선택</li>
+          <li>SELECT * FROM EX_MEMBER WHERE ID = 'test'; 특정 행 선택</li>
+        </ul>
+
+        <h3>ORDER BY</h3>
+        <ul>
+          <li>DESC : descending order</li>
+          <li>ASC(생략하면 기본 오름차순) ascending order</li>
+        </ul>
+
+        <h3>DISTINCT</h3>
+        <ul>
+          <li>중복을 제거한 데이터</li>
+          <li>SELECT DISTINCT ID FROM EX_MEMBER;</li>
+        </ul>
+
+        <h3>IN</h3>
+        <ul>
+          <li>포함하는 데이터</li>
+          <li>WHERE DEPARTMENT_ID IN(10,20,30);</li>
+        </ul>
+
+        <h3>Like</h3>
+        <ul>
+          <li>WHERE 컬럼이름 LIKE '%문자%'</li>
+
+        </ul>
+
+        <h3>조건연산자</h3>
+        <ul>
+          <li>AND</li>
+          <li>OR</li>
+        </ul>
+
+        <h3>AS</h3>
+        <ul>
+          <li>SELECT EMPLOYEE_ID AS 사번, LAST_NAME 이름 FROM EMPLOYEES;</li>
+          <li>별명</li>
+        </ul>
+
+        <h2>UPDATE</h2>
+        <ul>
+          <li>UPDATE EX_MEMBER SET EMAIL = 'update@test.com' WHERE ID = 'guest';</li>
+        </ul>
+
+        <h2>DELETE</h2>
+        <ul>
+          <li>DELETE FROM EX_MEMBER WHERE ID = 'guest';</li>
+        </ul>
+
+        <h2>함수</h2>
+        <ul>
+          <li>COUNT() : 행의 개수 출력</li>
+          <li>LOWER() : 입력된 문자를 소문자로 변환 (실제데이터를 수정하진 않고 일시적)</li>
+          <li>UPPER() : 입력된 문자를 대문자로 변환</li>
+          <li>NVL(컬럼, 치환값) : 컬럼의 NULL 값을 치환값으로 변환</li>
+        </ul>
+
+        <h2>JOIN</h2>
+        <p>두개 이상의 테이블에서 데이터들을 조합해서 검색하는 방법</p>
+        <ul>
+          <li>ANSI JOIN : DB 종류 상관없이 모든 DB에서 사용가능한 표준 JOIN</li>
+          <li>SELECT A.컬럼1, B.컬럼2 FROM 테이블1 A(별명) JOIN 테이블2 B ON A.컬럼1 = B.컬럼2;</li>
+        </ul>
+
+        <h2>유사컬럼</h2>
+        <p>유사컬럼은 실제로 있는 컬럼이 아니며, 생성 후 사용가능</p>
+        <ul>
+          <li>SELECT ROWNUM R, EMPLOYEE_ID, LAST_NAME FROM EMPLOYEES; 유사컬럼R 생성</li>
+        </ul>
 
       </div>
     </div>
