@@ -874,17 +874,19 @@
       </ul>
 
       <h1>Collection Framework</h1>
-      <p><img src="Java_collection.jpg" width="700px"></p>
+      <p>베열의 문제점을 보완하여 효율적으로 객체들을 수집, 저장하는 라이브러리
+      <br><img src="Java_collection.jpg" width="700px"></p>
 
       <h2>Collection&lt;E></h2>
       <p>자료(데이터)를 저장하기 위한 Generic 인터페이스
-      <br>자식 인터페이스 : List, Set, Map</p>
+      <br>배열은 생성시 사이즈를 지정해야하지만, 컬렉션은 추가시 공간을 늘려 저장공간의 한계가 없다
+      <br>타입파라미터 E 에는 클래스나 인터페이스 타입만 올 수 있다 (Primitive Type 사용불가, Wrapper Class로 대체사용)</p>
 
-      <h2>List&lt;E></h2>
+      <h3>List&lt;E></h3>
       <ul><span id="ulh">특징</span>
-        <li>배열과 같은 역할을 Generic 클래스로 생성한 형태</li>
-        <li>배열은 생성시 사이즈를 지정하지만, List는 추가하는 만큼 공간을 늘려 저장공간의 한계가 없음</li>
-        <li>인덱스로 자료를 구분하므로 중복값 저장 허용</li>
+        <li>Collection&lt;E> 인터페이스를 상속받은 Generic 인터페이스</li>
+        <li>순서 유지하며 저장, 인덱스O, 중복값 저장 허용</li>
+        <li>객체의 번지를 참조함. null일 경우 해당 인덱스는 객체를 참조하지 않음(주소값이 없는것)</li>
       </ul>
 
       <ul><span id="ulh">주요 메소드</span>
@@ -895,30 +897,36 @@
         <li>list.size() : list의 저장된 길이를 리턴</li>
       </ul>
 
-      <h3>ArrayList&lt;E></h3>
-      <ul>
+      <ul><span id="accent">ArrayList&lt;E></span>
+      <li>List&lt;E> 인터페이스의 구현 클래스</li>
+      <li>List&lt;타입> lsit = new ArrayList&lt;타입>(초기용량); <span id="comment">→ 초기용량 미지정시 자동으로 10으로 생성</span></li>
       <li>내부적으로 배열 자료구조를 사용</li>
       <li>저장 용량을 늘리는데 많은 시간이 소요됨</li>
       <li>저장된 데이터를 삭제하는데 많은 시간이 소요됨</li>
       <li>데이터 참조(검색)할 때 매우 빠름 / A B C D "인덱스 3번 D"</li>
       </ul>
 
-      <h3>LinkedList&lt;E></h3>
-      <ul>
+      <ul><span id="accent">LinkedList&lt;E></span>
+      <li>List&lt;E> 인터페이스의 구현 클래스</li>
       <li>내부적으로 LinkedList 자료구조를 사용</li>
       <li>저장 용량을 늘리는 과정이 매우 간단</li>
       <li>저장된 데이터를 삭제하는 과정도 매우 간단</li>
       <li>데이터 참조(검색)하는 시간이 매우 느림 / A B C D "A뒤에 B뒤에 C뒤에 있는 D"</li>
       </ul>
 
+      <ul><span id="accent">Vector&lt;E></span>
+        <li>List&lt;E> 인터페이스의 구현 클래스</li>
+        <li>ArrayList&lt;E> 와 동일한 내부구조</li>
+        <li>동기화된 메소드 사용으로 멀티스레드가 동시에 메소드 실행불가(Thread Safe)</li>
+        </ul>
 
-      <h2>Set&lt;E></h2>
 
+      <h3>Set&lt;E></h3>
       <ul><span id="ulh">특징</span>
-        <li>데이터의 저장 순서가 중요하지 않음 (인덱스 없음)</li>
-        <li>중복된 데이터의 저장을 허용하지 않음</li>
-        <li>예) {3,2,2,3,1,3} = {1,2,3};</li>
+        <li>Collection&lt;E> 인터페이스를 상속받은 Generic 인터페이스</li>
+        <li>순서 유지없이 저장, 인덱스X, 중복값 저장 불가</li>
         <li>원소는 자동으로 오름차순 정렬</li>
+        <li>예) {2,2,2,3,1,3} = {1,2,3};</li>
       </ul>
 
       <ul><span id="ulh">주요 메소드</span>
@@ -928,26 +936,29 @@
       </ul>
 
       <ul><span id="ulh">Iterator(반복자) 를 사용한 데이터 검색</span>
+        <li>Set컬렉션은 인덱스로 객체를 검색해서 가져오는 메소드가 없어 반복자를 제공한다</li>
         <li>iterator() : Iterator 객체를 리턴</li>
         <li>hasNext() : Iterator 객체가 가리키는 위치에 원소가 있는지(true) 없는지(false) 리턴</li>
         <li>next() : Iterator 객체가 가리키는 위치를 다음 위치로 이동하고 원래 가리키고 있던 값을 리턴</li>
       </ul>
 
-      <h3>HashSet&lt;E></h3>
-      <p>검색을 빠르게 하기 위한 Hash 알고리즘이 적용된 Set</p>
+      <ul><span id="accent">HashSet&lt;E></span>
+        <li>Set&lt;E> 인터페이스의 구현 클래스</li>
+        <li>hashCode()와 equals()메소드를 오버라이딩하여 인스턴스가 달라도 내용이 중복된다면 중복저장하지 않음</li>
+        <li>검색을 빠르게 하기 위한 Hash 알고리즘이 적용된 Set</li>
+      </ul>
 
-      <h3>TreeSet&lt;E></h3>
-      <p>정렬을 빠르게 하기 위한 Tree 알고리즘이 적용된 Set</p>
+      <ul><span id="accent">TreeSet&lt;E></span>
+        <li>Set&lt;E> 인터페이스의 구현 클래스</li>
+        <li>정렬을 빠르게 하기 위한 Tree 알고리즘이 적용된 Set</li>
+      </ul>
  
 
       <h2>Map&lt;K, V></h2>
-
       <ul><span id="ulh">특징</span>
         <li>key-value 쌍으로 데이터를 저장하는 구조</li>
-        <li>key는 중복되지 않는 값만 저장 가능</li>
-        <li>value는 중복된 값도 저장 가능</li>
+        <li>key는 중복 저장 불가, value는 중복 저장 가능</li>
         <li>검색, 수정 삭제할 때 key값을 사용함</li>
-        <li></li>
       </ul>
 
       <ul><span id="ulh">주요 메소드</span>
@@ -958,11 +969,36 @@
         <li>keySet() : key들로만 이루어진 Setlist 생성(중복없는)</li>
       </ul>
 
-      <h3>HashMap&lt;K, V></h3>
-      <p>검색을 빠르게 하기 위한 Hash 알고리즘이 적용된 Set</p>
+      <ul><span id="accent">HashMap&lt;K, V></span>
+        <li>Map&lt;K, V> 인터페이스의 구현 클래스</li>
+        <li>검색을 빠르게 하기 위한 Hash 알고리즘이 적용된 Map</li>
+      </ul>
 
-      <h3>TreeMap&lt;K, V></h3>
-      <p>정렬을 빠르게 하기 위한 Tree 알고리즘이 적용된 Set</p>
+      <ul><span id="accent">TreeMap&lt;K, V></span>
+        <li>Map&lt;K, V> 인터페이스의 구현 클래스</li>
+        <li>검색을 빠르게 하기 위한 Tree 알고리즘이 적용된 Map</li>
+      </ul>
+
+      <ul><span id="accent">Hashtable&lt;K, V></span>
+        <li>Map&lt;K, V> 인터페이스의 구현 클래스</li>
+        <li>HashMap&lt;K, V> 과 동일한 내부구조</li>
+        <li>동기화된 메소드 사용으로 멀티스레드가 동시에 메소드 실행불가(Thread Safe)</li>
+        <li>하위클래스 Properties는 기능이 동일하나, 키값을 String으로 제한한 컬렉션</li>
+      </ul>
+
+      <h2>LIFO & FIFO</h2>
+      <ul><span id="ulh">Stack</span>
+        <li>LIFO 방식의 자료구조를 제공하는 클래스</li>
+        <li>LIFO : Last In First Out</li>
+        <li>후입선출 : 나중에 넣은 객체가 먼저 빠져나가는 자료구조</li>
+        <li>스택 응용 사례 - JVM 스택메모리</li>
+      </ul>
+      <ul><span id="ulh">Queue</span>
+        <li>FIFO 방식의 자료구조를 제공하는 인터페이스</li>
+        <li>FIFO : First In First Out</li>
+        <li>선입선출 : 먼저 넣은 객체가 먼저 빠져나가는 자료구조</li>
+        <li>큐 응용 사례 - 스레드풀의 작업 큐</li>
+      </ul>
 
       <h1>API</h1>
       <p>API(Application Programming Interface, 응용 프로그램 프로그래밍 인터페이스)는 응용 프로그램에서 사용할 수 있도록, 운영 체제나 프로그래밍 언어가 제공하는 기능을 제어할 수 있게 만든 인터페이스를 뜻한다. 주로 파일 제어, 창 제어, 화상 처리, 문자 제어 등을 위한 인터페이스를 제공한다.
