@@ -1184,6 +1184,48 @@
         <li>isFile() : File 객체가 파일이면 true를 리턴</li>
         <li>listFiles() : 디렉토리 안의 내용 확인</li>
       </ul>
+
+      <h1>JDBC</h1>
+      <p>JDBC(Java Database Connectivity)는 자바에서 데이터베이스에 접속할 수 있도록 하는 자바 API이다. JDBC는 데이터베이스에서 자료를 쿼리하거나 업데이트하는 방법을 제공한다.</p>
+
+      <ul><span id="ulh">OracleDB 연결 방법</span>
+       <li style="list-style:decimal">데이터베이스 라이브러리를 프로젝트에 추가 (Referenced Libraries)</li>
+       <li style="list-style:decimal">DB와 연동하기 위해 필요한 상수들을 정의</li>
+       <li style="list-style:decimal">JDBC 드라이버를 메모리에 로드</li>
+       <li style="list-style:decimal">DB와 Connection을 맺음</li>
+       <li style="list-style:decimal">Connection 객체를 사용하여 Statement 객체 생성</li>
+       <li style="list-style:decimal">SQL 문장 작성</li>
+       <li style="list-style:decimal">Statement 객체를 사용하여 SQL 문장 실행 (DB 서버로 SQL 문장 전송)</li>
+       <li style="list-style:decimal">DB 서버가 보내준 결과를 확인/처리</li>
+       <li style="list-style:decimal">사용한 객체들 close</li>
+      </ul>
+
+      <h2>Java → DB</h2>
+      <ul><span id="accent">Statement Class</span>
+        <li>기본 쿼리문 전달</li>
+        <li>1. stmt.createStatement();</li>
+      </ul>
+      <ul><span id="accent">PreparedStatement Class</span>
+        <li>Statement 상속, 쿼리의 ?를 세팅하며 전달</li>
+        <li>1. pstmt.set타입(?순서, 채울값);<span id="comment"> →순서는 쿼리문 ? 왼쪽부터 1부터 채번</span></li>
+        <li>2. pstmt.prepareStatement(쿼리문);<span id="comment"> →매개변수 생략불가</span></li>
+      </ul>
+
+      <h2>DB → Java</h2>
+      <ul><span id="accent">executeUpdate() Method</span>
+        <li>DB로 데이터 일방적 전달</li>
+        <li>리턴값 : int 0실패 1성공 </li>
+        <li>1. int rs = stmt.executeUpdate(쿼리문); / pstmt.executeUpdate();</li>
+        <li><span id="comment">매개변수(쿼리문)는 이전과정에서 쿼리문을 매개변수로 넣었는지 아닌지 여부에 따라 결정</span></li>
+      </ul>
+
+      <ul><span id="accent">executeQuery() Method</span>
+        <li>DB로 요청하여 데이터를 받아옴</li>
+        <li>리턴값 : ResultSet타입 (DB로 요청한 데이터를 돌려받는 그릇)</li>
+        <li>1. ResultSet rs = stmt.executeQuery(쿼리문); / pstmt.executeQuery();</li>
+        <li>2. rs.next() : ResultSet에서 다음행(row, record)이 있으면 true리턴, 가리키는 위치를 다음으로 변경</li>
+        <li>3. rs.get타입(컬럼순서); <span id="comment"> →순서는 컬럼왼쪽부터 1부터 채번</span></li>
+      </ul>
 	
     </div>
   </div>
