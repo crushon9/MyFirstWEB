@@ -1188,7 +1188,8 @@
       <h1>JDBC</h1>
       <p>JDBC(Java Database Connectivity)는 자바에서 데이터베이스에 접속할 수 있도록 하는 자바 API이다. JDBC는 데이터베이스에서 자료를 쿼리하거나 업데이트하는 방법을 제공한다.</p>
 
-      <ul><span id="ulh">OracleDB 연결 방법</span>
+      <h3>OracleDB 연결 방법</h3>
+      <ul>
        <li style="list-style:decimal">데이터베이스 라이브러리를 프로젝트에 추가 (Referenced Libraries)</li>
        <li style="list-style:decimal">DB와 연동하기 위해 필요한 상수들을 정의</li>
        <li style="list-style:decimal">JDBC 드라이버를 메모리에 로드</li>
@@ -1200,7 +1201,7 @@
        <li style="list-style:decimal">사용한 객체들 close</li>
       </ul>
 
-      <h2>Statement (Java → DB)</h2>
+      <h2>Statement (Java→DB)</h2>
       <ul><span id="accent">Statement Class</span>
         <li>기본 쿼리문 전달</li>
         <li>1. stmt.createStatement();</li>
@@ -1211,7 +1212,7 @@
         <li>2. pstmt.prepareStatement(쿼리문);<span id="comment"> →매개변수 생략불가</span></li>
       </ul>
 
-      <h2>execute (DB → Java)</h2>
+      <h2>execute (DB→Java)</h2>
       <ul><span id="accent">executeUpdate() Method</span>
         <li>DB로 데이터 일방적 전달</li>
         <li>리턴값 : int 0실패 1성공 </li>
