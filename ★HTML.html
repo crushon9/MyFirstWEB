@@ -32,14 +32,20 @@
     </div>
 
     <div class="gridright">
-      <h1>HTML : 웹페이지를 만드는 언어 </h1>
+      <h1>HTML(Hyper Text Markup Language) : 웹페이지를 만들기 위한 표준 마크업 언어</h1>
+
+      <h2>요소(element)와 속성(attribute)</h2>
+      <p id="href">시작 태그와 종료 태그를 갖는 모든 것들은 요소이고 (예외 a, img, button 등) 모든 요소들은 추가적인 정보를 제공하는 속성을 가질 수 있음
+      <br>속성은 alt, href, src, style, width, height 등이 있음
+      </p>
+
       <h2>제목태그</h2>
       <h4>예시) This is heading4</h4>
       <h6>예시) This is heading6</h6>
 
       <h2>줄바꿈과 단락태그</h2>
-      <br>br 줄바꿈은 닫는 태그가 없다
-      <p>p 단락태그는 닫는 태그가 있다</p>
+      <br>br break line 줄바꿈은 닫는 태그가 없다
+      <p>p paragraph 단락태그는 닫는 태그가 있다</p>
 
 
       <h2>주석</h2>
@@ -66,11 +72,12 @@
       </ol>
 
       <h2>링크</h2>
-      <p><a href="https://www.naver.com">hyperlink reference</a>
-        <br><a href="https://www.naver.com" target="_blank">hyperlink reference 새탭</a>
+      <p><a href="★CSS.html">anchor hyperlink reference (지역링크 : 주소를 다 적지 않아도 접근가능)</a>
+        <br><a href="https://www.naver.com" target="_blank">새탭 (외부 주소 링크 : 주소를 모두 적어야 함)</a>
+      <p><a href="#href">#id로 이동</a></p>
 
       <h2>이미지</h2>
-      <p><img src="HTML_tag.JPG" width="600px" border="1">
+      <p><img alt="이미지로딩 실패시 불러오는 문자열" src="HTML_tag.JPG" width="600px" border="1">
         <br>(출처: <a href="https://unsplash.com" target="_blank">https://unsplash.com</a>)
       </p>
 
@@ -102,10 +109,16 @@
       </table>
 
       <h2>글꼴</h2>
-      <p><strong>진하게</strong>
-        <br><u>밑줄</u>
-        <br><i>기울이기</i>
-      </p>
+        <p>여기는 기본 단락입니다</p>
+  	    <p>여기는 <b>볼드체</b> 입니다</p>
+	      <p>여기는 <strong>강조</strong> 입니다</p>
+        <p>여기는 <u>밑줄</u> 입니다</p>
+	      <p>여기는 <i>이태릭체</i> 입니다</p>
+	      <p>여기는 <em>강조 이태릭</em> 입니다	</p>
+	      <p>여기는 <mark>마크</mark>입니다</p>
+	      <p>여기는 <sup>위첨자</sup> 입니다</p>
+	      <p>여기는 <sub>아래첨자</sub> 입니다</p>
+	      <p>누군가가 <q>색깔은 어떻게 바뀌나요?</q> 라고 질문 했습니다 quote</p>
 
       <h2>체크박스</h2>
       <p><input type="checkbox" name="" value=""></p>
