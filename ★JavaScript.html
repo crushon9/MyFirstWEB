@@ -40,10 +40,12 @@
 
       <h2>HTML에서 JavaScript실행방법</h2>
       <h3>script 태그</h3>
-      <p>JavaScript 문법을 HTML에 들여올때 script 태그를 이용한다.</p>
+      <p>JavaScript 문법을 HTML에 들여올때 script 태그를 이용한다. head, body 모두 가능</p>
 
+      <h3>파일 link</h3>
+      <p>자바스크립트 코드만을 포함한 .js 파일을 HTML 파일에서 링크</p>
 
-      <h3>이벤트 on~속성</h3>
+      <h3>on 이벤트속성</h3>
       <p>input의 on~의 속성에 자바스크립트의 문법이 온다.
         <br><br><img src="JavaScript_event.JPG" width="600px" border="1">
       </p>
@@ -85,7 +87,7 @@
 
       <h2>주석</h2>
       <ul>
-        <li>HTML < !-- -->
+        <li>HTML &lt; !-- -->
         </li>
         <li>CSS /* */</li>
         <li>JavaScript //한줄주석 /*범위주석*/</li>
@@ -278,11 +280,11 @@
         </li>
         <br>
         <li>var i = 0; <span id="comment">*관습적으로 반복문에선 index의 첫글자를 따서 변수 i를 쓰며, 0부터 카운팅한다</span>
-          <br>while (i < 숫자) {코드; <br>i = i + 1;}
+          <br>while (i &lt; 숫자) {코드; <br>i = i + 1;}
         </li>
         <br>
         <li>for (초기화; 반복조건; 반복시조건코드세미콜론없이) {코드}
-          <br>for (var i = 0; i < 숫자; i++) {코드} <br><span id="comment">i++ 는 i=i+1 와 같은 의미이다
+          <br>for (var i = 0; i &lt; 숫자; i++) {코드} <br><span id="comment">i++ 는 i=i+1 와 같은 의미이다
               <br>i++ 는 기존의 i를 불러오고 1증가 시킴 / ++i 기존의 값에서 1증가 시킨 후 사용함</span>
         </li>
       </ul>
@@ -298,10 +300,10 @@
 
       <h3>반복문제어</h3>
       <ul><span id="ulh">Break</span>
-        <li>for(var i = 0; i < 숫자; i++) { if(i===숫자){break;} 코드;} <br>break를 만나면 반복문 밖으로 나온다</li>
+        <li>for(var i = 0; i &lt; 숫자; i++) { if(i===숫자){break;} 코드;} <br>break를 만나면 반복문 밖으로 나온다</li>
       </ul>
       <ul><span id="ulh">Continue</span>
-        <li>for(var i = 0; i < 숫자; i++) { if(i===숫자){continue;} 코드;} <br>continue를 만나면 중지되었다가, 다시 반복문이 실행된다</li>
+        <li>for(var i = 0; i &lt; 숫자; i++) { if(i===숫자){continue;} 코드;} <br>continue를 만나면 중지되었다가, 다시 반복문이 실행된다</li>
       </ul>
       <script>
         for (var i = 0; i < 5; i++) { if (i === 2) { break; } document.write("반복break" + i + "<br>"); }
@@ -311,7 +313,7 @@
 
       <h3>반복문중첩</h3>
       <ul>
-        <li>for(var i = 0; i < 10; i++) { <br> for(var j = 0; j < 10; j++) { <br> 코드}}
+        <li>for(var i = 0; i &lt; 10; i++) { <br> for(var j = 0; j &lt; 10; j++) { <br> 코드}}
               <br>i의 조건이 true이면 j조건이 true일때까지 코드가 실행되다가 false가되면 i조건으로 빠져나와 첫과정을 반복한다</li>
       </ul>
       <script>
@@ -797,10 +799,10 @@
       <P>"문자열".replace(pattern, "치환할표현");</P>
       <p>var URLPattern = /\b(?:https?):\/\/[a-z0-9-+&@#\/%?=~_|!:,.;]*/gim;
         <br>var URL예문 = '생활코딩 : http://opentutorials.org/course/1 입니다. 네이버 : http://naver.com 입니다. ';
-        <br>var 치환결과 = URL예문.replace(URLPattern, function(url){return "<\a href='"+url+"'>"+url+"<\ /a>";});
+        <br>var 치환결과 = URL예문.replace(URLPattern, function(url){return "&lt;\a href='"+url+"'>"+url+"&lt;\ /a>";});
             <br>console.log(치환결과);
-            <br>생활코딩 : <\a href='http://opentutorials.org/course/1'>http://opentutorials.org/course/1<\ /a> 입니다. 네이버 :
-                <\a href='http://naver.com'>http://naver.com<\ /a> 입니다.
+            <br>생활코딩 : &lt;\a href='http://opentutorials.org/course/1'>http://opentutorials.org/course/1&lt;\ /a> 입니다. 네이버 :
+            &lt;\a href='http://naver.com'>http://naver.com&lt;\ /a> 입니다.
       </p>
 
       <!------------------------------------------------------------------>
