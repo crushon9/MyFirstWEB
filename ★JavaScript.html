@@ -347,46 +347,43 @@
         <br>함수에는 내장함수(elert과같은)와 사용자정의함수가 있다
       </p>
       <ul><span id="ulh">함수정의와 호출</span>
-        <li>정의 : <span id="accent">function 함수이름() {코드}</span>
-          <br>호출 : <span id="accent">함수이름();</span>
-        </li>
+        <li><span id="comment">함수의 정의 부분은 script 상단으로 이동, 즉 함수정의 전에 호출가능</span></li>
+        <li>함수이름은 대소문자를 구분한다</li>
+        <li>자바스크립트는 변수에 함수를 정의하며/ 정의한후 담는 것도 가능</li>
         <br>
+        <li>정의 : <span id="accent">function 함수이름(매개변수) {코드 return 반환내용;}</span>
+          <br>호출 : <span id="accent">함수이름(인자);</span>
+        </li>
         <li>정의 : <span id="accent">function 함수이름(self) {코드}</span>
-          <br>호출 :<span id="accent">함수이름(this);</span>
+          <br>호출 : <span id="accent">함수이름(this);</span>
           <br>this는 html태그안에서는 태그자체 (input태그라면 input객체)
           <br>html태그밖에서는 전역객체(window)를 가리킨다
           <br>html태그밖인 자바스크립트 함수에서는 this대신에 self로 대체한다</li>
-        <br>
-        <li>정의 :<span id="accent">함수이름 = function () {코드}</span>
-          <br>호출 :<span id="accent">함수이름();</span>
+        <li>정의 : <span id="accent">함수이름 = function() {코드};</span>
+          <br>호출 : <span id="accent">함수이름();</span>
         </li>
-        <br>
-        <li>익명함수_정의호출동시 :<span id="accent">(function () {코드}) ();</span></li>
+        <li>익명함수_정의호출동시 : <span id="accent">(function () {코드})();</span></li>
         
       </ul>
 
 
-      <h3>함수의 입력과 출력</h3>
-      <p>함수는 입력값에는 여러개의 매개변수를 넣고, 출력시에는 하나의 값만 나오는 구조이다</P>
-      <ul><span id="ulh">정의</span>
-        <li><span id="accent">function 함수이름 (매개변수) { return 변환내용 }</span></li>
+      <h3>매개변수와 인자</h3>
+      <p>함수는 입력값에 여러개의 매개변수를 넣고, 출력시 하나의 리턴값만 돌려주는 구조이다</P>
+      <ul><span id="ulh">매개변수(parameter)</span>
+        <li>매개변수는 인자가 유입되는 위치를 지정해준다</li> <li>자바스크립트에서는 매개변수의 타입을 명시하지 않는다</li>
       </ul>
-      <ul><span id="ulh">호출</span>
-        <li><span id="accent">함수이름 (인자);</span></li>
-        <li>호출시 함수이름의 대소문자를 구분한다</li>
+      <ul><span id="ulh">인자(parameter)</span>
+        <li>인자(argument)는 함수로 유입되는 입력 값이다</li>
+        <li>어떤 값을 인자로 전달하느냐에 따라서 함수가 반환하는 값이나 메소드의 동작방법을 다르게 할 수 있다</li>
+        <li>자바스크립트에서는 인자의 타입 및 개수를 체크하지 않는다</li>
       </ul>
-      <ul><span id="ulh">입력</span>
-        <li>매개변수(parameter)와 인자(argument)
-          <br>인자(argument)는 함수로 유입되는 입력 값, 어떤 값을 인자로 전달하느냐에 따라서 함수가 반환하는 값이나 메소드의 동작방법을 다르게 할 수 있다.
-          <br>매개변수는 인자가 유입되는 위치를 지정해준다.
-        </li>
+
+      <h3>리턴</h3>
+      <ul>
+        <li>함수 내에서 return 뒤에 따라오는 값을 함수의 결과로 반환한다</li>
+        <li>동시에 함수를 종료시키므로 return; 다음 행에 오는 코드는 동작하지 않는다</li>
       </ul>
-      <ul><span id="ulh">출력</span>
-        <li>리턴(return)
-          <br>함수 내에서 return 뒤에 따라오는 값을 함수의 결과로 반환한다.
-          <br>동시에 함수를 종료시키므로 return; 다음 행에 오는 코드는 동작하지 않는다
-        </li>
-      </ul>
+
       <script>
         //매개변수와 리턴을 사용한 함수정의
         function sum1(a, b) {//a,b는 매개변수이자 입력값
