@@ -34,8 +34,58 @@
 
     <div class="gridright">
 
-      <h1>Ajax</h1>
-    
+      <h1>Ajax (Asynchronous JavaScript and XML)
+        <br>(XML : eXtensible Markup Language)</h1>
+      <p>비동기 자바스크립트와 XML
+      <br>XMLHttpRequest 객체를 사용하여 JSON, XML, HTML, txt 등 다양한 포맷을 주고 받는 비동기 서버 통신 방식
+      </p>
+
+    	  [클라이언트JSP] ===============> [서버Servlet]
+		JavaScript 데이터				            JSON 데이터(String)
+		  ↓ parse ↓ JSON.stringify(obj); 		 ↓ parse ↓ JSONObject jsonObj = (JSONObject) parser.parse(obj);
+		JSON 데이터(String)			          	Java 데이터(다른언어가능)
+		
+		  [서버Servlet] ===================> [클라이언트JSP]
+		Java 데이터(다른언어가능)		    	  JSON 데이터(String)
+		  ↓ parse ↓ jsonObject.put();        ↓ parse ↓ JSON.parse(txt);
+		JSON 데이터(String)			          	JavaScript 데이터
+
+
+    <h2>XMLHttpRequest</h2>
+    <p>자바 스크립트에서 비동기식 통신 방식 객체이며, 서버와 데이터를 교환할 때 사용</p>
+    <ul>
+      
+    </ul>
+    // onreadystatechange : readyState 속성이 변경될 때 호출할 함수를 정의
+			// readyState : XMLHttpRequest의 상태
+			// 0: request not initialized
+			// 1: server connection established
+			// 2: request received
+			// 3: processiong request
+			// 4: request finished and response is ready
+      // status : HTML 메시지 코드
+			// 200: “OK”
+			// 403: “Forbidden”
+			// 404: “Page not founde”
+      // open(method, url, async) : xhttp에 보낼 정보 세팅
+			// method : 요청타입 GET or POST
+			// url : 파일 또는 요청 서버 위치
+			// async : true(비동기) or false(동기)
+      // send() GET 방식으로 요청을 서버로 전송
+			// send(string: 요청 파리미터 이름과 값) POST 방식으로 요청을 서버로 전송
+
+<h2>jQuery Ajax</h2>
+$(selector).load(URL, data, callback);
+
+$.ajax({name:value, name:value, ...});
+		// 		type : GET or POST
+		// 		url : 경로
+		// 		data : 보낼 데이터 패키지
+		// 		success : 호출 성공 시 리턴될 내용 (callback)
+
+    $.get(url, callback);
+    $.Post(url, data, callback);
+    $.getJSON(url, data, callback) 
 
 
     </div>
