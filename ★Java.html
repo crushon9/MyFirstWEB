@@ -198,32 +198,6 @@
         <li>call by reference : 주소값을 전달하기 때문에 어느 위치에서든 같은 객체 (메소드로 리턴값으로 주고받지않아도 원본값이 수정됨)</li>
       </ul>
 
-      <h2>Print & Scanner</h2>
-      <h3>Print</h3>
-      <ul>
-        <li><span id="accent">System.out.println(); </span> 출력 후 개행</li>
-        <li><span id="accent">System.out.print(); </span> 개행없이 출력</li>
-        <li><span id="accent">System.out.printf(); </span> 변수의 값을 지시자 형식으로 변환하여 출력</li>
- 
-      </ul>
-      <ul><span id="ulh">etc</span>
-        <li>System.out.println("Hello \"World\""); <span id="comment"> →escape</span></li>
-        <li>System.out.println("Hello <span id="accent"> →줄바꿈 불가능</span>
-          <br>World");
-        </li>
-        <li>System.out.println("Hello " <span id="comment"> →OK</span>
-          <br>+ "World");
-        </li>
-        <li>System.out.printf("&.3f", 변수) <span id="comment"> →소수점 셋째자리까지 출력</span></li>
-      </ul>
-      <h3>Scanner</h3>
-      <ul>
-        <li><span id="accent">sc.nextInt(); </span> 정수 입력받기</li>
-        <li><span id="accent">sc.nextLine(); </span> Enter전까지 입력받은 문자열을 리턴 <span id="comment">*엔터버퍼 주의*</span></li>
-        <li><span id="accent">sc.next(); </span> Space전까지 입력받은 문자열을 리턴</li>
-        <li><span id="accent">sc.next().charAt(0); </span> 입력받은 문자열중 첫번째 문자만 저장</li>
-      </ul>
-
       <h1>Operator</h1>
       <p>연산식은 연산자의 수가 아무리 많아도 반드시 하나의 값을 산출한다
       <br>대부분 연산자는 <span id="accent">→ 방향</span>으로 연산되나, 단항연산자(++)와 대입연산자(+=)는 <span id="accent">← 방향</span>으로 연산된다</p>
@@ -834,6 +808,116 @@
         <li>class TV implements RemoteController {...}</li>
       </ul>
 
+      <h1>Stream</h1>
+      <p>단일 방향(출발지 → 도착지)으로 흘러가며 자바에서 데이터의 입출력을 담당
+      <br><img src="Java_stream.jpg" width="600px"></p>
+
+      <h2>InputStream & OutputStream</h2>
+      <p>바이트 단위 입출력을 위한 최상위 입출력 스트림 추상클래스</p>
+      <ul><span id="ulh">InputStream</span>
+        <li>입력장치(키보드,마우스,파일..) → InputStream → 프로그램</li>
+        <li>상속받은 하위 클래스 : FileInputStream, BufferedInputStream, DataInputStream</li>
+        <li>주요 메소드 : read(), close()</li>
+      </ul>
+      <ul><span id="ulh">OutputStream</span>
+        <li>프로그램 → OutputStream → 출력장치(모니터,프린터,파일..)</li>
+        <li>상속받은 하위 클래스 : PrintStream, FileOutputStream, BufferedOutputStream, DataOutputStream</li>
+        <li>주요 메소드 : write(), flush(), close()</li>
+      </ul>
+
+      <h2>Reader & Writer</h2>
+      <p>문자 단위 입출력을 위한 최상위 입출력 스트림 추상클래스</p>
+      <ul><span id="ulh">Reader</span>
+        <li>상속받은 하위 클래스 : FileReader, BufferedReader, InputStreamReader;</li>
+        <li>주요 메소드 : read(), close()</li>
+      </ul>
+      <ul><span id="ulh">Writer</span>
+        <li>상속받은 하위 클래스 : PrintWriter, FileWriter, BufferedWriter, OutputStreamWriter</li>
+        <li>주요 메소드 : write(), flush(), close()</li>
+      </ul>
+
+      <h2>Console</h2>
+      <p>콘솔은 시스템을 사용하기 위해 키보드로 입력을 받고 화면으로 출력하는 소프트웨어를 말한다
+      <br>리눅스는 터미널, 윈도우는 명령 프롬프트, 이클립스에도 콘솔 뷰가 있다</p>
+      <h3>System</h3>
+      <ul><span id="ulh">System.in</span>
+        <li>콘솔로부터 데이터를 입력 받을 때</li>
+        <li>in 은 InputStream 클래스의 인스턴스 (java.lang.System.in)</li>
+      </ul>
+      <ul><span id="ulh">System.out</span>
+        <li>콘솔에 데이터를 출력 할 때</li>
+        <li>out 은 PrintStream 클래스의 인스턴스 (java.lang.System.out), PrintStream은 OutputStream 클래스의 하위 클래스</li>
+      </ul>
+      <ul><span id="ulh">System.err</span>
+        <li>콘솔에 에러를 출력 할 때</li>
+      </ul>
+
+      <h3>Scanner</h3>
+      <p>콘솔로부터 기본타입의 값을 읽어오는 java.util 패키지의 클래스
+      <br>Scanner sc = new Scanner(System.in);</p>
+      <ul>
+        <li><span id="accent">sc.nextInt(); </span> 정수 입력받기</li>
+        <li><span id="accent">sc.nextLine(); </span> Enter전까지 입력받은 String을 리턴 <span id="comment">*엔터버퍼 주의*</span></li>
+        <li><span id="accent">sc.next(); </span> Space전까지 입력받은 문자열을 리턴</li>
+        <li><span id="accent">sc.next().charAt(0); </span> 입력받은 문자열중 첫번째 문자만 저장</li>
+      </ul>
+
+      <h2>보조 스트림</h2>
+      <p>다른 스트림과 연결되어 여러가지 편리기능을 제공해주는 스트림
+      <br><img src="Java_stream2.jpg" width="600px"></p>
+      <h3>Object Stream</h3>
+      <p>최상위 조상 클래스인 Object 클래스를 통로로 모든 클래스의 데이터를 입출력 할 수 있다 (다형성)
+      <br>이때 입출력하는 클래스는 Serializable 인터페이스를 구현해야한다 <span id="accent">implements Serializable</span></p>
+      <ul>
+        <li>프로그램 &lt;=== ObjectInputStream &lt;=== FileInputStream &lt;=== 파일</li>
+        <li>프로그램 ===> ObjectOutputStream ===> FileOutputStream ===> 파일</li>
+      </ul>
+
+      <h3>Print</h3>
+      <ul>
+        <li><span id="accent">System.out.println(); </span> 출력 후 개행</li>
+        <li><span id="accent">System.out.print(); </span> 개행없이 출력</li>
+        <li><span id="accent">System.out.printf(); </span> 변수의 값을 지시자 형식으로 변환하여 출력</li>
+ 
+      </ul>
+      <ul><span id="ulh">etc</span>
+        <li>System.out.println("Hello \"World\""); <span id="comment"> →escape</span></li>
+        <li>System.out.println("Hello <span id="accent"> →줄바꿈 불가능</span>
+          <br>World");
+        </li>
+        <li>System.out.println("Hello " <span id="comment"> →OK</span>
+          <br>+ "World");
+        </li>
+        <li>System.out.printf("&.3f", 변수) <span id="comment"> →소수점 셋째자리까지 출력</span></li>
+      </ul>
+
+      <h2>File</h2>
+      <p>파일(txt,doc,mp4,jpg..)객체와 디렉토리객체를 다루기 위한 클래스</p>
+      <ul><span id="ulh">Path</span>
+        <li>절대경로 : 루트(C:\, D:\)부터 파일(폴더)의 전체 경로</li>
+        <li>상대경로 : 현재 작업 프로젝트 기준으로 파일(폴더)의 경로</li>
+        <li>. 현재디렉토리 .. 상위디렉토리</li>
+      </ul>
+      <ul><span id="ulh">File Separator</span>
+        <li>파일구분자는 운영체제(OS)마다 다르게 사용</li>
+        <li>Windows : \</li>
+        <li>Unix, Linux, Android ... : /</li>
+        <li>자바에서는 File.separator 상수를 출력해보면 해당 운영체제의 디렉토리 구분자를 확인할 수 있다</li>
+      </ul>
+      <ul><span id="ulh">method</span>
+        <li>exists() : 파일, 폴더가 존재하는지 boolean값 리턴</li>
+        <li>mkdir() : 디렉토리를 1개만 생성하는 메소드. 성공여부를 boolean값 리턴</li>
+        <li>mkdirs() : 상위디렉토리를 포함하여 한번에 생성하는 메소드. 성공여부를 boolean값 리턴</li>
+        <li>creatNewFile() : 새로운 빈 파일 생성 <span id="comment">→new File로 인스턴스 생성시, 실제 파일은 생성되지않고 create 메소드를 통해 생성됨</span></li>
+        <li>file1.renameTo(file2) : 파일 이름 변경</li>
+        <li>file.delete() : 파일 삭제</li>
+        <li>getPath() : 생성시의 경로를 리턴</li>
+        <li>getAbsolutePath() : 절대 경로 리턴</li>
+        <li>isDirectory() : File 객체가 디렉토리이면 true를 리턴</li>
+        <li>isFile() : File 객체가 파일이면 true를 리턴</li>
+        <li>listFiles() : 디렉토리 안의 내용 확인</li>
+      </ul>
+
       <h1>Generic &lt;></h1>
       <p>제네릭은 람다식, 컬렉션, 스트림, NIO에서 주로 사용된다</p>
       <h2>Generic Type (Class&lt;T> , Interface&lt;T>)</h2>
@@ -1079,7 +1163,7 @@
         <li>선언 : Method 선언부 throws Exception(예외클래스)...</li>
         <li>호출 : try { Method(); } catch (...) {...}</li>
       </ul>
-     
+
       <h1>Thread</h1>
       <p>하나의 작업을 순차적으로 진행하는 실행 코드 흐름</p>
       <h2>Process & Thread</h2>
@@ -1119,87 +1203,6 @@
         <li style="list-style: decimal">생성한 인스턴스를 매개변수(Runnable 다형성)로 Thread 인스턴스 생성</li>
         <li style="list-style: decimal">Thread 인스턴스에서 start( ) 메소드 호출</li>
         <li style="list-style: decimal">(Thread의 메모리 공간확보, 스케중링 등록, 초기화가 자동으로 이루어진 뒤) →run( ) 자동 호출</li>
-      </ul>
-
-
-      <h1>Stream</h1>
-      <p><img src="Java_thread.jpg" width="600px">
-      <br>단일 방향(출발지 -> 도착지)으로 흘러감. 데이터의 입출력을 담당</p>
-      <h2>IO Stream</h2>
-      <p></p>
-      <ul><span id="ulh">Input</span>
-        <li>프로그램 &lt;=== InputStream &lt;=== 입력장치(키보드,마우스,파일..)</li>
-        <li>Scanner sc = new Scanner(System.in);</li>
-        <li>in 은 InputStream 클래스의 인스턴스 (java.lang.System.in)</li>
-      </ul>
-      <ul><span id="ulh">Output</span>
-        <li>프로그램 ===> OutputStream ===> 출력장치(모니터,프린터,파일..)</li>
-        <li>System.out.println("Hello");</li>
-        <li>out 은 printStream 클래스의 인스턴스 (java.lang.System.out)</li>
-        <li>printStream은 OutputStream 클래스의 하위 클래스</li>
-      </ul>
-
-      <h2>IO Stream</h2>
-      <ul><span id="ulh">Input</span>
-        <li>프로그램 &lt;=== InputStream &lt;=== 입력장치(키보드,마우스,파일..)</li>
-        <li>Scanner sc = new Scanner(System.in);</li>
-        <li>in 은 InputStream 클래스의 인스턴스 (java.lang.System.in)</li>
-      </ul>
-      <ul><span id="ulh">Output</span>
-        <li>프로그램 ===> OutputStream ===> 출력장치(모니터,프린터,파일..)</li>
-        <li>System.out.println("Hello");</li>
-        <li>out 은 printStream 클래스의 인스턴스 (java.lang.System.out)</li>
-        <li>printStream은 OutputStream 클래스의 하위 클래스</li>
-      </ul>
-
-      <h3>File Stream</h3>
-      <ul><span id="ulh">Input</span>
-        <li>프로그램 &lt;=== FileInputStream &lt;=== 파일</li>
-        <li>FileInputStream 객체생성, read() 메소드를 사용하여 파일을 읽음</li>
-        <li>read()메소드는 파일에서 데이터를 읽어오며, 파일끝에 도달했을때 -1 리턴</li>
-      </ul>
-      <ul><span id="ulh">Output</span>
-        <li>프로그램 ===> FileOutputStream ===> 파일</li>
-        <li>FileOutputStream 객체생성, write() 메소드를 사용하여 파일을 씀</li>
-      </ul>
-
-      <h3>Object Stream</h3>
-      <p>최상위 조상 클래스인 Object 클래스를 통로로 모든 클래스의 데이터를 입출력 할 수 있다 (다형성)
-      <br>이때 입출력하는 클래스는 Serializable 인터페이스를 구현해야한다 <span id="accent">implements Serializable</span></p>
-      <ul>
-        <li>프로그램 &lt;=== ObjectInputStream &lt;=== FileInputStream &lt;=== 파일</li>
-        <li>프로그램 ===> ObjectOutputStream ===> FileOutputStream ===> 파일</li>
-      </ul>
-
-      <h2>File Class</h2>
-      <p>파일(txt, doc, mp4, jpg, png, ...) 객체와 디렉토리 객체를 다루기 위한 클래스</p>
-      
-      <h3>Path</h3>
-      <ul>
-        <li>절대경로 : 루트(C:\, D:\)부터 파일(폴더)의 전체 경로</li>
-        <li>상대경로 : 현재 작업 프로젝트 기준으로 파일(폴더)의 경로</li>
-        <li>. 현재디렉토리 .. 상위디렉토리</li>
-      </ul>
-      <ul><span id="ulh">File Separator</span>
-        <li>파일구분자는 운영체제(OS)마다 다르게 사용</li>
-        <li>Windows : \</li>
-        <li>Unix, Linux, Android ... : /</li>
-        <li>자바에서는 File.separator 라는 변수 제공</li>
-      </ul>
-
-      <h3>Method</h3>
-      <ul>
-        <li>exists() : 파일, 폴더가 존재하는지 boolean값 리턴</li>
-        <li>mkdir() : 디렉토리를 1개만 생성하는 메소드. 성공여부를 boolean값 리턴</li>
-        <li>mkdirs() : 상위디렉토리를 포함하여 한번에 생성하는 메소드. 성공여부를 boolean값 리턴</li>
-        <li>creatNewFile() : 새로운 빈 파일 생성 <span id="comment">→new File로 인스턴스 생성시, 실제 파일은 생성되지않고 create 메소드를 통해 생성됨</span></li>
-        <li>file1.renameTo(file2) : 파일 이름 변경</li>
-        <li>file.delete() : 파일 삭제</li>
-        <li>getPath() : 생성시의 경로를 리턴</li>
-        <li>getAbsolutePath() : 절대 경로 리턴</li>
-        <li>isDirectory() : File 객체가 디렉토리이면 true를 리턴</li>
-        <li>isFile() : File 객체가 파일이면 true를 리턴</li>
-        <li>listFiles() : 디렉토리 안의 내용 확인</li>
       </ul>
 
       <h1>JDBC</h1>
