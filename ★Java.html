@@ -812,30 +812,89 @@
       <p>단일 방향(출발지 → 도착지)으로 흘러가며 자바에서 데이터의 입출력을 담당
       <br><img src="Java_stream.jpg" width="600px"></p>
 
-      <h2>InputStream & OutputStream</h2>
-      <p>바이트 단위 입출력을 위한 최상위 입출력 스트림 추상클래스</p>
-      <ul><span id="ulh">InputStream</span>
-        <li>입력장치(키보드,마우스,파일..) → InputStream → 프로그램</li>
-        <li>상속받은 하위 클래스 : FileInputStream, BufferedInputStream, DataInputStream</li>
+      <h2>주 입출력 스트림</h2>
+      <h3>바이트 단위</h3>
+      <ul><span id="accent">InputStream</span>
+        <li>바이트 단위 최상위 입력 스트림의 추상클래스</li>
+        <li>상속받은 하위 클래스 : XXXInputStream</li>
         <li>주요 메소드 : read(), close()</li>
       </ul>
-      <ul><span id="ulh">OutputStream</span>
-        <li>프로그램 → OutputStream → 출력장치(모니터,프린터,파일..)</li>
-        <li>상속받은 하위 클래스 : PrintStream, FileOutputStream, BufferedOutputStream, DataOutputStream</li>
+      <ul><span id="accent">OutputStream</span>
+        <li>바이트 단위 최상위 출력 스트림의 추상클래스</li>
+        <li>상속받은 하위 클래스 : XXXOutputStream</li>
+        <li>주요 메소드 : write(), flush(), close()</li>
+      </ul>
+      
+      <h3>문자 단위</h3>
+      <ul><span id="accent">Reader</span>
+        <li>문자 단위 최상위 입력 스트림의 추상클래스</li>
+        <li>상속받은 하위 클래스 : XXXReader</li>
+        <li>주요 메소드 : read(), close()</li>
+      </ul>
+      <ul><span id="accent">Writer</span>
+        <li>문자 단위 최상위 출력 스트림의 추상클래스</li>
+        <li>상속받은 하위 클래스 : XXXWriter</li>
         <li>주요 메소드 : write(), flush(), close()</li>
       </ul>
 
-      <h2>Reader & Writer</h2>
-      <p>문자 단위 입출력을 위한 최상위 입출력 스트림 추상클래스</p>
-      <ul><span id="ulh">Reader</span>
-        <li>상속받은 하위 클래스 : FileReader, BufferedReader, InputStreamReader;</li>
-        <li>주요 메소드 : read(), close()</li>
-      </ul>
-      <ul><span id="ulh">Writer</span>
-        <li>상속받은 하위 클래스 : PrintWriter, FileWriter, BufferedWriter, OutputStreamWriter</li>
-        <li>주요 메소드 : write(), flush(), close()</li>
-      </ul>
+      <h3>파일 스트림</h3>
+      <ul>
+        <li>최상위 입출력 스트림 추상 클래스를 상속받은 파일 스트림</li>
+        <li>FileInputStream, FileOutputStream, FileReader, FileWriter</li>
+      </ul> 
 
+      <h2>보조 스트림</h2>
+      <p>자체적으로 입출력은 불가하나 주 입출력 스트림과 연결되어 여러가지 기능을 제공해주는 스트림
+      <br><span id="comment">보조스트림 변수 = new 보조스트임(연결스트림);</span>
+      <br><img src="Java_stream2.jpg" width="700px"></p>
+        <h3>문자 변환 보조 스트림</h3>
+        <ul>   
+        <li>바이트 단위 스트림(InputStream, OutputStream)과 연결하여 문자 단위 스트림(Reader, Writer)으로 변환시키는 보조스트림</li>
+        <li>InputStreamReader, OutputStreamWriter</li>
+        </ul>
+
+        <h3>기본 타입 입출력 보조 스트림</h3>
+        <ul>
+          <li>바이트 단위 스트림과 연결하여 기본 데이터(Primitive) 타입 단위로 입출력해주는 보조스트림</li>
+          <li>DataInputStream, DataOutputStream</li>
+        </ul>
+
+        <h3>객체 입출력 보조 스트림</h3>
+        <ul>
+          <li>바이트 단위 스트림과 연결하여 객체 단위로 입출력해주는 보조스트림</li>
+          <li>ObjectInputStream, ObjectOutputStream</li>
+          <li><span id="comment">바이트 → InputStream → ObjectInputStream(역직렬화) → 프로그램(객체) → ObjectOutputStream(직렬화) → OutputStream → 바이트</span></li>
+        </ul>
+        <ul><span id="ulh">다형성</span>
+          <li>최상위 객체 클래스인 Object를 통로로 모든 클래스의 데이터를 입출력 가능</li>
+        </ul>
+        <ul><span id="accent">직렬화</span>
+          <li>객체를 입출력하는 클래스는 Serializable 인터페이스를 구현해야한다 <span id="comment">implements Serializable</span></li>
+          <li>객체 직렬화(serialization) : 객체의 데이터를 일렬로 늘어선 연속적인 바이트로 변경하는 것</li>
+          <li>객체 역직렬화(deserialization) : 연속적인 바이트를 객체로 복원하는 것</li>
+          <li>Serializable 인터페이스를 구현한 클래스의 멤버 변수(static 아닌)만 직렬화되며, 생성자 및 메소드는 직렬화 대상이 아니다.</li>
+          <li>serialVersionUID : Serializable 인터페이스를 구현한 클래스를 컴파일하면 자동으로 serialVersionUID 정적 필드가 추가되며 재 컴파일시 이 값이 달라진다. 직렬화된 객체를 역질렬화 할 때는 내용이 완전히 같은 클래스여야 하는데 이를 판별하는 식별자 역할을 한다.</li>
+        </ul>
+
+        <h3>Buffered 보조 스트림</h3>
+        <ul>
+          <li>버퍼를 이용하여 하드디스크(처리 속도가 늦음)에 데이터를 주고받는 횟수를 줄여 성능을 향상</li>
+          <li>BufferedInputStream, BufferedReader, BufferedOutputStream, BufferedWriter</li>
+        </ul>
+
+        <h3>프린터 보조 스트림</h3>
+        <ul>
+          <li>print() 계열 메소드를 가진 출력 보조 스트림</li>
+          <li>PrintStream, PrintWrite</li>
+          <li><span id="comment">System.out이 PrintStream 타입이기 때문에 System.out.print()</span></li>
+        </ul>
+        <ul><span id="ulh">method</span>
+          <li><span id="comment">System.out.println(); </span> 출력 후 개행</li>
+          <li><span id="comment">System.out.print(); </span> 개행없이 출력</li>
+          <li><span id="comment">System.out.printf(); </span> 변수를 지시자 형식으로 변환하여 출력</li>
+          <li>System.out.printf("&.3f", 변수) → 소수점 셋째자리까지 출력</li>
+        </ul>
+   
       <h2>Console</h2>
       <p>콘솔은 시스템을 사용하기 위해 키보드로 입력을 받고 화면으로 출력하는 소프트웨어를 말한다
       <br>리눅스는 터미널, 윈도우는 명령 프롬프트, 이클립스에도 콘솔 뷰가 있다</p>
@@ -846,65 +905,39 @@
       </ul>
       <ul><span id="ulh">System.out</span>
         <li>콘솔에 데이터를 출력 할 때</li>
-        <li>out 은 PrintStream 클래스의 인스턴스 (java.lang.System.out), PrintStream은 OutputStream 클래스의 하위 클래스</li>
+        <li>out 은 PrintStream 클래스의 인스턴스 (java.lang.System.out) <span id="comment">PrintStream은 OutputStream 클래스의 하위 클래스</span></li>
       </ul>
       <ul><span id="ulh">System.err</span>
         <li>콘솔에 에러를 출력 할 때</li>
       </ul>
-
-      <h3>Scanner</h3>
-      <p>콘솔로부터 기본타입의 값을 읽어오는 java.util 패키지의 클래스
-      <br>Scanner sc = new Scanner(System.in);</p>
-      <ul>
-        <li><span id="accent">sc.nextInt(); </span> 정수 입력받기</li>
-        <li><span id="accent">sc.nextLine(); </span> Enter전까지 입력받은 String을 리턴 <span id="comment">*엔터버퍼 주의*</span></li>
-        <li><span id="accent">sc.next(); </span> Space전까지 입력받은 문자열을 리턴</li>
-        <li><span id="accent">sc.next().charAt(0); </span> 입력받은 문자열중 첫번째 문자만 저장</li>
-      </ul>
-
-      <h2>보조 스트림</h2>
-      <p>다른 스트림과 연결되어 여러가지 편리기능을 제공해주는 스트림
-      <br><img src="Java_stream2.jpg" width="600px"></p>
-      <h3>Object Stream</h3>
-      <p>최상위 조상 클래스인 Object 클래스를 통로로 모든 클래스의 데이터를 입출력 할 수 있다 (다형성)
-      <br>이때 입출력하는 클래스는 Serializable 인터페이스를 구현해야한다 <span id="accent">implements Serializable</span></p>
-      <ul>
-        <li>프로그램 &lt;=== ObjectInputStream &lt;=== FileInputStream &lt;=== 파일</li>
-        <li>프로그램 ===> ObjectOutputStream ===> FileOutputStream ===> 파일</li>
-      </ul>
-
-      <h3>Print</h3>
-      <ul>
-        <li><span id="accent">System.out.println(); </span> 출력 후 개행</li>
-        <li><span id="accent">System.out.print(); </span> 개행없이 출력</li>
-        <li><span id="accent">System.out.printf(); </span> 변수의 값을 지시자 형식으로 변환하여 출력</li>
- 
-      </ul>
-      <ul><span id="ulh">etc</span>
-        <li>System.out.println("Hello \"World\""); <span id="comment"> →escape</span></li>
-        <li>System.out.println("Hello <span id="accent"> →줄바꿈 불가능</span>
-          <br>World");
-        </li>
-        <li>System.out.println("Hello " <span id="comment"> →OK</span>
-          <br>+ "World");
-        </li>
-        <li>System.out.printf("&.3f", 변수) <span id="comment"> →소수점 셋째자리까지 출력</span></li>
-      </ul>
-
+  
+        <h3>Scanner</h3>
+        <p>콘솔로부터 기본타입의 값을 읽어오는 java.util 패키지의 클래스
+        <br><span id="comment">Scanner sc = new Scanner(System.in);</span></p>
+        <ul>
+          <li><span id="accent">sc.nextInt(); </span> 정수 입력받기</li>
+          <li><span id="accent">sc.nextLine(); </span> Enter전까지 입력받은 String을 리턴 <span id="comment">*엔터버퍼 주의*</span></li>
+          <li><span id="accent">sc.next(); </span> Space전까지 입력받은 문자열을 리턴</li>
+          <li><span id="accent">sc.next().charAt(0); </span> 입력받은 문자열중 첫번째 문자만 저장</li>
+        </ul>
+     
       <h2>File</h2>
       <p>파일(txt,doc,mp4,jpg..)객체와 디렉토리객체를 다루기 위한 클래스</p>
-      <ul><span id="ulh">Path</span>
+      <h3>Path</h3>
+      <ul>
         <li>절대경로 : 루트(C:\, D:\)부터 파일(폴더)의 전체 경로</li>
         <li>상대경로 : 현재 작업 프로젝트 기준으로 파일(폴더)의 경로</li>
         <li>. 현재디렉토리 .. 상위디렉토리</li>
       </ul>
-      <ul><span id="ulh">File Separator</span>
+      <h3>File Separator</h3>
+      <ul>
         <li>파일구분자는 운영체제(OS)마다 다르게 사용</li>
         <li>Windows : \</li>
         <li>Unix, Linux, Android ... : /</li>
         <li>자바에서는 File.separator 상수를 출력해보면 해당 운영체제의 디렉토리 구분자를 확인할 수 있다</li>
       </ul>
-      <ul><span id="ulh">method</span>
+      <h3>File Method</h3>
+      <ul>
         <li>exists() : 파일, 폴더가 존재하는지 boolean값 리턴</li>
         <li>mkdir() : 디렉토리를 1개만 생성하는 메소드. 성공여부를 boolean값 리턴</li>
         <li>mkdirs() : 상위디렉토리를 포함하여 한번에 생성하는 메소드. 성공여부를 boolean값 리턴</li>
