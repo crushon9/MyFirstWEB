@@ -32,16 +32,19 @@
       <div class="gridright">
         <h1>WEB : 퍼블릭 도메인(Public Domain)</h1>
 
-        <h2>internet 과 web</h2>
+        <h2>Client & Server</h2>
+        <p><img src="WEB_client&server.JPG" width="600px" border=1>
+          <ul><span id="ulh"></span>
+            <li>client & server : 정보를 요청하고 제공받는 관계</li>
+            <li>host : 네트워크에 연결된 컴퓨터나 기타장치 (클라이언트와 서버 각각의 컴퓨터)</li>
+            <li>network : host가 그물망처럼 연결되어 통신하는 형태</li>
+            <li>internet : 인터네트워크(inter-network)'라는 말에서 시작되었으며, 전 세계 컴퓨터들을 하나로 연결하는 거대한 컴퓨터 통신망</li>
+          </ul>
+        </p>
+        
+        <h2>Internet > Web</h2>
         <p><img src="WEB_internet.JPG" width="400px" border=1>
         <br>최초의 웹사이트 주소 <a href="http://info.cern.ch">(http://info.cern.ch)</a></p>
-
-        <h2>client & server</h2>
-        <p><img src="WEB_client&server.JPG" width="600px" border=1>
-        <br>호스트 = 항상 켜져있는 컴퓨터</p>
-
-
-
 
         <h2>웹서버 운영방법</h2>
         <ol>
@@ -50,6 +53,25 @@
           <li>직접 웹서버 운영하기2 : <a href="https://chrome.google.com/webstore/detail/web-server-for-chrome/ofhbbkphhbklhfoeikjpcbhemlocgigb">Web Server for Chrome </a></li>
         </ol>
 
+        <h2>IP address (Internet Protocol address)</h2>
+        <p>IP 주소는 컴퓨터 네트워크에서 장치들이 서로를 인식하고 통신을 하기 위해서 사용하는 특수한 번호이다.
+          <br>네트워크 어댑터(랜 카드) 마다 하나의 IP주소가 할당된다. 윈도우 명령프롬프트에서 ipconfig 명령어로 확인 가능하다.
+        </p>
+  
+        <h2>Domain name</h2>
+        <p>도메인 네임은 넓은 의미로는 네트워크상에서 컴퓨터를 식별하는 호스트명을 가리키며, 좁은 의미에서는 도메인 레지스트리에게서 등록된 이름을 의미한다.
+          <br>DNS(Domain Name Server)에는 거대한 전화번호부와 같이 모든 IP의 domain이 저장되어있다.
+        </p>
+  
+        <h3>URL(Uniform Resource Locator)</h3>
+        <p>인터넷에서 리소스의 위치를 가리키는 문자열 https:// 뒤의 도메인 이름 모두 포함한 경로</p>
+  
+        <h2>Port</h2>
+        <p>한 대의 컴퓨터는 다양한 서버 프로그램들이 실행될 수 있다. IP는 컴퓨터의 네트워크 어댑터까지만 갈 수 있는 정보이기 때문에 컴퓨터 내에서 실행하는 서버를 선택하려면 추가적인 정보 port번호가 필요하다.
+        </p>
+
+        <h3>Port Binding</h3>
+        <p>서버는 시작할때 고정적인 포트 번호를 가지고 실행하는데 이를 포트 바인딩이라 한다. 웹서버는 기본적으로 80번과 바인딩한다.</p>
 
       </div>
     </div>
