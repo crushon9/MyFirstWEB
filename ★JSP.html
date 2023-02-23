@@ -48,17 +48,11 @@
         <br>라이브러리이기 때문에 JSTL을 사용하려면, 라이브러리를 다운로드 해서 추가해야 합니다.
         <br>&lt;%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
       </p>
-
-
-
-
-
-<c:set var ="total" value = "0" />
-
-<c:forEach var="price" items="${prices}">
-    <c:set var= "total" value="${ total + price }"/>
-</c:forEach>
-
+      <ul>
+        <li>&lt;c:set var ="total" value = "0" /></li>
+        <li>&lt;c:forEach var="price" items="${prices}">&lt;/c:forEach></li>
+        <li>&lt;c:if test="${name eq '홍길동'}">&lt;/c:if></li>
+      </ul>
 
       <h3>Servlet 과 JSP 의 차이점</h3>
       <p>자바 서블릿은 웹페이지를 동적으로 생성하는 서버 측 프로그램 혹은 그 사양을 말한다
