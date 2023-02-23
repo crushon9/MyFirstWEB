@@ -41,12 +41,11 @@
 
       <h2>EL (Expression Language)</h2>
       <p>EL은 JSP의 출력 문법을 대체하는 표현 언어
-      <br>&lt;%= 변수 %> (JSP값표현) → ${ 변수 } (EL값표현)</p>
+      <br>JSP의 값 표현 : &lt;%= 변수 %> → <span id="accent">EL의 값 표현 : ${ 변수 }</span></p>
     
       <h2>JSTL (JavaServer Pages Standard Tag Library)</h2>
       <p>JSTL은 태그를 통해 JSP 코드를 관리하는 라이브러리로서, JSP의 가독성이 좋아집니다.
-        <br>라이브러리이기 때문에 JSTL을 사용하려면, 라이브러리를 다운로드 해서 추가해야 합니다.
-        <br>&lt;%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+        <br>라이브러리이기 때문에 JSTL을 사용하려면 헤더에 태그를 추가해야한다 &lt;%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
       </p>
       <ul>
         <li>&lt;c:set var ="total" value = "0" /></li>
