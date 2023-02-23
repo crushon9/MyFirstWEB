@@ -608,7 +608,7 @@
         <h3>Class Member (Static Member)</h3>
         <ul>
           <li>static으로 선언한 정적필드(멤버변수)와 정적메소드</li>
-          <li><span id="accent">담고있는 클래스의 인스턴스를 생성하지 않아도 접근 가능 </span> / static ← static(가능) / static ← instance(가능)</li>
+          <li><span id="accent">담고있는 클래스의 인스턴스를 생성하지 않고 클래스이름으로 접근 </span> Class.member(가능) / instance.member(가능)</li>
           <li><span id="comment">static 변수는 생성되는 모든 인스턴스들이 공유하기 때문에 값의 변경에 대해서 주의해야 함</span></li>
           <li>변수 사용형식 : 클래스이름.변수이름</li>
           <li>메소드 사용형식 : 클래스이름.메소드()</li>
@@ -617,11 +617,11 @@
         <h3>Instance Member</h3>
         <ul>
         <li>static이 선언되지 않은 인스턴스필드(멤버변수)와 인스턴스메소드</li>
-        <li><span id="accent">담고있는 클래스의 인스턴스를 생성한 후에만 접근 가능</span> / instance ← instance(가능) / instance ← static(불가능)</li>
+        <li><span id="accent">담고있는 클래스의 인스턴스를 생성한 후 인스턴스 변수로 접근</span> Class.member(불가능) / instance.member(가능)</li>
         <li>변수 사용형식 : 참조변수.변수이름</li>
         <li>메소드 사용형식 : 참조변수.메소드()</li>
       </ul>
-      <p><span id="comment"> → 객체마다 가지고 있어야 할 데이터라면 인스턴스필드로 선언하는 것이 좋고, 공용적인 데이터라면 static변수로 선언하는 것이 좋다. 메소드는 인스턴스 필드를 사용한다면 인스턴스 메소드로, 인스턴스 필드를 사용하지 않는다면 정적 메소드로 선언한다</span></p>
+      <p><span id="comment"> → 객체마다 가지고 있어야 할 데이터라면 인스턴스필드로 선언하는 것이 좋고, 공용적인 데이터라면 static변수로 선언하는 것이 좋다. 메소드는 인스턴스 필드를 사용한다면 인스턴스 메소드로, 인스턴스 필드를 사용하지 않는다면 static 메소드로 선언한다</span></p>
 
 
       <h3>변수의 종류</h3>
