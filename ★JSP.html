@@ -41,19 +41,19 @@
 
       <h2>EL (Expression Language)</h2>
       <p>EL은 JSP의 출력 문법을 대체하는 표현 언어
-      <br>JSP의 값 표현 : &lt;%= 변수 %> → <span id="accent">EL의 값 표현 : ${ 변수 }</span></p>
+      <br>JSP의 값 표현 : &lt;%= 변수 %> <span id="accent">→ EL의 값 표현 : ${ 변수 }</span></p>
     
       <h2>JSTL (JavaServer Pages Standard Tag Library)</h2>
       <p>JSTL은 태그를 통해 JSP 코드를 관리하는 라이브러리로서, JSP의 가독성이 좋아집니다.
         <br>라이브러리이기 때문에 JSTL을 사용하려면 헤더에 태그를 추가해야한다 &lt;%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
       </p>
-      <ul>
+      <ul><span id="ulh">JSTL 태그 예시</span>
         <li>&lt;c:set var ="total" value = "0" /></li>
         <li>&lt;c:forEach var="price" items="${prices}">&lt;/c:forEach></li>
         <li>&lt;c:if test="${name eq '홍길동'}">&lt;/c:if></li>
       </ul>
 
-      <h3>Servlet 과 JSP 의 차이점</h3>
+      <h2>Servlet 과 JSP 의 차이점</h2>
       <p>자바 서블릿은 웹페이지를 동적으로 생성하는 서버 측 프로그램 혹은 그 사양을 말한다
       <br>서블릿은 JSP와 비슷한 점이 있지만, JSP가 HTML 문서 안에 Java 코드를 포함하고 있는 반면, 서블릿은 자바 코드 안에 HTML을 포함하고 있다는 차이점이 있다.
       </p>
