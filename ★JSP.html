@@ -1,0 +1,71 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>JSP</title>
+</head>
+
+<link rel="stylesheet" href="CSS_Style.css">
+
+<body>
+  <h1 id="mainhead">JSP</h1>
+  <div class="grid">
+    <div class="gridleft">
+      <ul>
+        <a href="★Java.html"><li>Java</li></a>
+        <a href="★C.html"><li>C언어</li></a>
+        <a href="★WEB.html"><li>WEB</li></a>
+          <ol>
+            <a href="★HTML.html"><li>HTML</li></a>
+            <a href="★CSS.html"><li>CSS</li></a>
+            <a href="★JavaScript.html"><li>JavaScript</li></a>
+            <a href="★Ajax.html"><li>Ajax</li></a>
+            <a href="★JSP.html"><li id="active">JSP</li></a> 
+            
+          </ol>
+        <a href="★Linux.html"><li>Linux</li></a>
+        <a href="★DataBase.html"><li>DataBase</li></a>
+          <ol>
+            <a href="★OracleSQL.html"><li>OracleSQL</li></a>
+          </ol>
+      </ul>
+
+    </div>
+
+    <div class="gridright">
+
+      <h1>JSP (Java Server Page)</h1>
+      <p>Java를 이용한 서버 사이드 템플릿 엔진. jsp 는 자바를 웹서버에서 쉽게 쓰기 위한 기술이며 언어가 아니다
+      <br>HTML 코드 내에 직접 비즈니스 로직을 삽입할 수 있는 개발 기술이다</p>
+
+      <h2>EL (Expression Language)</h2>
+      <p>EL은 JSP의 출력 문법을 대체하는 표현 언어
+      <br>&lt;%= 변수 %> (JSP값표현) → ${ 변수 } (EL값표현)</p>
+    
+      <h2>JSTL (JavaServer Pages Standard Tag Library)</h2>
+      <p>JSTL은 태그를 통해 JSP 코드를 관리하는 라이브러리로서, JSP의 가독성이 좋아집니다.
+        <br>라이브러리이기 때문에 JSTL을 사용하려면, 라이브러리를 다운로드 해서 추가해야 합니다.
+        <br>&lt;%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+      </p>
+
+
+
+
+
+<c:set var ="total" value = "0" />
+
+<c:forEach var="price" items="${prices}">
+    <c:set var= "total" value="${ total + price }"/>
+</c:forEach>
+
+
+      <h3>Servlet 과 JSP 의 차이점</h3>
+      <p>자바 서블릿은 웹페이지를 동적으로 생성하는 서버 측 프로그램 혹은 그 사양을 말한다
+      <br>서블릿은 JSP와 비슷한 점이 있지만, JSP가 HTML 문서 안에 Java 코드를 포함하고 있는 반면, 서블릿은 자바 코드 안에 HTML을 포함하고 있다는 차이점이 있다.
+      </p>
+
+    </div>
+  </div>
+</body>
+</html>
