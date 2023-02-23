@@ -38,6 +38,54 @@
       <p>비동기 자바스크립트와 XML
         <br>XMLHttpRequest 객체를 사용하여 JSON, XML, HTML, txt 등 다양한 포맷을 주고 받는 비동기 서버 통신 방식
       </p>
+		
+    <h2>XMLHttpRequest</h2>
+    <p>자바 스크립트에서 비동기식 통신 방식 객체이며, 서버와 데이터를 교환할 때 사용</p>
+      <ul><span id="ulh">onreadystatechange</span>
+        <li>readyState 속성이 변경될 때 호출할 함수를 정의</li>
+      </ul>
+      <ul><span id="ulh"> readyState property</span>
+        <li>XMLHttpRequest 객체의 현재 상태를 나타낸다</li>
+        <li> 0: request not initialized</li>
+        <li> 1: server connection established</li>
+        <li> 2: request received</li>
+        <li> 3: processiong request</li>
+        <li> 4: request finished and response is ready</li>
+      </ul>
+      <ul><span id="ulh">status property</span>
+        <li>서버의 문서 상태를 나타낸다</li>
+        <li> if(this.status == 200) 와 같이 사용</li>
+        <li> 1XX : Informational responses</li>
+        <li> 2XX : OK responses</li>
+        <li> 3XX : Redirection messages</li>
+        <li> 4XX : Client error responses</li>
+        <li> 5XX : Server error responses</li>
+      </ul>
+      <ul><span id="ulh">open(method, url, async) method</span>
+        <li> xhttp에 보낼 정보 세팅</li>
+        <li> method : 요청타입 GET / POST / UPDATE / DELETE </li>
+        <li> url : 파일 또는 요청 서버 주소</li>
+        <li> async : true(비동기) or false(동기)</li>
+      </ul>
+      <ul><span id="ulh">send() method</span>
+        <li> send() GET 방식으로 요청을 서버로 전송</li>
+        <li> send(string: 요청 파리미터 이름과 값) POST 방식으로 요청을 서버로 전송</li>
+      </ul>
+
+
+    <h2>jQuery Ajax</h2>
+      <ul><span id="ulh">method</span>
+        <li>$(selector).load(URL, data, callback);</li>
+        <li>$.ajax({
+        <br>&emsp; type : GET or POST,
+        <br>&emsp; url : 경로,
+        <br>&emsp; data : 보낼 데이터 패키지,
+        <br>&emsp; success : 호출 성공 시 리턴될 내용 (callback)
+        <br>});</li>
+        <li>$.get(url, callback);</li>
+        <li>$.post(url, data, callback);</li>
+        <li>$.getJSON(url, data, callback)</li>
+      </ul>
 
       <h2>JSP & Servlet 구조</h2>
         <ol><strong>[클라이언트JSP]</strong>
@@ -58,42 +106,8 @@
         <ol><strong>[클라이언트JSP]</strong>
         <br>JSON 데이터(String)
         <br>↓ parse ↓ JSON.parse(txt);
-        <br>JavaScript 데이터</ol>
-		
-    <h2>XMLHttpRequest</h2>
-    <p>자바 스크립트에서 비동기식 통신 방식 객체이며, 서버와 데이터를 교환할 때 사용</p>
-      <ul>
-        <li> onreadystatechange : readyState 속성이 변경될 때 호출할 함수를 정의</li>
-        <li> readyState : XMLHttpRequest의 상태
-        <br> 0: request not initialized
-        <br> 1: server connection established
-        <br> 2: request received
-        <br> 3: processiong request
-        <br> 4: request finished and response is ready</li>
-        <li> status : HTML 메시지 코드
-        <br> 200: “OK”
-        <br> 403: “Forbidden”
-        <br> 404: “Page not founde”</li>
-        <li> open(method, url, async) : xhttp에 보낼 정보 세팅</li>
-        <li> method : 요청타입 GET or POST</li>
-        <li> url : 파일 또는 요청 서버 위치</li>
-        <li> async : true(비동기) or false(동기)</li>
-        <li> send() GET 방식으로 요청을 서버로 전송</li>
-        <li> send(string: 요청 파리미터 이름과 값) POST 방식으로 요청을 서버로 전송</li>
-      </ul>
-
-    <h2>jQuery Ajax</h2>
-      <ul>
-        <li>$(selector).load(URL, data, callback);</li>
-        <li>$.ajax({name:value, name:value, ...});
-        <br> 	type : GET or POST
-        <br> 	url : 경로
-        <br> 	data : 보낼 데이터 패키지
-        <br> 	success : 호출 성공 시 리턴될 내용 (callback)</li>
-        <li>$.get(url, callback);</li>
-        <li>$.post(url, data, callback);</li>
-        <li>$.getJSON(url, data, callback)</li>
-      </ul>
+        <br>JavaScript 데이터</ol> 
+        
     </div>
   </div>
 </body>
