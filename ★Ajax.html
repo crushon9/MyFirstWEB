@@ -34,14 +34,13 @@
 
     <div class="gridright">
 
-      <h1>Ajax (Asynchronous JavaScript and XML)
-      <br>(XML : eXtensible Markup Language)</h1>
-      <p>비동기 자바스크립트와 XML
+      <h1>Ajax (Asynchronous JavaScript and XML)</h1>
+      <p>비동기 자바스크립트와 XML(eXtensible Markup Language)
         <br>XMLHttpRequest 객체를 사용하여 JSON, XML, HTML, txt 등 다양한 포맷을 주고 받는 비동기 서버 통신 방식
       </p>
 		
-    <h2>XMLHttpRequest</h2>
-    <p>자바 스크립트에서 비동기식 통신 방식 객체이며, 서버와 데이터를 교환할 때 사용</p>
+      <h2>XMLHttpRequest</h2>
+      <p>자바 스크립트에서 비동기식 통신 방식 객체이며, 서버와 데이터를 교환할 때 사용</p>
       <ul><span id="ulh">onreadystatechange</span>
         <li>readyState 속성이 변경될 때 호출할 함수를 정의</li>
       </ul>
@@ -74,7 +73,7 @@
       </ul>
 
 
-    <h2>jQuery Ajax</h2>
+      <h2>jQuery Ajax</h2>
       <ul><span id="ulh">method</span>
         <li>$(selector).load(URL, data, callback);</li>
         <li>$.ajax({
@@ -88,26 +87,84 @@
         <li>$.getJSON(url, data, callback)</li>
       </ul>
 
-      <h2>JSP & Servlet 구조</h2>
-        <ol><strong>[클라이언트JSP]</strong>
-        <br>Javacript 데이터
-        <br>↓ parse ↓ JSON.stringify(obj);
-        <br>JSON 데이터(String)</ol>
+      <h2>JSP & Servlet 구조와 JSON parse</h2>
+      <ol><strong>[클라이언트JSP]</strong>
+      <br>Javacript 데이터
+      <br>↓ parse ↓ JSON.stringify(obj);
+      <br>JSON 데이터(String)</ol>
 
-        <ol><strong>[서버Servlet]</strong>
-        <br>JSON 데이터(String)
-        <br>↓ parse ↓ JSONObject jsonObj = (JSONObject) parser.parse(obj);
-        <br>Java 데이터(다른언어가능)</ol>
+      <ol><strong>[서버Servlet]</strong>
+      <br>JSON 데이터(String)
+      <br>↓ parse ↓ JSONObject jsonObj = (JSONObject) parser.parse(obj);
+      <br>Java 데이터(다른언어가능)</ol>
 
-        <ol><strong>[서버Servlet]</strong>
-        <br>Java 데이터(다른언어가능)	
-        <br>↓ parse ↓ jsonObject.put();
-        <br>JSON 데이터(String)</ol>
+      <ol><strong>[서버Servlet]</strong>
+      <br>Java 데이터(다른언어가능)	
+      <br>↓ parse ↓ jsonObject.put();
+      <br>JSON 데이터(String)</ol>
 
-        <ol><strong>[클라이언트JSP]</strong>
-        <br>JSON 데이터(String)
-        <br>↓ parse ↓ JSON.parse(txt);
-        <br>JavaScript 데이터</ol> 
+      <ol><strong>[클라이언트JSP]</strong>
+      <br>JSON 데이터(String)
+      <br>↓ parse ↓ JSON.parse(txt);
+      <br>JavaScript 데이터</ol> 
+
+      <h1>REST API</h1>
+      <p>RESTful API는 두 컴퓨터 시스템이 인터넷을 통해 정보를 안전하게 교환하기 위해 사용하는 인터페이스입니다. 안전하고 신뢰할 수 있으며 효율적인 소프트웨어 통신 표준을 따르므로 이러한 정보 교환을 지원합니다.</p>
+
+      <h3>REST API 디자인 가이드</h3>
+      <ul>
+        <li>1. URI는 정보의 자원을 표현해야 한다</li>
+        <li>2. 자원에 대한 행위는 HTTP Method로 표현한다</li>
+        <li>3. 슬래시(/)는 계층 관계를 나타내는 데 사용하며, 마지막 문자로는 사용하지 않는다</li>
+        <li>4. 하이픈(-)은 가독성을 높이는데 사용하며, 밑줄(_)은 사용하지 않는다</li>
+        <li>5. URI 경로에는 소문자가 적합하다</li>
+        <li>6. 파일 확장자는 URI에 포함시키지 않는다</li>
+        <li>예시 : GET /admin/member/1</li>
+      </ul>
+
+      <h3>HTTP Method</h3>
+      <table border="1">
+        <thead>
+          <tr>
+            <th>Method</th>
+            <th>CRUD</th>
+            <th>설명</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>POST</td>
+            <td>Create</td>
+            <td>해당 URI를 요청시 리소스를 생성</td>
+          </tr>
+          <tr>
+            <td>GET</td>
+            <td>Read</td>
+            <td>리소스를 조회하고 해당 도큐먼트에 대한 자세한 정보를 가져온다</td>
+          </tr>
+          <tr>
+            <td>PUT</td>
+            <td>Update</td>
+            <td>리소스 수정</td>
+          </tr>
+          <tr>
+            <td>DELETE</td>
+            <td>Delete</td>
+            <td>리소스 삭제</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>GraphQL</h2>
+      <p>GraphQL은 API를 위한 쿼리 언어이며 이미 존재하는 데이터로 쿼리를 수행하기 위한 런타임이다. GraphQL은 API에 있는 데이터에 대한 설명을 제공하고 클라이언트에게 필요한 것을 정확하게 요청할 수 있는 기능을 제공한다</p>
+      <ul><span id="ulh">REST API</span>
+        <li>URL(///)을 통하여 미리 설정해둔 result타입으로 데이터를 받아온다</li>
+        <li>요청복잡도↓ 응답복잡도↑</li>
+      </ul>
+      <ul><span id="ulh">GraphQL</span>
+        <li>필요한 정보만 별도 요청하면 해당 정보만 돌려준다</li>
+        <li>요청복잡도↑ 응답복잡도↓</li>
+      </ul>
 
     </div>
   </div>
