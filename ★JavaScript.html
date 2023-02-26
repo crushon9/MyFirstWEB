@@ -57,16 +57,17 @@
 
 
       <h3>on속성을 이용한 버튼</h3>
-      <input type="button" value="Night모드" onclick="
+      <p><input type="button" value="Night모드" onclick="
           document.querySelector('body').style.backgroundColor='black';
           document.querySelector('body').style.color='white';
           ">
-      <!--대소문자를 주의 해야한다-->
-      <!--body 자리에 #id나 .class 선택자를 넣을 수 있다-->
-      <br><input type="button" value="Day모드" onclick="
-          document.querySelector('body').style.backgroundColor='white';
-          document.querySelector('body').style.color='black';
-          ">
+        <!--대소문자를 주의 해야한다-->
+        <!--body 자리에 #id나 .class 선택자를 넣을 수 있다-->
+        <br><input type="button" value="Day모드" onclick="
+            document.querySelector('body').style.backgroundColor='white';
+            document.querySelector('body').style.color='black';
+            ">
+      </p>
 
 
       <h2>콘솔 console</h2>
@@ -161,10 +162,10 @@
         <li> = 는 대입연산자</li>
         <li>상수는 변하지 않는 값 (1, 2..)[우항]</li>
       </ul>
-      <script>
+      <p id="comment"><script>
         var name = '변수';
         document.write(" 변수를 이용하여 무수히 많은 >" + name + "<의 값은 일괄변경 가능하다");
-      </script>
+      </script></p>
       <p id="question">만약 변수이름이 중복되어 쓰이면??
         <br>답 : var는 중복선언이 가능하며 호출하는 코드 기준 제일 마지막에 선언된 변수를 불러오는 듯하다. 이를 보완하기 위해 let이라는 명령어가 있고, 중복선언이 불가하다
       </p>
@@ -182,13 +183,14 @@
         <li>flase</li>
       </ul>
       <!--1&lt; = less than / &gt; = greater than 줄임말-->
-      <p>1=='1' →
+      <p id="comment">1=='1' →
         <script>document.write(1 == '1');</script> <span id="comment">←엥간하면 사용하지 말것</span>
         <br> 1==='1' →
         <script>document.write(1 === '1');</script>
-      <p><a href="https://dorey.github.io/JavaScript-Equality-Table" target="_blank">==의 TRUE/FALSE 정리링크</a></p>
+      </p>
       <p><img src="JavaScript_true=1.JPG" border="1">
         <br>비교연산자 ==에서 1을 true, 0을 false으로 간주한다
+        <br><a href="https://dorey.github.io/JavaScript-Equality-Table" target="_blank">==의 TRUE/FALSE 정리링크</a>
       </p>
 
       <!---------------------------------------------------------------->
@@ -212,11 +214,11 @@
           <br>else if는 중첩이 가능하며, 가장 끝 else는 생략가능하다 생략시 조건전부 false일때 아무동작하지 않는다.
         </li>
       </ul>
-      <script>
+      <p id="comment"><script>
         document.write("예제ㄱ"); if (true) { document.write("내용<br>"); }
         document.write("예제ㄴ"); if (false) { document.write("내용1<br>"); } else { document.write("내용2<br>"); }
         document.write("예제ㄷ"); if (false) { document.write("내용1<br>"); } else if (false) { document.write("내용2<br>"); } else { document.write("내용3<br>"); }
-      </script>
+      </script></p>
 
 
       <h3>조건문_비교연산자</h3>
@@ -270,7 +272,7 @@
               <br>i++ 는 기존의 i를 불러오고 1증가 시킴 / ++i 기존의 값에서 1증가 시킨 후 사용함</span>
         </li>
       </ul>
-      <script>
+      <p id="comment"><script>
         var i = 0;
         while (i < 3) {
           document.write("반복while" + i);
@@ -278,7 +280,7 @@
         }
         document.write("<br>");
         for (var i = 0; i < 3; i++) { document.write("반복for" + i); }
-      </script>
+      </script></p>
 
 
       <h3>반복문제어</h3>
@@ -288,10 +290,10 @@
       <ul><span id="ulh">Continue</span>
         <li>continue를 만나면 건너띄고, 다음 반복문이 실행된다</li>
       </ul>
-      <script>
+      <p id="comment"><script>
         for (var i = 0; i < 5; i++) { if (i === 2) { break; } document.write("반복break" + i + "<br>"); }
         for (var i = 0; i < 5; i++) { if (i === 2) { continue; } document.write("반복continue" + i + "<br>"); }
-      </script>
+      </script></p>
 
 
       <h3>조건문, 반복문, this, target을 활용한 리팩토링</h3>
@@ -300,7 +302,7 @@
       <!--querySelectorALL는 해당태그 전체를 선택한다 -->
       <!--this는 html태그안에서는 태그자체(input태그라면 input객체를 가리킴) / html태그밖에서는 전역객체(윈도우)를 가리킨다
       html태그밖인 자바스크립트 함수에서는 this대신에 self로 대체한다 -->
-      <input id="night_day" type="button" value="Night로전환_조건문" onclick="
+      <p><input id="night_day" type="button" value="Night로전환_조건문" onclick="
         if(document.querySelector('#night_day').value==='Night로전환_조건문'){
           document.querySelector('body').style.backgroundColor='black';
           document.querySelector('body').style.color='white';
@@ -337,7 +339,7 @@
             i = i + 1;
           }
         }
-        ">
+        "></p>
       <!---------------------------------------------------------->
 
       <h1>함수(function)</h1>
@@ -392,11 +394,11 @@
           return a / b;//첫번째 리턴; 다음의 코드는 동작하지 않는다
         }
         //함수호출
-        document.write('<div style="color:red">' + sum1(2, 3) + '</div>');
+        document.write('<p style="color:red">' + sum1(2, 3) + '</p>');
 
         //리턴을 사용하지 않은 함수정의
         function sum2(a, b) {
-          document.write('<div style="color:blue">' + (a + b) + '</div>');
+          document.write('<p style="color:blue">' + (a + b) + '</p>');
         }
         //함수호출
         sum2(2, 3); // 2,3은 인자
@@ -435,8 +437,8 @@
           }
         }
       </script>
-      <input type="button" value="Night로 전환_함수" onclick="
-        functionSwitch(this);">
+      <p><input type="button" value="Night로 전환_함수" onclick="
+        functionSwitch(this);"></p>
 
 
       <!------------------------------------------------------------------>
@@ -449,14 +451,14 @@
         <li>전체호출 :<span id="accent"> 배열이름</span></li>
         <li>index호출 :<span id="accent"> 배열이름[i]</span> *index(색인)은 0부터 카운팅</li>
       </ul>
-      <script>
+      <p id="comment"><script>
         var array = ['빨강', '노랑', '파랑'];
         document.write(array + "<br>"); // 자동으로 전체출력되네?
         document.write(array[0] + "<br>");
         document.write(array.length + "<br>");
         array.push('추가값'); //배열안의 값 추가하기
         document.write(array + "<br>");
-      </script>
+      </script></
 
 
       <h3>배열편집</h3>
@@ -506,7 +508,7 @@
         <li>객체이름.key = 'value';</li>
         <li>자바스크립트에서는 객체 생성 이후 추가, 변경, 삭제가 자유롭다</li>
       </ul>
-      <script>
+      <p id="comment"><script>
         var object1 = {
           "국어": 50, "수학": 80
         };
@@ -521,18 +523,18 @@
         document.write(object1.수학);
         document.write(object2['수학']);
         document.write(object2['수' + '학']);
-      </script>
+      </script></p>
 
 
       <h3>객체의 value</h3>
       <p>객체의 value로는 문자뿐 아니라 다양한 데이터가 올 수 있다.
         <br>객체안에 객체를 담을 수도 있다. 객체안에 함수를 담을 수도 있다.
-        <script>
+        <p id="comment"><script>
           var 객객체 = {
             '과목점수': { "국어": 50, "수학": 80 }
           }
           document.write(객객체['과목점수']['국어']);
-        </script>
+        </script></p>
 
 
       <h3>객체반복문(Iterate)</h3>
@@ -542,7 +544,7 @@
         <li><span id="accent">for(var key in 객체이름) { document.write(객체이름[key]); }</span> *모든value 불러오기</li>
         <li>*배열도 동일한 형식으로 사용가능하며 key란을 아무글자로 바꿔도 동작한다</li>
       </ul>
-      <script>
+      <p id="comment"><script>
         for (var key in object1) { //객체순회
           document.write(key + object1[key] + '<br>');
         }
@@ -564,7 +566,7 @@
       <ul><span id="ulh">호출</span>
         <li><span id="accent">객체이름.key();</span></li>
       </ul>
-      <script>
+      <p id="comment"><script>
         var object3 = {
           "레드": '빨강', "그린": '초록',
           showALL1: function () {
@@ -574,7 +576,7 @@
           }
         }
         object3.showALL1(); //호출시 마지막 Property인 Method내용도 출력
-      </script>
+      </script></p>
 
 
 
@@ -615,8 +617,8 @@
           }
         }
       </script>
-      <input type="button" value="Night로 전환_객체" onclick="
-        objectSwitch(this);">
+      <p><input type="button" value="Night로 전환_객체" onclick="
+        objectSwitch(this);"></p>
       <!------------------------------------------------------------------>
       <h1>모듈(module)</h1>
       <p>코드를 부품과 같이 여러개의 파일로 분리하여 생산성을 높이는 것
@@ -676,13 +678,48 @@
           }
         }
       </script>
-      <input type="button" value="Night로 전환_$" onclick="
-        $버튼 (this);">
+      <p><input type="button" value="Night로 전환_$" onclick="
+        $버튼 (this);"></p>
 
 
       <h3>프레임워크(framework)</h3>
       <p>framework는 반제품
-        <br><img src="WEB_framework.JPG" width="500px" border="1">
+        <table border="1">
+          <thead>
+            <tr>
+              <th>프레임워크</th>
+              <th>기반언어</th>
+              <th>특징</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Spring</td>
+              <td>Java</td>
+              <td>전자정부 표준 프레임워크의 기반 기술로 사용</td>
+            </tr>
+            <tr>
+              <td>Node.js</td>
+              <td>JavaScript</td>
+              <td>실시간 입출력이 빈번한 애플리케이션에 적합</td>
+            </tr>
+            <tr>
+              <td>Django</td>
+              <td>Python</td>
+              <td>컴포넌트 재사용과 플러그인화 강조</td>
+            </tr>
+            <tr>
+              <td>Codeigniter</td>
+              <td>PHP</td>
+              <td>인터페이스가 간편하여 서버 자원을 적게 사용</td>
+            </tr>
+            <tr>
+              <td>Ruby on Rails</td>
+              <td>Ruby</td>
+              <td>개발 코드 길이가 짧아 신속한 개발 가능</td>
+            </tr>
+          </tbody>
+        </table> 
       </p>
 
       <!------------------------------------------------------------------>
